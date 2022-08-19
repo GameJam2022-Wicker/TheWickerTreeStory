@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerAction : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class PlayerAction : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private Color materialTintColor;
-    private LayerMask ladderLayer, tileLayer, playerLayer;
+    private LayerMask ladderLayer, tileLayer, playerLayer, portalLayer;
 
     void Awake()
     {
@@ -38,8 +39,9 @@ public class PlayerAction : MonoBehaviour
         ladderLayer = LayerMask.NameToLayer("Ladder");
         tileLayer = LayerMask.NameToLayer("Tile");
         playerLayer = LayerMask.NameToLayer("Player");
+        portalLayer = LayerMask.NameToLayer("Portal");
 
-        tempOwl=GetComponent<TempOwl>();
+        tempOwl =GetComponent<TempOwl>();
     }
 
 
@@ -129,18 +131,23 @@ public class PlayerAction : MonoBehaviour
     // 사다리 진입
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == ladderLayer)
+        if (collision.gameObject.layer == ladderLayer)  // 사다리
         {
             ladder = collision.gameObject;
             isLadder = true;
             capsuleCollider2D.size = new Vector2(capsuleCollider2D.size.x / 2, capsuleCollider2D.size.y);
+        }
+        if (collision.gameObject.layer == portalLayer)  // 포탈
+        {
+            int currentSceneNumber = SceneManager.GetActiveScene().buildIndex;  // 현재 scene number 가져오기
+            SceneManager.LoadScene(++currentSceneNumber);   // 다음 scene으로 이동
         }
     }
 
     // 사다리 나가기
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == ladderLayer)
+        if (collision.gameObject.layer == ladderLayer)  // 사다리
         {
             isLadder = isClimbing = false;
             capsuleCollider2D.size = new Vector2(capsuleCollider2D.size.x * 2, capsuleCollider2D.size.y);

@@ -139,13 +139,15 @@ MonoBehaviour:
   platformLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  portalLayer:
+    serializedVersion: 2
+    m_Bits: 256
   gravityScale: 1
   fallGravityMultiflier: 5
   maxSpeed: 6
   jumpPower: 10
   ladderSpeed: 5
   isHurting: 0
-  tempOwl: {fileID: 1985046961115039258}
 --- !u!114 &1985046961115039258
 MonoBehaviour:
   m_ObjectHideFlags: 0
