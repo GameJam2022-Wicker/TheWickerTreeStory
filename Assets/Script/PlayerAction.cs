@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAction : MonoBehaviour
 {
     [SerializeField] private LayerMask platformLayerMask;
-    [SerializeField] private float gravityScale;
+    public float gravityScale;
     public float fallGravityMultiflier;
 
     public float maxSpeed;
@@ -21,6 +21,7 @@ public class PlayerAction : MonoBehaviour
 
     private GameObject ladder;  // 현재 플레이어가 타고 있는 사다리
 
+    private TempOwl tempOwl;
     private CapsuleCollider2D capsuleCollider2D;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -37,19 +38,24 @@ public class PlayerAction : MonoBehaviour
         ladderLayer = LayerMask.NameToLayer("Ladder");
         tileLayer = LayerMask.NameToLayer("Tile");
         playerLayer = LayerMask.NameToLayer("Player");
+
+        tempOwl=GetComponent<TempOwl>();
     }
 
 
     void Update()
     {
-        if (IsGrounded())
+        if (!tempOwl.isOwlSkilling)
         {
-            Physics2D.IgnoreLayerCollision(playerLayer, tileLayer, false);
-            rigid.gravityScale = gravityScale;
-        }
-        else
-        {
-            rigid.gravityScale = gravityScale * fallGravityMultiflier;
+            if (IsGrounded())
+            {
+                Physics2D.IgnoreLayerCollision(playerLayer, tileLayer, false);
+                rigid.gravityScale = gravityScale;
+            }
+            else
+            {
+                rigid.gravityScale = gravityScale * fallGravityMultiflier;
+            }
         }
 
         if (isLadder)   // 사다리 앞에 있는 경우

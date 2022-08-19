@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5672160483998577828}
   - component: {fileID: 5672160483998577831}
   - component: {fileID: 5672160483998577827}
+  - component: {fileID: 1985046961115039258}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -144,3 +145,17 @@ MonoBehaviour:
   jumpPower: 10
   ladderSpeed: 5
   isHurting: 0
+  tempOwl: {fileID: 1985046961115039258}
+--- !u!114 &1985046961115039258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5672160483998577826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190b71a344b81444fbb48bcd1e61ea7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOwlSkilling: 0

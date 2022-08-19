@@ -436,6 +436,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5672160483998577827, guid: 5ec17e08921e66445b5921867e8dd479, type: 3}
+      propertyPath: tempOwl
+      value: 
+      objectReference: {fileID: 830616965}
     - target: {fileID: 5672160483998577830, guid: 5ec17e08921e66445b5921867e8dd479, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -482,6 +486,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ec17e08921e66445b5921867e8dd479, type: 3}
+--- !u!114 &830616965 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1985046961115039258, guid: 5ec17e08921e66445b5921867e8dd479, type: 3}
+  m_PrefabInstance: {fileID: 830616964}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190b71a344b81444fbb48bcd1e61ea7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1256425356
 PrefabInstance:
   m_ObjectHideFlags: 0
