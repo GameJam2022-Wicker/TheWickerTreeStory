@@ -23,7 +23,7 @@ public class SkillManager : MonoBehaviour
     [SerializeField] LayerMask signLayerMask;
 
     //yesman: 가면 None
-    public GameObject signObject;
+    public GameObject signUI;
 
     //yesman: 가면 owl
     public bool isOwlSkilling = false;
@@ -91,7 +91,7 @@ public class SkillManager : MonoBehaviour
         Color rayColor;
         if (raycastHit2D.collider.gameObject.tag == "Sign")
         {
-            signObject.SetActive(true);
+            signUI.SetActive(true);
             rayColor = Color.green;
         }
         else
