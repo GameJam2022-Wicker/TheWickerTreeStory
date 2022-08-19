@@ -8,6 +8,7 @@ TagManager:
   - Ladder-floor
   - Ladder-bottom
   - Ladder-air
+  - Sign
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Tile
   - Player
   - Portal
-  - 
+  - Sign
   - 
   - 
   - 
