@@ -22,8 +22,8 @@ public class PlayerAction : MonoBehaviour
     private Animator animator;
     private Color materialTintColor;
 
-    private float coyoteTime = 0.2f;
-    private float coyoteTimeCounter;
+    //private float coyoteTime = 0.2f;
+    //private float coyoteTimeCounter;
 
     void Awake()
     {
@@ -38,17 +38,18 @@ public class PlayerAction : MonoBehaviour
     {
         if (IsGrounded())
         {
-            coyoteTimeCounter = coyoteTime;
+            //coyoteTimeCounter = coyoteTime;
             rigid.gravityScale = gravityScale;
         }
         else
         {
-            coyoteTimeCounter -= Time.deltaTime;
+            //coyoteTimeCounter -= Time.deltaTime;
             rigid.gravityScale = gravityScale * fallGravityMultiflier;
         }
 
         //Jump
-        if (coyoteTimeCounter > 0f && Input.GetButtonDown("Jump"))
+        //if (coyoteTimeCounter > 0f && Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
             isJumping = true;
             rigid.velocity = Vector2.up * jumpPower;
@@ -58,7 +59,7 @@ public class PlayerAction : MonoBehaviour
         if (Input.GetButtonUp("Jump") && rigid.velocity.y > 0f)
         {
             rigid.velocity = new Vector2(rigid.velocity.x, rigid.velocity.y * 0.5f);
-            coyoteTimeCounter = 0f;
+            //coyoteTimeCounter = 0f;
         }
 
         //Stop Speed
