@@ -73,17 +73,17 @@ public class PlayerAction : MonoBehaviour
         }
 
         //Jump
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             isJumping = true;
             rigid.velocity = Vector2.up * jumpPower;
         }
-
+        /*
         if (Input.GetButtonUp("Jump") && rigid.velocity.y > 0f)
         {
             rigid.velocity = new Vector2(rigid.velocity.x, rigid.velocity.y * 0.5f);
         }
-
+        */
         //Stop Speed
         if (Input.GetButtonUp("Horizontal"))
         {

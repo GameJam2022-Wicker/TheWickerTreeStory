@@ -139,17 +139,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   gravityScale: 1
-  ladderLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  tileLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 128
   fallGravityMultiflier: 5
   maxSpeed: 6
-  jumpPower: 20
+  jumpPower: 10
   ladderSpeed: 5
   isHurting: 0
