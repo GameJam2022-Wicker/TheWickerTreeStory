@@ -22,7 +22,7 @@ public class PlayerAction : MonoBehaviour
 
     private GameObject ladder;  // 현재 플레이어가 타고 있는 사다리
 
-    private TempOwl tempOwl;
+    private SkillManager skillManager;
     private CapsuleCollider2D capsuleCollider2D;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -41,13 +41,13 @@ public class PlayerAction : MonoBehaviour
         playerLayer = LayerMask.NameToLayer("Player");
         portalLayer = LayerMask.NameToLayer("Portal");
 
-        tempOwl =GetComponent<TempOwl>();
+        skillManager = GameObject.Find("SkillManager").GetComponent<SkillManager>();
     }
 
 
     void Update()
     {
-        if (!tempOwl.isOwlSkilling)
+        if (!skillManager.isOwlSkilling)
         {
             if (IsGrounded())
             {
@@ -81,7 +81,7 @@ public class PlayerAction : MonoBehaviour
         }
 
         //Jump
-        if (Input.GetButtonDown("Jump") && IsGrounded() && !isClimbing) // 사다리를 타는 중에는 점프 불가능
+        if (Input.GetButtonDown("Jump") && IsGrounded() && !isClimbing && !skillManager.isOwlSkilling) // 사다리를 타는 중, 올빼미 스킬 사용 중에는 점프 불가능
         {
             isJumping = true;
             rigid.velocity = Vector2.up * jumpPower;

@@ -667,6 +667,7 @@ GameObject:
   m_Component:
   - component: {fileID: 593503639}
   - component: {fileID: 593503638}
+  - component: {fileID: 593503640}
   m_Layer: 0
   m_Name: SkillManager
   m_TagString: Untagged
@@ -706,6 +707,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &593503640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593503637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55ba5672a1b3d8c43913f18f25f57754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  signObject: {fileID: 0}
+  isOwlSkilling: 0
+  player: {fileID: 830616966}
 --- !u!1001 &830616964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -776,6 +795,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 190b71a344b81444fbb48bcd1e61ea7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &830616966 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5672160483998577827, guid: 5ec17e08921e66445b5921867e8dd479, type: 3}
+  m_PrefabInstance: {fileID: 830616964}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83555acae2a05b1478af0ddd4a3db928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1256425356
