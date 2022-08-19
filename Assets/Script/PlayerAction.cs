@@ -79,7 +79,7 @@ public class PlayerAction : MonoBehaviour
         }
 
         //Jump
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (Input.GetButtonDown("Jump") && IsGrounded() && !isClimbing) // 사다리를 타는 중에는 점프 불가능
         {
             isJumping = true;
             rigid.velocity = Vector2.up * jumpPower;
