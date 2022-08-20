@@ -56,7 +56,7 @@ public class SkillManager : MonoBehaviour
         switch(maskManager.currentMask)
         {
             case MaskManager.Mask.None:
-                if(signUI.activeSelf == true)
+                if(signUI != null && signUI.activeSelf == true)
                 {
                     if(Input.GetKeyDown(KeyCode.F))
                     {
