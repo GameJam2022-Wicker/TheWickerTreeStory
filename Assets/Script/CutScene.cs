@@ -7,11 +7,12 @@ using UnityEngine.UI;
 public class CutScene : MonoBehaviour
 {
     [SerializeField]
-    private Image fadePanel;
-    [SerializeField]
     private Image image;
     [SerializeField]
     private List<Sprite> imageList;
+    [SerializeField]
+    private GameObject boy;
+
     private int imageNum;   // 이미지 개수
     private int idx;      // 현재 이미지
 
@@ -35,6 +36,18 @@ public class CutScene : MonoBehaviour
         if (idx == imageNum)
             GameObject.Find("FadeManager").GetComponent<FadeManager>().StartCoroutine("FadeOutCoroutine");
         else if (idx < imageNum)
+        {
             image.sprite = imageList[idx];
+
+
+            // 특정 조건에 발생하는 이벤트 체크
+            if (SceneManager.GetActiveScene().buildIndex == 3)
+            {
+                if (idx == 1)
+                    boy.SetActive(true);
+                else if (idx == 2)
+                    boy.SetActive(false);
+            }
+        }
     }
 }
