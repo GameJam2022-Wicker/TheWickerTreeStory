@@ -13,7 +13,8 @@ public class MaskManager : MonoBehaviour
     }
     public Mask currentMask;
 
-    [SerializeField] private Image maskImage; 
+    [SerializeField] private Image maskImage;
+    [SerializeField] private Animator animator;
     [SerializeField] private List<Sprite> maskSpriteList;
     private int maskNum;
     
@@ -32,6 +33,7 @@ public class MaskManager : MonoBehaviour
             if (currentMask < 0)
                 currentMask = (Mask)(maskNum - 1);
             SetMaskImage();
+            SetAnimation();
         }
         else if (Input.GetKeyUp(KeyCode.E))
         {
@@ -45,5 +47,10 @@ public class MaskManager : MonoBehaviour
     private void SetMaskImage()
     {
         maskImage.sprite = maskSpriteList[(int)currentMask];
+    }
+
+    private void SetAnimation()
+    {
+        animator.SetTrigger(currentMask.ToString());
     }
 }
