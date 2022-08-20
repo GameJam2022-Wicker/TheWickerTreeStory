@@ -49,9 +49,6 @@ public class Prologue : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             StartBackground.SetActive(false);
-            blackpanel.gameObject.SetActive(true);
-            if(blackpanel.gameObject.activeSelf)
-                Destroy(blackpanel);
         }
     }
 
