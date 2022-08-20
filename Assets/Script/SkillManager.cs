@@ -110,11 +110,16 @@ public class SkillManager : MonoBehaviour
     void UseSkillNoneMask()
     {
         RaycastHit2D raycastHit2D = Physics2D.Raycast(capsuleCollider2D.bounds.center, Vector2.right, 5f, signLayerMask);
+        RaycastHit2D raycastLeftHit2D = Physics2D.Raycast(capsuleCollider2D.bounds.center, Vector2.left, 5f, signLayerMask);
         Color rayColor;
-        if(raycastHit2D.collider!= null && raycastHit2D.collider.gameObject.tag == "Sign")
+        if(raycastHit2D.collider!= null && raycastHit2D.collider.gameObject.tag == "Sign" ||
+            raycastLeftHit2D.collider != null && raycastLeftHit2D.collider.gameObject.tag == "Sign")
         {
             signUI.SetActive(true);
-            signText.text = raycastHit2D.collider.GetComponent<Sign>().signStr;
+            if(raycastHit2D.collider != null)
+                signText.text = raycastHit2D.collider.GetComponent<Sign>().signStr;
+            if (raycastLeftHit2D.collider != null)
+                signText.text = raycastLeftHit2D.collider.GetComponent<Sign>().signStr;
             Time.timeScale = 0;
             rayColor = Color.green;
         }
