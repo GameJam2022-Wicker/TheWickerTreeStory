@@ -33,25 +33,8 @@ public class CutScene : MonoBehaviour
     {
         idx++;
         if (idx == imageNum)
-            StartCoroutine("FadeOutCoroutine");
+            GameObject.Find("FadeManager").GetComponent<FadeManager>().StartCoroutine("FadeOutCoroutine");
         else if (idx < imageNum)
             image.sprite = imageList[idx];
-    }
-
-    IEnumerator FadeOutCoroutine()
-    {
-        float fadeCount = 0;    // 초기 알파값(검은 화면)
-        while (true)    // 알파값이 최대(1)가 될 때까지 반복
-        {
-            if (fadeCount >= 1) // 페이드아웃 종료
-                break;
-
-            fadeCount += 0.01f;
-            yield return new WaitForSeconds(0.01f); // 0.01초마다 어두워지게->1초 후 완전히 어두워짐
-            fadePanel.color = new Color(0, 0, 0, fadeCount);    // 알파값 조정
-        }
-
-        int currentSceneNumber = SceneManager.GetActiveScene().buildIndex;  // 현재 scene number
-        SceneManager.LoadScene(++currentSceneNumber);
     }
 }

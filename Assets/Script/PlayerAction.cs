@@ -177,7 +177,7 @@ public class PlayerAction : MonoBehaviour
         if (collision.gameObject.layer == portalLayer)  // 포탈
         {
             portalSound.Play();
-            StartCoroutine("LoadSceneCoroutine");
+            GameObject.Find("FadeManager").GetComponent<FadeManager>().StartCoroutine("FadeOutCoroutine");
         }
     }
 
@@ -233,16 +233,6 @@ public class PlayerAction : MonoBehaviour
         {
             Debug.Log("게임 오버");
         }
-    }
-
-    IEnumerator LoadSceneCoroutine()
-    {
-        int currentSceneNumber = SceneManager.GetActiveScene().buildIndex;  // 현재 scene number 가져오기
-        while (portalSound.isPlaying)
-        {
-            yield return null;
-        }
-        SceneManager.LoadScene(++currentSceneNumber);   // 다음 scene으로 이동
     }
 
     public void DamageFlash()
