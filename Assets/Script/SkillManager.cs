@@ -15,7 +15,6 @@ public class SkillManager : MonoBehaviour
         else
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
     }
     #endregion
@@ -24,6 +23,7 @@ public class SkillManager : MonoBehaviour
 
     //yesman: 가면 None
     public GameObject signUI;
+    public Text signText;
 
     //yesman: 가면 owl
     public bool isOwlSkilling = false;
@@ -104,6 +104,7 @@ public class SkillManager : MonoBehaviour
         if(raycastHit2D.collider!= null && raycastHit2D.collider.gameObject.tag == "Sign")
         {
             signUI.SetActive(true);
+            signText.text = raycastHit2D.collider.GetComponent<Sign>().signStr;
             Time.timeScale = 0;
             rayColor = Color.green;
         }
