@@ -615,6 +615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentMask: 0
   maskImage: {fileID: 1549169025}
+  animator: {fileID: 1671171926}
   maskSpriteList:
   - {fileID: -3708508325519384304, guid: f73dfe034c22cfc41bd7e8799020a5ac, type: 3}
   - {fileID: 8596640243658272642, guid: 5d4daff38e3d9174b873918abcf2c1d4, type: 3}
@@ -1038,6 +1039,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1671171926 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7477860893880078849, guid: 5ec17e08921e66445b5921867e8dd479, type: 3}
+  m_PrefabInstance: {fileID: 830616964}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1878102559
 PrefabInstance:
   m_ObjectHideFlags: 0
