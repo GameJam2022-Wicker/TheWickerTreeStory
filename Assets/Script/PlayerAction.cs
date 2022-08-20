@@ -28,7 +28,7 @@ public class PlayerAction : MonoBehaviour
     private Color materialTintColor;
     private LayerMask ladderLayer, tileLayer, playerLayer, portalLayer, obstacleLayerMask;
 
-    [SerializeField] private AudioSource walkSound, jumpSound, flySound, ladderSound;
+    [SerializeField] private AudioSource walkSound, jumpSound, flySound, ladderSound, portalSound;
 
     void Awake()
     {
@@ -175,8 +175,8 @@ public class PlayerAction : MonoBehaviour
         }
         if (collision.gameObject.layer == portalLayer)  // 포탈
         {
-            int currentSceneNumber = SceneManager.GetActiveScene().buildIndex;  // 현재 scene number 가져오기
-            SceneManager.LoadScene(++currentSceneNumber);   // 다음 scene으로 이동
+            portalSound.Play();
+            StartCoroutine("LoadSceneCoroutine");
         }
     }
 
@@ -228,6 +228,16 @@ public class PlayerAction : MonoBehaviour
             isJumping = false;
             animator.SetBool("isJumping", false);
         }
+    }
+
+    IEnumerator LoadSceneCoroutine()
+    {
+        int currentSceneNumber = SceneManager.GetActiveScene().buildIndex;  // 현재 scene number 가져오기
+        while (portalSound.isPlaying)
+        {
+            yield return null;
+        }
+        SceneManager.LoadScene(++currentSceneNumber);   // 다음 scene으로 이동
     }
 
     public void DamageFlash()

@@ -7,6 +7,7 @@ public class Obstacle : MonoBehaviour
     Rigidbody2D rigid;
     BoxCollider2D boxCollider;
     Animator animator;  // 플레이어 애니메이터
+    AudioSource pushSound;  // 바위 미는 소리
     bool canPush;
     public LayerMask playerLayerMask;
     public LayerMask tileLayerMask;
@@ -16,6 +17,7 @@ public class Obstacle : MonoBehaviour
         rigid = gameObject.GetComponent<Rigidbody2D>();
         boxCollider = gameObject.GetComponent<BoxCollider2D>();
         animator = GameObject.Find("Player").GetComponent<Animator>();
+        pushSound = GameObject.Find("Player").GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -66,14 +68,19 @@ public class Obstacle : MonoBehaviour
                 //yesman: 바위가 많이 밀리지 않도록 velocity 0, 무겁게 밀리도록 스피드 줄임
                 collision.gameObject.GetComponent<PlayerAction>().maxSpeed = 3f;
                 rigid.velocity = new Vector2(0, 0);
-                animator.SetBool("isPushing", true);
+
+                animator.SetBool("isPushing", true);    // 바위 밀기 애니메이션 재생
+                if (!pushSound.isPlaying)   // 바위 미는 소리 재생
+                    pushSound.Play();
             }
             else
             {
                 rigid.bodyType = RigidbodyType2D.Kinematic;
                 rigid.constraints = RigidbodyConstraints2D.FreezePositionX;
                 collision.gameObject.GetComponent<PlayerAction>().maxSpeed = 6f;
-                animator.SetBool("isPushing", false);
+
+                animator.SetBool("isPushing", false);   // 바위 밀기 애니메이션 중지
+                pushSound.Stop();   // 바위 미는 소리 중지
             }
         }
     }
