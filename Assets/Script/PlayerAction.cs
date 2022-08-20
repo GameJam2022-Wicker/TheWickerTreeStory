@@ -28,7 +28,7 @@ public class PlayerAction : MonoBehaviour
     private Color materialTintColor;
     private LayerMask ladderLayer, tileLayer, playerLayer, portalLayer, obstacleLayerMask;
 
-    [SerializeField] private AudioSource walkSound, jumpSound, flySound;
+    [SerializeField] private AudioSource walkSound, jumpSound, flySound, ladderSound;
 
     void Awake()
     {
@@ -81,11 +81,15 @@ public class PlayerAction : MonoBehaviour
                 transform.position = new Vector3(ladder.transform.position.x, transform.position.y, transform.position.z);  // 플레이어를 사다리 가운데로 정렬
                 transform.position += horizontalMove * ladderSpeed * Time.deltaTime;    // 플레이어 이동
                 Physics2D.IgnoreLayerCollision(playerLayer, tileLayer, true); // 타일과의 충돌 처리 X
+
+                if (!ladderSound.isPlaying) // 사다리 타기 소리 재생
+                    ladderSound.Play();
             }
             else if (isClimbing)    // 사다리를 타고 있지만 움직이지 않는 경우
             {
                 rigid.gravityScale = 0; // 중력 X
                 animator.speed = 0; // 애니메이션 정지
+                ladderSound.Stop();
             }
         }
 
@@ -137,8 +141,11 @@ public class PlayerAction : MonoBehaviour
 
             // 걷는 소리 재생
             if (isMoving && IsGrounded() && !skillManager.isOwlSkilling)
+            {
                 if (!walkSound.isPlaying)
                     walkSound.Play();
+            }
+                
             else if (skillManager.isOwlSkilling && !flySound.isPlaying)
                 flySound.Play();
             else
