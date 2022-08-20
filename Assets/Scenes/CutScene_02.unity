@@ -247,7 +247,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 99d186b587d70be4c917b384f54cebcf, type: 3}
   - {fileID: 21300000, guid: 9fe730f3abd142a44af0d75cec877d64, type: 3}
   - {fileID: 21300000, guid: 30a84992d66ad674b91cdcf3096b4732, type: 3}
-  - {fileID: 21300000, guid: e104307b0b435bf498faba8e8e727b8e, type: 3}
   boy: {fileID: 1556986012}
 --- !u!4 &628691018
 Transform:
@@ -499,8 +498,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -277, y: -234}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchoredPosition: {x: -371, y: -221.8}
+  m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1556986014
 Animator:
