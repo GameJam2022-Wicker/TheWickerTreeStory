@@ -14,7 +14,7 @@ public class FadeManager : MonoBehaviour
         StartCoroutine("FadeInCoroutine");
     }
 
-    IEnumerator FadeInCoroutine()
+    public IEnumerator FadeInCoroutine()
     {
         float fadeCount = 1;    // 초기 알파값(검은 화면)
         while (fadeCount > 0)    // 알파값이 최소(0)가 될 때까지 반복

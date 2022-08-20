@@ -12,6 +12,7 @@ public class CutScene : MonoBehaviour
     private List<Sprite> imageList;
     [SerializeField]
     private GameObject boy;
+    public GameObject StartBackground;
 
     private int imageNum;   // 이미지 개수
     private int idx;      // 현재 이미지
@@ -32,6 +33,16 @@ public class CutScene : MonoBehaviour
 
     private void ChangeImage()
     {
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            if (StartBackground.activeSelf)
+            {
+                StartBackground.SetActive(false);
+                GameObject.Find("FadeManager").GetComponent<FadeManager>().StartCoroutine("FadeInCoroutine");
+                return;
+            }
+        }
+            
         idx++;
         if (idx == imageNum)
             GameObject.Find("FadeManager").GetComponent<FadeManager>().StartCoroutine("FadeOutCoroutine");
@@ -47,6 +58,11 @@ public class CutScene : MonoBehaviour
                     boy.SetActive(true);
                 else if (idx == 2)
                     boy.SetActive(false);
+            }
+            else if (SceneManager.GetActiveScene().buildIndex == 0)
+            {
+                if(idx == imageList.Count)
+                    SceneManager.LoadScene(1);
             }
         }
     }
