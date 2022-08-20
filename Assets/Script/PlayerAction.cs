@@ -64,8 +64,6 @@ public class PlayerAction : MonoBehaviour
 
         if (isLadder)   // 사다리 앞에 있는 경우
         {
-            rigid.gravityScale = 0; // 중력 X
-
             // 수직 방향키 입력 감지
             Vector3 horizontalMove = Vector3.zero;
             if (Input.GetKey(KeyCode.UpArrow))
@@ -75,6 +73,7 @@ public class PlayerAction : MonoBehaviour
 
             if (horizontalMove!= Vector3.zero)  // 수직 방향키 입력이 있다면
             {
+                rigid.gravityScale = 0; // 중력 X
                 isClimbing = true;
                 animator.SetBool("isClimbing", isClimbing);
                 transform.position = new Vector3(ladder.transform.position.x, transform.position.y, transform.position.z);  // 플레이어를 사다리 가운데로 정렬
@@ -82,12 +81,16 @@ public class PlayerAction : MonoBehaviour
                 Physics2D.IgnoreLayerCollision(playerLayer, tileLayer, true); // 타일과의 충돌 처리 X
             }
             else if (isClimbing)    // 사다리를 타고 있지만 움직이지 않는 경우
+            {
+                rigid.gravityScale = 0; // 중력 X
                 animator.speed = 0; // 애니메이션 정지
+            }
         }
 
         //Jump
         if (Input.GetButtonDown("Jump") && IsGrounded() && !isClimbing && !skillManager.isOwlSkilling) // 사다리를 타는 중, 올빼미 스킬 사용 중에는 점프 불가능
         {
+            Debug.Log("점프");
             isJumping = true;
             animator.SetBool("isJumping", true);
             rigid.velocity = Vector2.up * jumpPower;
