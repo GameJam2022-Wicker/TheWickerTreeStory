@@ -16,6 +16,7 @@ public class MaskManager : MonoBehaviour
     public Image maskImage;
     [SerializeField] private List<Sprite> maskSpriteList;
     [SerializeField] private List<AudioSource> maskChangeAudioList;
+    [SerializeField] private bool canChangeMask;    // 가면 변경 가능 여부 (Map_03 -> false)
     private Animator animator;
     private int maskNum;
     
@@ -29,19 +30,22 @@ public class MaskManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (canChangeMask)
         {
-            currentMask--;
-            if (currentMask < 0)
-                currentMask = (Mask)(maskNum - 1);
-            ChangeMask();
-        }
-        else if (Input.GetKeyUp(KeyCode.E))
-        {
-            currentMask++;
-            if (currentMask == (Mask)maskNum)
-                currentMask = 0;
-            ChangeMask();
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                currentMask--;
+                if (currentMask < 0)
+                    currentMask = (Mask)(maskNum - 1);
+                ChangeMask();
+            }
+            else if (Input.GetKeyUp(KeyCode.E))
+            {
+                currentMask++;
+                if (currentMask == (Mask)maskNum)
+                    currentMask = 0;
+                ChangeMask();
+            }
         }
     }
 

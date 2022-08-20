@@ -52,7 +52,7 @@ public class PlayerAction : MonoBehaviour
     {
         animator.speed = 1;
 
-        if (!skillManager.isOwlSkilling)    // 부엉이 스킬 사용 X
+        if (skillManager != null && !skillManager.isOwlSkilling)    // 부엉이 스킬 사용 X
         {
             if (IsGrounded())   // 땅에 있으면
             {
@@ -95,7 +95,7 @@ public class PlayerAction : MonoBehaviour
         }
 
         //Jump
-        if (Input.GetButtonDown("Jump") && IsGrounded() && !isClimbing && !skillManager.isOwlSkilling) // 사다리를 타는 중, 올빼미 스킬 사용 중에는 점프 불가능
+        if (Input.GetButtonDown("Jump") && IsGrounded() && !isClimbing && skillManager != null && !skillManager.isOwlSkilling) // 사다리를 타는 중, 올빼미 스킬 사용 중에는 점프 불가능
         {
             isJumping = true;
             animator.SetBool("isJumping", true);
@@ -141,13 +141,13 @@ public class PlayerAction : MonoBehaviour
             animator.SetBool("isMoving", isMoving);
 
             // 걷는 소리 재생
-            if (isMoving && IsGrounded() && !skillManager.isOwlSkilling)
+            if (isMoving && IsGrounded() && skillManager != null && !skillManager.isOwlSkilling)
             {
                 if (!walkSound.isPlaying)
                     walkSound.Play();
             }
                 
-            else if (skillManager.isOwlSkilling && !flySound.isPlaying)
+            else if (skillManager != null && skillManager.isOwlSkilling && !flySound.isPlaying)
                 flySound.Play();
             else
                 walkSound.Stop();
