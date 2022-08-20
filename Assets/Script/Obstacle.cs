@@ -7,6 +7,8 @@ public class Obstacle : MonoBehaviour
     Rigidbody2D rigid;
     BoxCollider2D boxCollider;
     bool canPush;
+    public LayerMask playerLayerMask;
+    public LayerMask tileLayerMask;
 
     private void Start() 
     {
@@ -17,17 +19,24 @@ public class Obstacle : MonoBehaviour
     private void Update()
     {
         //yesman: 레이캐스트로 플레이어를 감지하여 플레이어가 박스 위에 있다면 canPush = false;
-        RaycastHit2D raycastHit2D = Physics2D.Raycast(boxCollider.bounds.center, Vector2.up, boxCollider.bounds.extents.y);
-        Color rayColor;
+        RaycastHit2D raycastHit2D = Physics2D.Raycast(boxCollider.bounds.center, Vector2.up, boxCollider.bounds.extents.y, playerLayerMask);
+        RaycastHit2D raycastHit2DDown = Physics2D.Raycast(boxCollider.bounds.center, Vector2.down, boxCollider.bounds.extents.y, tileLayerMask);
+
         if (raycastHit2D.collider != null)
         {
-            rayColor = Color.green;
             canPush = false;
         }
         else
         {
-            rayColor = Color.red;
             canPush = true;
+        }
+
+        if(raycastHit2DDown.collider == null)
+        {
+            rigid.bodyType = RigidbodyType2D.Dynamic;
+            rigid.constraints = RigidbodyConstraints2D.None;
+            rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+            gameObject.transform.SetParent(null);
         }
     }
 
@@ -35,6 +44,7 @@ public class Obstacle : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && SkillManager.instance.maskManager.currentMask != MaskManager.Mask.Pig)
         {
+            //kinematic으로 하여 움직이지 않도록 함.
             rigid.bodyType = RigidbodyType2D.Kinematic;
             rigid.constraints = RigidbodyConstraints2D.FreezePositionX;
         }
@@ -49,7 +59,8 @@ public class Obstacle : MonoBehaviour
                 rigid.bodyType = RigidbodyType2D.Dynamic;
                 rigid.constraints = RigidbodyConstraints2D.None;
                 rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
-                //yesman: 바위가 많이 밀리지 않도록 velocity 0
+                //yesman: 바위가 많이 밀리지 않도록 velocity 0, 무겁게 밀리도록 스피드 줄임
+                collision.gameObject.GetComponent<PlayerAction>().maxSpeed = 3f;
                 rigid.velocity = new Vector2(0, 0);
                 //yesman: 밀 수 없는 상태라면 return
                 if (!canPush)
@@ -66,6 +77,7 @@ public class Obstacle : MonoBehaviour
             {
                 rigid.bodyType = RigidbodyType2D.Kinematic;
                 rigid.constraints = RigidbodyConstraints2D.FreezePositionX;
+                gameObject.transform.SetParent(null);
             }
         }
     }
