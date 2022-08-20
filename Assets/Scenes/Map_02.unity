@@ -2764,9 +2764,9 @@ MonoBehaviour:
   currentMask: 0
   maskImage: {fileID: 1549169025}
   maskSpriteList:
-  - {fileID: -3708508325519384304, guid: f73dfe034c22cfc41bd7e8799020a5ac, type: 3}
-  - {fileID: 8596640243658272642, guid: 5d4daff38e3d9174b873918abcf2c1d4, type: 3}
-  - {fileID: -6447722072507503168, guid: 10f3cacccb0c4c547be76836eba20664, type: 3}
+  - {fileID: 21300000, guid: 8a4c2410abd089b4e9054712a1825c21, type: 3}
+  - {fileID: -7410076271603460419, guid: d73429fefab312c48ada0190f09471ec, type: 3}
+  - {fileID: 21300000, guid: 31e67134806fdcb43b4a816a884cc133, type: 3}
   maskChangeAudioList:
   - {fileID: 0}
   - {fileID: 593503642}
@@ -16626,6 +16626,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 559797057}
     m_Modifications:
+    - target: {fileID: 3873859121686058572, guid: 7738a3cf6e4482d47a9ded55e17740c6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8a4c2410abd089b4e9054712a1825c21, type: 3}
+    - target: {fileID: 3873859121686058572, guid: 7738a3cf6e4482d47a9ded55e17740c6, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3873859121686058573, guid: 7738a3cf6e4482d47a9ded55e17740c6, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -16656,7 +16664,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3873859121686058573, guid: 7738a3cf6e4482d47a9ded55e17740c6, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 150
+      value: 226.5834
       objectReference: {fileID: 0}
     - target: {fileID: 3873859121686058573, guid: 7738a3cf6e4482d47a9ded55e17740c6, type: 3}
       propertyPath: m_SizeDelta.y
