@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerAction : MonoBehaviour
 {
-    [SerializeField] private LayerMask platformLayerMask;
     public float gravityScale;
     public float fallGravityMultiflier;
 
@@ -27,7 +26,7 @@ public class PlayerAction : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private Color materialTintColor;
-    private LayerMask ladderLayer, tileLayer, playerLayer, portalLayer;
+    private LayerMask ladderLayer, tileLayer, playerLayer, portalLayer, obstacleLayerMask;
 
     void Awake()
     {
@@ -40,6 +39,7 @@ public class PlayerAction : MonoBehaviour
         tileLayer = LayerMask.NameToLayer("Tile");
         playerLayer = LayerMask.NameToLayer("Player");
         portalLayer = LayerMask.NameToLayer("Portal");
+        obstacleLayerMask = LayerMask.NameToLayer("Obstacle");
 
         skillManager = GameObject.Find("SkillManager").GetComponent<SkillManager>();
     }
@@ -173,7 +173,8 @@ public class PlayerAction : MonoBehaviour
     {
         float extraHeightText = .3f;
 
-        RaycastHit2D raycastHit = Physics2D.Raycast(capsuleCollider2D.bounds.center, Vector2.down, capsuleCollider2D.bounds.extents.y + extraHeightText, platformLayerMask);
+        int layerMask = (1 << tileLayer) + (1 << obstacleLayerMask);    // Player 와 MyTeammate 레이어만 충돌체크함
+        RaycastHit2D raycastHit = Physics2D.Raycast(capsuleCollider2D.bounds.center, Vector2.down, capsuleCollider2D.bounds.extents.y + extraHeightText, layerMask);
         Color rayColor;
         if (raycastHit.collider != null)
         {
@@ -185,7 +186,7 @@ public class PlayerAction : MonoBehaviour
         }
         Debug.DrawRay(capsuleCollider2D.bounds.center, Vector2.down * (capsuleCollider2D.bounds.extents.y + extraHeightText), rayColor);
 
-        return raycastHit.collider != null;
+        return raycastHit.collider != null; 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
