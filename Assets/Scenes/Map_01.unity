@@ -595,7 +595,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306731287}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1, y: -0.31999993, z: 10}
+  m_LocalPosition: {x: 0.1, y: 1.27, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -2259,6 +2259,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: SignUI
       objectReference: {fileID: 0}
+    - target: {fileID: 8704486331377523550, guid: a7279d62afa61354896ee3fc8dce6f76, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704486331377523550, guid: a7279d62afa61354896ee3fc8dce6f76, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704486331377523550, guid: a7279d62afa61354896ee3fc8dce6f76, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704486331377523550, guid: a7279d62afa61354896ee3fc8dce6f76, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7279d62afa61354896ee3fc8dce6f76, type: 3}
 --- !u!224 &368000734 stripped
@@ -2311,7 +2327,7 @@ MonoBehaviour:
   m_Follow: {fileID: 459091845}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 5
+    OrthographicSize: 6.4
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -4952,7 +4968,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4976,7 +4992,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.92774, y: 0.29874, z: -10}
+  m_LocalPosition: {x: 7.4246273, y: 0.8932, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1443078496}
@@ -5113,6 +5129,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FadePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 2715369639878703527, guid: 017b1173443b07c45b30e9a17ed027eb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2715369639878703529, guid: 017b1173443b07c45b30e9a17ed027eb, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -5197,6 +5217,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1218608411605025139, guid: dd727c249e3705f41b1205c192671129, type: 3}
   m_PrefabInstance: {fileID: 606692014}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &699901733 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8704486331377523550, guid: a7279d62afa61354896ee3fc8dce6f76, type: 3}
+  m_PrefabInstance: {fileID: 368000733}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &732100482
 GameObject:
   m_ObjectHideFlags: 3
@@ -5448,7 +5479,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -6369,7 +6400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1218608411605025139, guid: dd727c249e3705f41b1205c192671129, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.97
+      value: 25.56
       objectReference: {fileID: 0}
     - target: {fileID: 1218608411605025139, guid: dd727c249e3705f41b1205c192671129, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6443,7 +6474,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443078495}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1, y: -0.31999993, z: 10}
+  m_LocalPosition: {x: 0.1, y: 1.27, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -6934,17 +6965,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1218608411605025139, guid: dd727c249e3705f41b1205c192671129, type: 3}
   m_PrefabInstance: {fileID: 1834578176}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1837068571 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5677131208562436266, guid: a7279d62afa61354896ee3fc8dce6f76, type: 3}
-  m_PrefabInstance: {fileID: 368000733}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1857039742
 GameObject:
   m_ObjectHideFlags: 0
@@ -11642,7 +11662,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   signUI: {fileID: 368000735}
-  signText: {fileID: 1837068571}
+  signTextPro: {fileID: 699901733}
   isOwlSkilling: 0
   player: {fileID: 459091841}
   maskManager: {fileID: 1937560721}
