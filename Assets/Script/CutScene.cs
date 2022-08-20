@@ -12,6 +12,8 @@ public class CutScene : MonoBehaviour
     private List<Sprite> imageList;
     [SerializeField]
     private GameObject boy;
+    [SerializeField]
+    private GameObject buttons;
     public GameObject StartBackground;
 
     private int imageNum;   // 이미지 개수
@@ -44,7 +46,13 @@ public class CutScene : MonoBehaviour
             
         idx++;
         if (idx == imageNum)
-            GameObject.Find("FadeManager").GetComponent<FadeManager>().StartCoroutine("FadeOutCoroutine");
+        {
+            if (SceneManager.GetActiveScene().buildIndex == 5)
+                buttons.SetActive(true);
+            else
+                GameObject.Find("FadeManager").GetComponent<FadeManager>().StartCoroutine("FadeOutCoroutine");
+        }
+            
         else if (idx < imageNum)
         {
             image.sprite = imageList[idx];
@@ -64,5 +72,23 @@ public class CutScene : MonoBehaviour
                     SceneManager.LoadScene(1);
             }
         }
+    }
+
+    public void ClickBelieve()
+    {
+
+        EndCutScene();
+    }
+
+    public void ClickNonBelieve()
+    {
+
+        EndCutScene();
+    }
+
+    private void EndCutScene()
+    {
+        buttons.SetActive(false);
+        GameObject.Find("FadeManager").GetComponent<FadeManager>().StartCoroutine("FadeOutCoroutine");
     }
 }
