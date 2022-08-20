@@ -84,6 +84,7 @@ public class PlayerAction : MonoBehaviour
         if (Input.GetButtonDown("Jump") && IsGrounded() && !isClimbing && !skillManager.isOwlSkilling) // 사다리를 타는 중, 올빼미 스킬 사용 중에는 점프 불가능
         {
             isJumping = true;
+            animator.SetBool("isJumping", true);
             rigid.velocity = Vector2.up * jumpPower;
         }
         /*
@@ -114,6 +115,10 @@ public class PlayerAction : MonoBehaviour
         if (!isClimbing || isClimbing && IsGrounded())
         {
             float moveInput = Input.GetAxisRaw("Horizontal");
+            if (moveInput != 0)
+                animator.SetBool("isMoving", true);
+            else
+                animator.SetBool("isMoving", false);
 
             rigid.velocity = new Vector2(moveInput * maxSpeed, rigid.velocity.y);
 
@@ -185,9 +190,10 @@ public class PlayerAction : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 10 && isJumping)
+        if (collision.gameObject.layer == tileLayer && isJumping)
         {
             isJumping = false;
+            animator.SetBool("isJumping", false);
         }
     }
 
