@@ -121,6 +121,9 @@ MonoBehaviour:
   wayPoints: []
   speed: 2
   currentWayPointIndex: 0
+  obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!61 &1850128085
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -190,7 +193,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8696645274070750173}
   - component: {fileID: 4422687603886497569}
-  - component: {fileID: 945735538}
   m_Layer: 0
   m_Name: wayPoint (1)
   m_TagString: Untagged
@@ -238,18 +240,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &945735538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8696645274070750146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a72ebf032d3834fa1ae6cd0849a032, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8696645274811372941
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +250,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8696645274811372940}
   - component: {fileID: 5447661470024976035}
-  - component: {fileID: 75088163}
   m_Layer: 0
   m_Name: wayPoint
   m_TagString: Untagged
@@ -308,15 +297,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &75088163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8696645274811372941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a72ebf032d3834fa1ae6cd0849a032, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

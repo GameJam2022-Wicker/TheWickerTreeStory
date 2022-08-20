@@ -9,6 +9,8 @@ TagManager:
   - Ladder-bottom
   - Ladder-air
   - Sign
+  - Monster
+  - Obstacle
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,9 @@ public class MonsterMove : MonoBehaviour
     public int currentWayPointIndex = 0;
 
     SpriteRenderer monsterSprite;
+    BoxCollider2D boxCollider2D;
+
+    [SerializeField] LayerMask obstacleLayerMask;
 
     private void Start()
     {
@@ -22,6 +25,7 @@ public class MonsterMove : MonoBehaviour
         }
 
         monsterSprite = gameObject.GetComponent<SpriteRenderer>();
+        boxCollider2D = gameObject.GetComponent<BoxCollider2D>();
     }
 
     private void Update()
@@ -38,5 +42,21 @@ public class MonsterMove : MonoBehaviour
         }
         transform.position = Vector2.MoveTowards(transform.position,
                     wayPoints[currentWayPointIndex].transform.position, Time.deltaTime * speed);
+
+        Vector2 direction = (wayPoints[currentWayPointIndex].transform.position - transform.position).normalized;
+        RaycastHit2D[] raycastHit2D = Physics2D.RaycastAll(boxCollider2D.bounds.center - new Vector3(0f, 0.5f, 0f), direction, 1.2f, obstacleLayerMask);
+
+        Debug.DrawRay(boxCollider2D.bounds.center - new Vector3(0f, 0.5f, 0f), direction * 1.2f, Color.red);
+
+        for(int i = 0; i< raycastHit2D.Length; i++)
+        {
+            RaycastHit2D ray = raycastHit2D[i];
+            Debug.Log(ray.collider.gameObject.name);
+            if(ray.collider.gameObject.tag == "Obstacle")
+            {
+                currentWayPointIndex++;
+                monsterSprite.flipX = !monsterSprite.flipX;
+            }
+        }
     }
 }
