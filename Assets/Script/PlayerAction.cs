@@ -26,7 +26,7 @@ public class PlayerAction : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private Color materialTintColor;
-    private LayerMask ladderLayer, tileLayer, playerLayer, portalLayer, obstacleLayerMask;
+    private LayerMask ladderLayer, tileLayer, playerLayer, portalLayer, obstacleLayerMask, gameOverLayer;
 
     [SerializeField] private AudioSource walkSound, jumpSound, flySound, ladderSound, portalSound;
 
@@ -42,6 +42,7 @@ public class PlayerAction : MonoBehaviour
         playerLayer = LayerMask.NameToLayer("Player");
         portalLayer = LayerMask.NameToLayer("Portal");
         obstacleLayerMask = LayerMask.NameToLayer("Obstacle");
+        gameOverLayer = LayerMask.NameToLayer("GameOver");
 
         skillManager = GameObject.Find("SkillManager").GetComponent<SkillManager>();
     }
@@ -227,6 +228,10 @@ public class PlayerAction : MonoBehaviour
         {
             isJumping = false;
             animator.SetBool("isJumping", false);
+        }
+        if (collision.gameObject.layer == gameOverLayer)    // 게임 오버
+        {
+            Debug.Log("게임 오버");
         }
     }
 
