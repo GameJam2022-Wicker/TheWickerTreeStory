@@ -62,6 +62,7 @@ public class PlayerAction : MonoBehaviour
 
         if (isLadder)   // 사다리 앞에 있는 경우
         {
+            animator.speed = 1;
             rigid.gravityScale = 0; // 중력 X
 
             // 수직 방향키 입력 감지
@@ -79,6 +80,8 @@ public class PlayerAction : MonoBehaviour
                 transform.position += horizontalMove * ladderSpeed * Time.deltaTime;    // 플레이어 이동
                 Physics2D.IgnoreLayerCollision(playerLayer, tileLayer, true); // 타일과의 충돌 처리 X
             }
+            else if (isClimbing)    // 사다리를 타고 있지만 움직이지 않는 경우
+                animator.speed = 0; // 애니메이션 정지
         }
 
         //Jump
