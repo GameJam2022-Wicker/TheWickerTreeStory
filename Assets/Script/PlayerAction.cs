@@ -74,6 +74,7 @@ public class PlayerAction : MonoBehaviour
             if (horizontalMove!= Vector3.zero)  // 수직 방향키 입력이 있다면
             {
                 isClimbing = true;
+                animator.SetBool("isClimbing", isClimbing);
                 transform.position = new Vector3(ladder.transform.position.x, transform.position.y, transform.position.z);  // 플레이어를 사다리 가운데로 정렬
                 transform.position += horizontalMove * ladderSpeed * Time.deltaTime;    // 플레이어 이동
                 Physics2D.IgnoreLayerCollision(playerLayer, tileLayer, true); // 타일과의 충돌 처리 X
@@ -155,6 +156,7 @@ public class PlayerAction : MonoBehaviour
         if (collision.gameObject.layer == ladderLayer)  // 사다리
         {
             isLadder = isClimbing = false;
+            animator.SetBool("isClimbing", isClimbing);
             capsuleCollider2D.size = new Vector2(capsuleCollider2D.size.x * 2, capsuleCollider2D.size.y);
         }
     }

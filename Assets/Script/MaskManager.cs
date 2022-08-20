@@ -53,5 +53,6 @@ public class MaskManager : MonoBehaviour
     private void SetAnimation()
     {
         animator.SetTrigger(currentMask.ToString());
+        animator.SetInteger("maskType", (int)currentMask);
     }
 }
