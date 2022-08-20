@@ -20,7 +20,7 @@ public class Obstacle : MonoBehaviour
     {
         //yesman: 레이캐스트로 플레이어를 감지하여 플레이어가 박스 위에 있다면 canPush = false;
         RaycastHit2D raycastHit2D = Physics2D.Raycast(boxCollider.bounds.center, Vector2.up, boxCollider.bounds.extents.y, playerLayerMask);
-        RaycastHit2D raycastHit2DDown = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 3f, tileLayerMask);
+        RaycastHit2D raycastHit2DDown = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 1f, tileLayerMask);
 
         if (raycastHit2D.collider != null)
         {
