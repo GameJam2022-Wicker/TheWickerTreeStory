@@ -2768,6 +2768,7 @@ MonoBehaviour:
   - {fileID: 593503642}
   - {fileID: 593503641}
   canChangeMask: 1
+  maskNum: 3
 --- !u!4 &593503639
 Transform:
   m_ObjectHideFlags: 0

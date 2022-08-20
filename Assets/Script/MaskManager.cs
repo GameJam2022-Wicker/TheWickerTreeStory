@@ -17,14 +17,13 @@ public class MaskManager : MonoBehaviour
     [SerializeField] private List<Sprite> maskSpriteList;
     [SerializeField] private List<AudioSource> maskChangeAudioList;
     [SerializeField] private bool canChangeMask;    // 가면 변경 가능 여부 (Map_03 -> false)
+    [SerializeField] private int maskNum;           // 가면 개수
     private Animator animator;
-    private int maskNum;
     
 
     private void Awake()
     {
         animator=GameObject.Find("Player").GetComponent<Animator>();
-        maskNum = System.Enum.GetValues(typeof(Mask)).Length;
     }
 
     // Update is called once per frame

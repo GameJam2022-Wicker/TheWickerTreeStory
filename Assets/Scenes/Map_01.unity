@@ -11682,13 +11682,14 @@ MonoBehaviour:
   maskImage: {fileID: 1995975364}
   maskSpriteList:
   - {fileID: 21300000, guid: 8a4c2410abd089b4e9054712a1825c21, type: 3}
-  - {fileID: 21300000, guid: 31e67134806fdcb43b4a816a884cc133, type: 3}
   - {fileID: -7410076271603460419, guid: d73429fefab312c48ada0190f09471ec, type: 3}
+  - {fileID: 21300000, guid: 31e67134806fdcb43b4a816a884cc133, type: 3}
   maskChangeAudioList:
   - {fileID: 0}
   - {fileID: 1937560723}
   - {fileID: 1937560722}
   canChangeMask: 1
+  maskNum: 2
 --- !u!82 &1937560722
 AudioSource:
   m_ObjectHideFlags: 0
