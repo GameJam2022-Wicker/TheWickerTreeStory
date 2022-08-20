@@ -33,25 +33,20 @@ public class MaskManager : MonoBehaviour
             currentMask--;
             if (currentMask < 0)
                 currentMask = (Mask)(maskNum - 1);
-            SetMaskImage();
-            SetAnimation();
+            ChangeMask();
         }
         else if (Input.GetKeyUp(KeyCode.E))
         {
             currentMask++;
             if (currentMask == (Mask)maskNum)
                 currentMask = 0;
-            SetMaskImage();
+            ChangeMask();
         }
     }
 
-    private void SetMaskImage()
+    private void ChangeMask()
     {
         maskImage.sprite = maskSpriteList[(int)currentMask];
-    }
-
-    private void SetAnimation()
-    {
         animator.SetTrigger(currentMask.ToString());
         animator.SetInteger("maskType", (int)currentMask);
     }

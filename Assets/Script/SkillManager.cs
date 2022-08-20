@@ -34,6 +34,7 @@ public class SkillManager : MonoBehaviour
     public PlayerAction player;
     Rigidbody2D rigid;
     CapsuleCollider2D capsuleCollider2D;
+    Animator animator;
 
     public MaskManager maskManager;
 
@@ -45,6 +46,7 @@ public class SkillManager : MonoBehaviour
         maskManager = gameObject.GetComponent<MaskManager>();
         capsuleCollider2D = player.gameObject.GetComponent<CapsuleCollider2D>();
         rigid = player.gameObject.GetComponent<Rigidbody2D>();
+        animator = player.GetComponent<Animator>();
     }
 
     private void Update()
@@ -104,6 +106,7 @@ public class SkillManager : MonoBehaviour
     private void StartOwlSkill()
     {
         isOwlSkilling = true;
+        animator.SetBool("isFlying", isOwlSkilling);
         rigid.gravityScale = 0;
         owlSkillCoolTime = 5.0f;
     }
@@ -112,6 +115,7 @@ public class SkillManager : MonoBehaviour
     private void FinishOwlSkill()
     {
         isOwlSkilling = false;
+        animator.SetBool("isFlying", isOwlSkilling);
         owlSkillTime = 5.0f;
     }
 }
