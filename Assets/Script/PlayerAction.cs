@@ -90,7 +90,6 @@ public class PlayerAction : MonoBehaviour
         //Jump
         if (Input.GetButtonDown("Jump") && IsGrounded() && !isClimbing && !skillManager.isOwlSkilling) // 사다리를 타는 중, 올빼미 스킬 사용 중에는 점프 불가능
         {
-            Debug.Log("점프");
             isJumping = true;
             animator.SetBool("isJumping", true);
             rigid.velocity = Vector2.up * jumpPower;

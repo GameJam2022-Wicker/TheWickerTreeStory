@@ -85,6 +85,7 @@ public class SkillManager : MonoBehaviour
                 //obstacle에 구현
                 break;
         }
+        Debug.Log("부엉이 스킬 쿨타임 : " + owlSkillCoolTime);
     }
 
     //yesman: 가면을 쓰지 않았을 때 표지판 체크 가능
