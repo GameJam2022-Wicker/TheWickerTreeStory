@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sign
       objectReference: {fileID: 0}
+    - target: {fileID: 5966249944039868776, guid: 159bba6eb5281354ea542a1ae9b8567d, type: 3}
+      propertyPath: id
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 159bba6eb5281354ea542a1ae9b8567d, type: 3}
 --- !u!4 &111612999 stripped
@@ -2801,6 +2805,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   signUI: {fileID: 996718442}
+  signText: {fileID: 996718444}
   isOwlSkilling: 0
   player: {fileID: 830616966}
   maskManager: {fileID: 593503638}
@@ -3476,6 +3481,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5677131207605939860, guid: a7279d62afa61354896ee3fc8dce6f76, type: 3}
   m_PrefabInstance: {fileID: 996718441}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &996718444 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5677131208562436266, guid: a7279d62afa61354896ee3fc8dce6f76, type: 3}
+  m_PrefabInstance: {fileID: 996718441}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1012466449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3653,6 +3669,10 @@ PrefabInstance:
     - target: {fileID: 5803971206612555564, guid: 159bba6eb5281354ea542a1ae9b8567d, type: 3}
       propertyPath: m_Name
       value: Sign (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5966249944039868776, guid: 159bba6eb5281354ea542a1ae9b8567d, type: 3}
+      propertyPath: id
+      value: 800
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 159bba6eb5281354ea542a1ae9b8567d, type: 3}
@@ -9154,6 +9174,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sign (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5966249944039868776, guid: 159bba6eb5281354ea542a1ae9b8567d, type: 3}
+      propertyPath: id
+      value: 700
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 159bba6eb5281354ea542a1ae9b8567d, type: 3}
 --- !u!4 &1490171413 stripped
@@ -9596,6 +9620,10 @@ PrefabInstance:
     - target: {fileID: 5803971206612555564, guid: 159bba6eb5281354ea542a1ae9b8567d, type: 3}
       propertyPath: m_Name
       value: Sign (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5966249944039868776, guid: 159bba6eb5281354ea542a1ae9b8567d, type: 3}
+      propertyPath: id
+      value: 600
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 159bba6eb5281354ea542a1ae9b8567d, type: 3}
