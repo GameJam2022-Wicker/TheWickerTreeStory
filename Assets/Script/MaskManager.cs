@@ -15,6 +15,7 @@ public class MaskManager : MonoBehaviour
 
     [SerializeField] private Image maskImage;
     [SerializeField] private List<Sprite> maskSpriteList;
+    [SerializeField] private List<AudioSource> maskChangeAudioList;
     private Animator animator;
     private int maskNum;
     
@@ -47,7 +48,11 @@ public class MaskManager : MonoBehaviour
     private void ChangeMask()
     {
         maskImage.sprite = maskSpriteList[(int)currentMask];
+
         animator.SetTrigger(currentMask.ToString());
         animator.SetInteger("maskType", (int)currentMask);
+
+        if (maskChangeAudioList[(int)currentMask] != null)
+            maskChangeAudioList[(int)currentMask].Play();
     }
 }
