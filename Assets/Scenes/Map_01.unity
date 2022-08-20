@@ -5382,6 +5382,7 @@ MonoBehaviour:
   signUI: {fileID: 368000735}
   isOwlSkilling: 0
   player: {fileID: 459091841}
+  maskManager: {fileID: 0}
 --- !u!114 &1937560721
 MonoBehaviour:
   m_ObjectHideFlags: 0
