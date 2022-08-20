@@ -237,6 +237,7 @@ public class PlayerAction : MonoBehaviour
             {
                 GameObject.Find("FadeManager").GetComponent<FadeManager>().StartCoroutine("GameOverCoroutine");
                 isGameOver = !isGameOver;
+                maxSpeed = 0f;
             }
         }
     }

@@ -9,14 +9,14 @@ public class CutScene : MonoBehaviour
     [SerializeField]
     private Image image;
     [SerializeField]
-    private List<Sprite> imageList;
+    public List<Sprite> imageList;
     [SerializeField]
     private GameObject boy;
     [SerializeField]
     private GameObject buttons;
     public GameObject StartBackground;
 
-    private int imageNum;   // 이미지 개수
+    public int imageNum;   // 이미지 개수
     private int idx;      // 현재 이미지
 
     // Start is called before the first frame update
@@ -33,7 +33,7 @@ public class CutScene : MonoBehaviour
             ChangeImage();
     }
 
-    private void ChangeImage()
+    public void ChangeImage()
     {
         if(SceneManager.GetActiveScene().buildIndex == 0)
         {
@@ -76,14 +76,14 @@ public class CutScene : MonoBehaviour
 
     public void ClickBelieve()
     {
-
         EndCutScene();
+        DataManager.instance.isBelieving = true;
     }
 
     public void ClickNonBelieve()
     {
-
         EndCutScene();
+        DataManager.instance.isBelieving = false;
     }
 
     private void EndCutScene()

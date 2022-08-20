@@ -29,4 +29,13 @@ public class ShadowMove : MonoBehaviour
         canChase = true;
         animator.SetTrigger("isWalking");
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.layer = LayerMask.NameToLayer("Dead");
+        }
+            
+    }
 }

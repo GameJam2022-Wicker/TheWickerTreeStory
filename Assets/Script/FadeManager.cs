@@ -42,6 +42,8 @@ public class FadeManager : MonoBehaviour
         }
 
         int currentSceneNumber = SceneManager.GetActiveScene().buildIndex;  // 현재 scene number
+        if(currentSceneNumber == 7)
+            SceneManager.LoadScene(0);
         SceneManager.LoadScene(++currentSceneNumber);   // scene 전환
     }
 
