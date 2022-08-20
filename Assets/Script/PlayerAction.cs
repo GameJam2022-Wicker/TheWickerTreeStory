@@ -28,6 +28,8 @@ public class PlayerAction : MonoBehaviour
     private Color materialTintColor;
     private LayerMask ladderLayer, tileLayer, playerLayer, portalLayer, obstacleLayerMask;
 
+    [SerializeField] private AudioSource walkSound, jumpSound;
+
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -93,6 +95,9 @@ public class PlayerAction : MonoBehaviour
             isJumping = true;
             animator.SetBool("isJumping", true);
             rigid.velocity = Vector2.up * jumpPower;
+
+            // 家府 犁积
+            jumpSound.Play();
         }
         /*
         if (Input.GetButtonUp("Jump") && rigid.velocity.y > 0f)
@@ -122,10 +127,22 @@ public class PlayerAction : MonoBehaviour
         if (!isClimbing || isClimbing && IsGrounded())
         {
             float moveInput = Input.GetAxisRaw("Horizontal");
+
+            bool isMoving;
             if (moveInput != 0)
-                animator.SetBool("isMoving", true);
+                isMoving = true;
             else
-                animator.SetBool("isMoving", false);
+                isMoving = false;
+            animator.SetBool("isMoving", isMoving);
+
+            // 叭绰 家府 犁积
+            if (isMoving && IsGrounded())
+            {
+                if (!walkSound.isPlaying)
+                    walkSound.Play();
+            }
+            else
+                walkSound.Stop();
 
             rigid.velocity = new Vector2(moveInput * maxSpeed, rigid.velocity.y);
 
