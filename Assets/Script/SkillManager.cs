@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SkillManager : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class SkillManager : MonoBehaviour
 
     //yesman: 가면 None
     public GameObject signUI;
-    public Text signText;
+    public TextMeshProUGUI signTextPro;
 
     //yesman: 가면 owl
     public bool isOwlSkilling = false;
@@ -117,9 +118,9 @@ public class SkillManager : MonoBehaviour
         {
             signUI.SetActive(true);
             if(raycastHit2D.collider != null)
-                signText.text = raycastHit2D.collider.GetComponent<Sign>().signStr;
+                signTextPro.text = raycastHit2D.collider.GetComponent<Sign>().signStr;
             if (raycastLeftHit2D.collider != null)
-                signText.text = raycastLeftHit2D.collider.GetComponent<Sign>().signStr;
+                signTextPro.text = raycastLeftHit2D.collider.GetComponent<Sign>().signStr;
             Time.timeScale = 0;
             rayColor = Color.green;
         }
