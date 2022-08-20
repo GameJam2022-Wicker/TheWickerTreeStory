@@ -52,6 +52,9 @@ TagManager:
   - name: Ladder
     uniqueID: 1910924343
     locked: 0
+  - name: Obstacle
+    uniqueID: 2515898921
+    locked: 0
   - name: Player
     uniqueID: 527426715
     locked: 0
