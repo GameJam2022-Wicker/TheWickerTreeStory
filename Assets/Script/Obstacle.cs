@@ -33,7 +33,6 @@ public class Obstacle : MonoBehaviour
 
         if (raycastHit2DDown.collider == null)
         {
-            Debug.Log("박스 밑에 타일 없음");
             rigid.bodyType = RigidbodyType2D.Dynamic;
             rigid.constraints = RigidbodyConstraints2D.None;
             rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
