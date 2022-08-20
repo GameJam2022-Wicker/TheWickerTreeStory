@@ -6,6 +6,7 @@ public class Obstacle : MonoBehaviour
 {
     Rigidbody2D rigid;
     BoxCollider2D boxCollider;
+    Animator animator;  // 플레이어 애니메이터
     bool canPush;
     public LayerMask playerLayerMask;
     public LayerMask tileLayerMask;
@@ -14,6 +15,7 @@ public class Obstacle : MonoBehaviour
     {
         rigid = gameObject.GetComponent<Rigidbody2D>();
         boxCollider = gameObject.GetComponent<BoxCollider2D>();
+        animator = GameObject.Find("Player").GetComponent<Animator>();
     }
 
     private void Update()
@@ -56,7 +58,7 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && SkillManager.instance.maskManager.currentMask == MaskManager.Mask.Pig)
         {
-            if (Input.GetKey(KeyCode.F))
+            if (Input.GetKey(KeyCode.F) && canPush) // 밀 수 있는 상태
             {
                 rigid.bodyType = RigidbodyType2D.Dynamic;
                 rigid.constraints = RigidbodyConstraints2D.None;
@@ -64,15 +66,14 @@ public class Obstacle : MonoBehaviour
                 //yesman: 바위가 많이 밀리지 않도록 velocity 0, 무겁게 밀리도록 스피드 줄임
                 collision.gameObject.GetComponent<PlayerAction>().maxSpeed = 3f;
                 rigid.velocity = new Vector2(0, 0);
-                //yesman: 밀 수 없는 상태라면 return
-                if (!canPush)
-                    return;
+                animator.SetBool("isPushing", true);
             }
             else
             {
                 rigid.bodyType = RigidbodyType2D.Kinematic;
                 rigid.constraints = RigidbodyConstraints2D.FreezePositionX;
                 collision.gameObject.GetComponent<PlayerAction>().maxSpeed = 6f;
+                animator.SetBool("isPushing", false);
             }
         }
     }
