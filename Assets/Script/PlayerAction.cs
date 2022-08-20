@@ -28,7 +28,7 @@ public class PlayerAction : MonoBehaviour
     private Color materialTintColor;
     private LayerMask ladderLayer, tileLayer, playerLayer, portalLayer, obstacleLayerMask;
 
-    [SerializeField] private AudioSource walkSound, jumpSound;
+    [SerializeField] private AudioSource walkSound, jumpSound, flySound;
 
     void Awake()
     {
@@ -51,11 +51,11 @@ public class PlayerAction : MonoBehaviour
     {
         animator.speed = 1;
 
-        if (!skillManager.isOwlSkilling)
+        if (!skillManager.isOwlSkilling)    // 부엉이 스킬 사용 X
         {
-            if (IsGrounded())
+            if (IsGrounded())   // 땅에 있으면
             {
-                Physics2D.IgnoreLayerCollision(playerLayer, tileLayer, false);
+                Physics2D.IgnoreLayerCollision(playerLayer, tileLayer, false);  // 타일과의 충돌 처리 O
                 rigid.gravityScale = gravityScale;
             }
             else
@@ -136,11 +136,11 @@ public class PlayerAction : MonoBehaviour
             animator.SetBool("isMoving", isMoving);
 
             // 걷는 소리 재생
-            if (isMoving && IsGrounded())
-            {
+            if (isMoving && IsGrounded() && !skillManager.isOwlSkilling)
                 if (!walkSound.isPlaying)
                     walkSound.Play();
-            }
+            else if (skillManager.isOwlSkilling && !flySound.isPlaying)
+                flySound.Play();
             else
                 walkSound.Stop();
 
