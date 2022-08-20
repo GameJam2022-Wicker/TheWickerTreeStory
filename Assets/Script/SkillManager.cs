@@ -54,7 +54,15 @@ public class SkillManager : MonoBehaviour
         switch(maskManager.currentMask)
         {
             case MaskManager.Mask.None:
-                if(Input.GetKeyDown(KeyCode.F))
+                if(signUI.activeSelf == true)
+                {
+                    if(Input.GetKeyDown(KeyCode.F))
+                    {
+                        signUI.SetActive(false);
+                        Time.timeScale = 1;
+                    }                        
+                }
+                else if (Input.GetKeyDown(KeyCode.F))
                     UseSkillNoneMask();
                 break;
             case MaskManager.Mask.Owl:
@@ -96,6 +104,7 @@ public class SkillManager : MonoBehaviour
         if(raycastHit2D.collider!= null && raycastHit2D.collider.gameObject.tag == "Sign")
         {
             signUI.SetActive(true);
+            Time.timeScale = 0;
             rayColor = Color.green;
         }
         else
