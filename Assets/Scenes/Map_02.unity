@@ -721,7 +721,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
   m_Layer: 0
@@ -739,21 +738,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
---- !u!114 &519420030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44b59ae3b9e403c4b9db29b3903cb37c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FollowSpeed: 2
-  yOffset: 1
-  target: {fileID: 1329110789}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -2803,7 +2787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signLayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
   signUI: {fileID: 996718442}
   signText: {fileID: 996718444}
   isOwlSkilling: 0

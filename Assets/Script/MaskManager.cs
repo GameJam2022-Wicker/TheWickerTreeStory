@@ -13,7 +13,7 @@ public class MaskManager : MonoBehaviour
     }
     public Mask currentMask;
 
-    [SerializeField] private Image maskImage;
+    public Image maskImage;
     [SerializeField] private List<Sprite> maskSpriteList;
     [SerializeField] private List<AudioSource> maskChangeAudioList;
     private Animator animator;
@@ -54,5 +54,8 @@ public class MaskManager : MonoBehaviour
 
         if (maskChangeAudioList[(int)currentMask] != null)
             maskChangeAudioList[(int)currentMask].Play();
+
+        if (currentMask != Mask.Owl)
+            maskImage.color = new Color(maskImage.color.r, maskImage.color.g, maskImage.color.b, 1);
     }
 }

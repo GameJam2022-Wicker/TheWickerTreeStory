@@ -27,7 +27,7 @@ public class SkillManager : MonoBehaviour
 
     //yesman: 가면 owl
     public bool isOwlSkilling = false;
-    private float owlSkillTime = 5.0f;  // 남은 올빼미 스킬 타임
+    private float owlSkillTime = 0.5f;  // 남은 올빼미 스킬 타임
     private float owlSkillCoolTime = 0f;  // 올빼미 스킬 쿨타임
 
     //yesman: 플레이어 관련
@@ -35,6 +35,8 @@ public class SkillManager : MonoBehaviour
     Rigidbody2D rigid;
     CapsuleCollider2D capsuleCollider2D;
     Animator animator;
+
+    private bool canOwlSkill = true;    // 올빼미 스킬 사용 가능 여부
 
     public MaskManager maskManager;
 
@@ -66,6 +68,11 @@ public class SkillManager : MonoBehaviour
                     UseSkillNoneMask();
                 break;
             case MaskManager.Mask.Owl:
+                if (canOwlSkill)
+                    maskManager.maskImage.color = new Color(maskManager.maskImage.color.r, maskManager.maskImage.color.g, maskManager.maskImage.color.b, 1);
+                else
+                    maskManager.maskImage.color = new Color(maskManager.maskImage.color.r, maskManager.maskImage.color.g, maskManager.maskImage.color.b, 0.5f);
+
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     if (owlSkillCoolTime == 0)  // 쿨타임 지났으면 스킬 시작
@@ -79,21 +86,24 @@ public class SkillManager : MonoBehaviour
                         FinishOwlSkill();
                 }
                 else if (Input.GetKeyUp(KeyCode.F)) // 스킬 종료
-                {
                     FinishOwlSkill();
-                }
                 else    // 쿨타임 업데이트
-                {
-                    owlSkillCoolTime -= Time.deltaTime;
-                    if (owlSkillCoolTime < 0)
-                        owlSkillCoolTime = 0;
-                }
+                    UpdateCoolTime();
                 break;
             case MaskManager.Mask.Pig:
                 //obstacle에 구현
                 break;
         }
-        Debug.Log("부엉이 스킬 쿨타임 : " + owlSkillCoolTime);
+    }
+
+    private void UpdateCoolTime()
+    {
+        owlSkillCoolTime -= Time.deltaTime;
+        if (owlSkillCoolTime < 0)
+        {
+            owlSkillCoolTime = 0;
+            canOwlSkill = true;
+        }
     }
 
     //yesman: 가면을 쓰지 않았을 때 표지판 체크 가능
@@ -119,6 +129,8 @@ public class SkillManager : MonoBehaviour
         isOwlSkilling = true;
         animator.SetBool("isFlying", isOwlSkilling);
         rigid.gravityScale = 0;
+
+        canOwlSkill = false;
         owlSkillCoolTime = 5.0f;
     }
 
@@ -127,6 +139,6 @@ public class SkillManager : MonoBehaviour
     {
         isOwlSkilling = false;
         animator.SetBool("isFlying", isOwlSkilling);
-        owlSkillTime = 5.0f;
+        owlSkillTime = 0.5f;
     }
 }
