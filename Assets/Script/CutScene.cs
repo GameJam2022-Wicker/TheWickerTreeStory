@@ -38,7 +38,6 @@ public class CutScene : MonoBehaviour
             if (StartBackground.activeSelf)
             {
                 StartBackground.SetActive(false);
-                GameObject.Find("FadeManager").GetComponent<FadeManager>().StartCoroutine("FadeInCoroutine");
                 return;
             }
         }
