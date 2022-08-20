@@ -2798,7 +2798,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   signUI: {fileID: 996718442}
-  signText: {fileID: 996718444}
+  signTextPro: {fileID: 996718444}
   isOwlSkilling: 0
   player: {fileID: 830616966}
   maskManager: {fileID: 593503638}
@@ -3577,13 +3577,13 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &996718444 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5677131208562436266, guid: a7279d62afa61354896ee3fc8dce6f76, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8704486331377523550, guid: a7279d62afa61354896ee3fc8dce6f76, type: 3}
   m_PrefabInstance: {fileID: 996718441}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1012466449
