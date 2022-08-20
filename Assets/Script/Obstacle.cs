@@ -20,7 +20,7 @@ public class Obstacle : MonoBehaviour
     {
         //yesman: 레이캐스트로 플레이어를 감지하여 플레이어가 박스 위에 있다면 canPush = false;
         RaycastHit2D raycastHit2D = Physics2D.Raycast(boxCollider.bounds.center, Vector2.up, boxCollider.bounds.extents.y, playerLayerMask);
-        RaycastHit2D raycastHit2DDown = Physics2D.Raycast(boxCollider.bounds.center, Vector2.down, boxCollider.bounds.extents.y, tileLayerMask);
+        RaycastHit2D raycastHit2DDown = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 3f, tileLayerMask);
 
         if (raycastHit2D.collider != null)
         {
@@ -31,13 +31,16 @@ public class Obstacle : MonoBehaviour
             canPush = true;
         }
 
-        if(raycastHit2DDown.collider == null)
+        if (raycastHit2DDown.collider == null)
         {
+            Debug.Log("박스 밑에 타일 없음");
             rigid.bodyType = RigidbodyType2D.Dynamic;
             rigid.constraints = RigidbodyConstraints2D.None;
             rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
             gameObject.transform.SetParent(null);
         }
+
+        Debug.DrawRay(boxCollider.bounds.center, Vector2.down * (boxCollider.bounds.extents.y), Color.red);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -65,19 +68,12 @@ public class Obstacle : MonoBehaviour
                 //yesman: 밀 수 없는 상태라면 return
                 if (!canPush)
                     return;
-                //yesman: 플레이어가 바위를 잡는 것처럼 보이도록 플레이어의 자식으로 설정함.
-                gameObject.transform.SetParent(collision.transform);
-                //yesman: 버튼을 뗐다면 자식에서 풀려남
-                if (Input.GetButtonUp("Horizontal"))
-                {
-                    gameObject.transform.SetParent(null);
-                }
             }
             else
             {
                 rigid.bodyType = RigidbodyType2D.Kinematic;
                 rigid.constraints = RigidbodyConstraints2D.FreezePositionX;
-                gameObject.transform.SetParent(null);
+                collision.gameObject.GetComponent<PlayerAction>().maxSpeed = 6f;
             }
         }
     }
@@ -88,7 +84,6 @@ public class Obstacle : MonoBehaviour
         if (collision.gameObject.tag == "Player" && SkillManager.instance.maskManager.currentMask == MaskManager.Mask.Pig)
         {
             rigid.velocity = new Vector2(0, 0);
-            gameObject.transform.SetParent(null);
         }
     }
 }
