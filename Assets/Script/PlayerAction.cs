@@ -47,6 +47,8 @@ public class PlayerAction : MonoBehaviour
 
     void Update()
     {
+        animator.speed = 1;
+
         if (!skillManager.isOwlSkilling)
         {
             if (IsGrounded())
@@ -62,7 +64,6 @@ public class PlayerAction : MonoBehaviour
 
         if (isLadder)   // 사다리 앞에 있는 경우
         {
-            animator.speed = 1;
             rigid.gravityScale = 0; // 중력 X
 
             // 수직 방향키 입력 감지
