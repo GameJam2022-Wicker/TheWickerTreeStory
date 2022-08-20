@@ -14,13 +14,14 @@ public class MaskManager : MonoBehaviour
     public Mask currentMask;
 
     [SerializeField] private Image maskImage;
-    [SerializeField] private Animator animator;
     [SerializeField] private List<Sprite> maskSpriteList;
+    private Animator animator;
     private int maskNum;
     
 
     private void Awake()
     {
+        animator=GameObject.Find("Player").GetComponent<Animator>();
         maskNum = System.Enum.GetValues(typeof(Mask)).Length;
     }
 
