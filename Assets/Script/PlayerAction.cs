@@ -18,6 +18,7 @@ public class PlayerAction : MonoBehaviour
     bool isJumping = false;
     bool isLadder;
     bool isClimbing;
+    bool isGameOver;
 
     private GameObject ladder;  // 현재 플레이어가 타고 있는 사다리
 
@@ -232,6 +233,11 @@ public class PlayerAction : MonoBehaviour
         if (collision.gameObject.layer == gameOverLayer)    // 게임 오버
         {
             Debug.Log("게임 오버");
+            if (!isGameOver)
+            {
+                GameObject.Find("FadeManager").GetComponent<FadeManager>().StartCoroutine("GameOverCoroutine");
+                isGameOver = !isGameOver;
+            }
         }
     }
 

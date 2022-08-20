@@ -628,6 +628,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 017b1173443b07c45b30e9a17ed027eb, type: 3}
+--- !u!114 &394145460 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8260345202907398860, guid: 017b1173443b07c45b30e9a17ed027eb, type: 3}
+  m_PrefabInstance: {fileID: 394145459}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &399590127
 GameObject:
   m_ObjectHideFlags: 0
@@ -2704,7 +2715,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -9559,6 +9570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadePanel: {fileID: 391810367}
+  text: {fileID: 394145460}
 --- !u!4 &1824230081
 Transform:
   m_ObjectHideFlags: 0
