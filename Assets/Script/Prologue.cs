@@ -7,8 +7,9 @@ using UnityEngine.SceneManagement;
 public class Prologue : MonoBehaviour
 {
     public Text lineText;
-    public Image backgroundImg;
     public Image blackpanel;
+    public GameObject StartBackground;
+    public GameObject BackgroundObject;
 
     public List<string> lineTextList;
 
@@ -41,6 +42,17 @@ public class Prologue : MonoBehaviour
                              "소녀의 눈 앞에는 소년의 작은 손이 내밀어져 있었습니다. \n\n" +
                             "그 작고 애처로운 손을, 소녀는 외면하지 못했습니다.");
         lineText.text = lineTextList[count];
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            StartBackground.SetActive(false);
+            blackpanel.gameObject.SetActive(true);
+            if(blackpanel.gameObject.activeSelf)
+                Destroy(blackpanel);
+        }
     }
 
     public void OnClickBackgroundImg()
