@@ -2796,7 +2796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   signUI: {fileID: 996718442}
   signTextPro: {fileID: 996718444}
   isOwlSkilling: 0
