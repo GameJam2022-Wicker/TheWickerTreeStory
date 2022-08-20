@@ -1304,6 +1304,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1218608411605025139, guid: dd727c249e3705f41b1205c192671129, type: 3}
   m_PrefabInstance: {fileID: 1688513325}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1712669020 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7477860893880078849, guid: 5ec17e08921e66445b5921867e8dd479, type: 3}
+  m_PrefabInstance: {fileID: 1590832778}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1834578176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1317,7 +1322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1218608411605025139, guid: dd727c249e3705f41b1205c192671129, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.39
+      value: 39.94
       objectReference: {fileID: 0}
     - target: {fileID: 1218608411605025139, guid: dd727c249e3705f41b1205c192671129, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5382,7 +5387,7 @@ MonoBehaviour:
   signUI: {fileID: 368000735}
   isOwlSkilling: 0
   player: {fileID: 459091841}
-  maskManager: {fileID: 0}
+  maskManager: {fileID: 1937560721}
 --- !u!114 &1937560721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5397,6 +5402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentMask: 0
   maskImage: {fileID: 1457763577}
+  animator: {fileID: 1712669020}
   maskSpriteList:
   - {fileID: -3708508325519384304, guid: f73dfe034c22cfc41bd7e8799020a5ac, type: 3}
   - {fileID: -6447722072507503168, guid: 10f3cacccb0c4c547be76836eba20664, type: 3}
