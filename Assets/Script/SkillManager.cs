@@ -35,7 +35,7 @@ public class SkillManager : MonoBehaviour
     Rigidbody2D rigid;
     CapsuleCollider2D capsuleCollider2D;
 
-    MaskManager maskManager;
+    public MaskManager maskManager;
 
     //최초에는 벗은 모습
     MaskManager.Mask mask;
@@ -80,6 +80,7 @@ public class SkillManager : MonoBehaviour
                 }
                 break;
             case MaskManager.Mask.Pig:
+                //obstacle에 구현
                 break;
         }
     }
@@ -89,7 +90,7 @@ public class SkillManager : MonoBehaviour
     {
         RaycastHit2D raycastHit2D = Physics2D.Raycast(capsuleCollider2D.bounds.center, Vector2.right, 5f, signLayerMask);
         Color rayColor;
-        if (raycastHit2D.collider.gameObject.tag == "Sign")
+        if(raycastHit2D.collider!= null && raycastHit2D.collider.gameObject.tag == "Sign")
         {
             signUI.SetActive(true);
             rayColor = Color.green;
