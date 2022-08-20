@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5672160483998577831}
   - component: {fileID: 5672160483998577827}
   - component: {fileID: 1985046961115039258}
+  - component: {fileID: 7477860893880078849}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 527426715
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 07da0beee7fd1234ea9ff7e48b6c6a2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -139,9 +140,6 @@ MonoBehaviour:
   platformLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  portalLayer:
-    serializedVersion: 2
-    m_Bits: 256
   gravityScale: 1
   fallGravityMultiflier: 5
   maxSpeed: 6
@@ -161,3 +159,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOwlSkilling: 0
+--- !u!95 &7477860893880078849
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5672160483998577826}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 44544c25448092b489956ea664b8bb83, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
