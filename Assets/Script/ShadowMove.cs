@@ -5,9 +5,11 @@ using UnityEngine;
 public class ShadowMove : MonoBehaviour
 {
     public GameObject endPoint;
+    public GameObject wall;
     public float speed;
     bool canChase = false;
     Animator animator;
+
 
     private void Start()
     {
@@ -25,8 +27,9 @@ public class ShadowMove : MonoBehaviour
 
     IEnumerator CoChasePlayer()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         canChase = true;
+        wall.SetActive(false);
         animator.SetTrigger("isWalking");
     }
 
