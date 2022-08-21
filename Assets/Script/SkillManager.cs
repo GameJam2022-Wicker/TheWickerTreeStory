@@ -88,15 +88,16 @@ public class SkillManager : MonoBehaviour
                 }
                 else if (Input.GetKeyUp(KeyCode.F)) // 스킬 종료
                     FinishOwlSkill();
-                else    // 쿨타임 업데이트
-                    UpdateCoolTime();
                 break;
             case MaskManager.Mask.Pig:
                 //obstacle에 구현
                 break;
         }
+
+        UpdateCoolTime();   // 부엉이 스킬 쿨타임 업데이트
     }
 
+    // 부엉이 스킬 쿨타임 업데이트
     private void UpdateCoolTime()
     {
         owlSkillCoolTime -= Time.deltaTime;
