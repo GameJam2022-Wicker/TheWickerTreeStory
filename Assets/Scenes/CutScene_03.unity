@@ -217,7 +217,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0fa42f3e1bca4394bbb2adadda2cfcb7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e6db4b3aa4fa2634eaa040f0642f12c8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -609,6 +609,7 @@ MonoBehaviour:
   boy: {fileID: 0}
   buttons: {fileID: 1781351056}
   StartBackground: {fileID: 0}
+  imageNum: 0
 --- !u!4 &628691018
 Transform:
   m_ObjectHideFlags: 0
