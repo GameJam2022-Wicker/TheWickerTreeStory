@@ -25,7 +25,7 @@ public class ShadowMove : MonoBehaviour
 
     IEnumerator CoChasePlayer()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         canChase = true;
         animator.SetTrigger("isWalking");
     }
