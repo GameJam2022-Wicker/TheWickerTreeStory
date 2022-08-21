@@ -387,7 +387,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1218608411605025139, guid: dd727c249e3705f41b1205c192671129, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.47
+      value: -10.496
       objectReference: {fileID: 0}
     - target: {fileID: 1218608411605025139, guid: dd727c249e3705f41b1205c192671129, type: 3}
       propertyPath: m_LocalPosition.z
@@ -625,6 +625,10 @@ PrefabInstance:
     - target: {fileID: 2715369639878703527, guid: 017b1173443b07c45b30e9a17ed027eb, type: 3}
       propertyPath: m_Name
       value: FadePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715369639878703527, guid: 017b1173443b07c45b30e9a17ed027eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 017b1173443b07c45b30e9a17ed027eb, type: 3}
@@ -3172,7 +3176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1218608411605025139, guid: dd727c249e3705f41b1205c192671129, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.482
+      value: -2.504
       objectReference: {fileID: 0}
     - target: {fileID: 1218608411605025139, guid: dd727c249e3705f41b1205c192671129, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3620,7 +3624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1218608411605025139, guid: dd727c249e3705f41b1205c192671129, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.47
+      value: -8.486
       objectReference: {fileID: 0}
     - target: {fileID: 1218608411605025139, guid: dd727c249e3705f41b1205c192671129, type: 3}
       propertyPath: m_LocalPosition.z
