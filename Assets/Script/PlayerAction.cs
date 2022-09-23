@@ -93,6 +93,9 @@ public class PlayerAction : MonoBehaviour
                 animator.speed = 0; // 애니메이션 정지
                 ladderSound.Stop();
             }
+
+            if (isClimbing) // 사다리 슈퍼점프 방지
+                rigid.velocity = Vector3.zero;
         }
 
         //Jump
