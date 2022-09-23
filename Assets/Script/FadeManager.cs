@@ -64,6 +64,6 @@ public class FadeManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(0);   // 게임 메뉴로 이동
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);   // 현재 스테이지 재시작
     }
 }
