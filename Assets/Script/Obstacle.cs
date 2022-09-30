@@ -40,20 +40,9 @@ public class Obstacle : MonoBehaviour
             rigid.bodyType = RigidbodyType2D.Dynamic;
             rigid.constraints = RigidbodyConstraints2D.None;
             rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
-            gameObject.transform.SetParent(null);
         }
 
         Debug.DrawRay(boxCollider.bounds.center, Vector2.down * (boxCollider.bounds.extents.y), Color.red);
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Player" && SkillManager.instance.maskManager.currentMask != MaskManager.Mask.Pig)
-        {
-            //kinematic으로 하여 움직이지 않도록 함.
-            rigid.bodyType = RigidbodyType2D.Kinematic;
-            rigid.constraints = RigidbodyConstraints2D.FreezePositionX;
-        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -65,9 +54,6 @@ public class Obstacle : MonoBehaviour
                 rigid.bodyType = RigidbodyType2D.Dynamic;
                 rigid.constraints = RigidbodyConstraints2D.None;
                 rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
-                //yesman: 바위가 많이 밀리지 않도록 velocity 0, 무겁게 밀리도록 스피드 줄임
-                collision.gameObject.GetComponent<PlayerAction>().maxSpeed = 3f;
-                rigid.velocity = new Vector2(0, 0);
 
                 animator.SetBool("isPushing", true);    // 바위 밀기 애니메이션 재생
                 if (!pushSound.isPlaying)   // 바위 미는 소리 재생
@@ -77,7 +63,6 @@ public class Obstacle : MonoBehaviour
             {
                 rigid.bodyType = RigidbodyType2D.Kinematic;
                 rigid.constraints = RigidbodyConstraints2D.FreezePositionX;
-                collision.gameObject.GetComponent<PlayerAction>().maxSpeed = 6f;
 
                 animator.SetBool("isPushing", false);   // 바위 밀기 애니메이션 중지
                 pushSound.Stop();   // 바위 미는 소리 중지
@@ -85,12 +70,14 @@ public class Obstacle : MonoBehaviour
         }
     }
 
+    //바위 미는 애니메이션 계속 재생되는 것 방지
     private void OnCollisionExit2D(Collision2D collision)
     {
-        //yesman: 바위에서 벗어난다면 바위가 플레이어의 자식에서 풀려남.
         if (collision.gameObject.tag == "Player" && SkillManager.instance.maskManager.currentMask == MaskManager.Mask.Pig)
         {
-            rigid.velocity = new Vector2(0, 0);
+            rigid.constraints = RigidbodyConstraints2D.FreezePositionX;
+            animator.SetBool("isPushing", false);   // 바위 밀기 애니메이션 중지
+            pushSound.Stop();   // 바위 미는 소리 중지
         }
     }
 }
