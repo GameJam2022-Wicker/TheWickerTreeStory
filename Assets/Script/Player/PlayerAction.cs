@@ -252,35 +252,4 @@ public class PlayerAction : MonoBehaviour
             }
         }
     }
-
-    public void DamageFlash()
-    {
-        materialTintColor = new Color(1, 1, 1, 0.5f);
-        spriteRenderer.material.SetColor("_Color", materialTintColor);
-
-        isHurting = true;
-    }
-
-    public void DamageKnockBack(Vector3 targetPos, int damageAmount)
-    {
-        int dir = transform.position.x - targetPos.x > 0 ? 1 : -1;
-        Vector2 knockBack = new Vector2(dir, 1) * 7;
-        rigid.AddForce(knockBack, ForceMode2D.Impulse);
-        DamageFlash();
-
-
-        StartCoroutine(CoEnableDamage(0.5f, 1.5f));
-    }
-
-    public IEnumerator CoEnableDamage(float waitTime1, float waitTime2)
-    {
-        if (isHurting)
-        {
-            yield return new WaitForSeconds(waitTime1);
-            yield return new WaitForSeconds(waitTime2);
-            materialTintColor = new Color(1, 1, 1, 1f);
-            spriteRenderer.material.SetColor("_Color", materialTintColor);
-            isHurting = false;
-        }
-    }
 }
