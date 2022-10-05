@@ -11,6 +11,7 @@ public class PlayerAction : MonoBehaviour
     public float maxSpeed;
     public float jumpPower;
     public float ladderSpeed;
+    public float colliderSizeX;
     public bool isHurting = false;
 
     Rigidbody2D rigid;
@@ -46,6 +47,11 @@ public class PlayerAction : MonoBehaviour
         gameOverLayer = LayerMask.NameToLayer("GameOver");
 
         skillManager = GameObject.Find("SkillManager").GetComponent<SkillManager>();
+    }
+
+    void Start()
+    {
+        colliderSizeX = capsuleCollider2D.size.x;   // 기존 콜라이더 사이즈 저장
     }
 
 
@@ -94,8 +100,11 @@ public class PlayerAction : MonoBehaviour
                 ladderSound.Stop();
             }
 
-            if (isClimbing) // 사다리 슈퍼점프 방지
-                rigid.velocity = Vector3.zero;
+            if (isClimbing)
+            {
+                rigid.velocity = Vector3.zero;   // 사다리 슈퍼점프 방지
+                capsuleCollider2D.size = new Vector2(colliderSizeX / 2, capsuleCollider2D.size.y);  // 플레이어 콜라이더를 줄여야 사다리 타기 가능
+            }
         }
 
         //Jump
@@ -176,7 +185,6 @@ public class PlayerAction : MonoBehaviour
         {
             ladder = collision.gameObject;
             isLadder = true;
-            capsuleCollider2D.size = new Vector2(capsuleCollider2D.size.x / 2, capsuleCollider2D.size.y);
         }
         if (collision.gameObject.layer == portalLayer)  // 포탈
         {
@@ -192,7 +200,7 @@ public class PlayerAction : MonoBehaviour
         {
             isLadder = isClimbing = false;
             animator.SetBool("isClimbing", isClimbing);
-            capsuleCollider2D.size = new Vector2(capsuleCollider2D.size.x * 2, capsuleCollider2D.size.y);
+            capsuleCollider2D.size = new Vector2(colliderSizeX, capsuleCollider2D.size.y);  // 플레이어 콜라이더 원상태로
         }
     }
 
