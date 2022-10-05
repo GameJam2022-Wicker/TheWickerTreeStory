@@ -27,22 +27,14 @@ public class Obstacle : MonoBehaviour
         RaycastHit2D raycastHit2DDown = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 1f, tileLayerMask);
 
         if (raycastHit2D.collider != null)
-        {
             canPush = false;
-        }
         else
-        {
             canPush = true;
-        }
 
         if (raycastHit2DDown.collider == null)
-        {
-            rigid.bodyType = RigidbodyType2D.Dynamic;
-            rigid.constraints = RigidbodyConstraints2D.None;
-            rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
-        }
+            Move();
 
-        Debug.DrawRay(boxCollider.bounds.center, Vector2.down * (boxCollider.bounds.extents.y), Color.red);
+        //Debug.DrawRay(boxCollider.bounds.center, Vector2.down * (boxCollider.bounds.extents.y), Color.red);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -50,23 +42,9 @@ public class Obstacle : MonoBehaviour
         if (collision.gameObject.tag == "Player" && SkillManager.instance.maskManager.currentMask == MaskManager.Mask.Pig)
         {
             if (Input.GetKey(KeyCode.F) && canPush) // 밀 수 있는 상태
-            {
-                rigid.bodyType = RigidbodyType2D.Dynamic;
-                rigid.constraints = RigidbodyConstraints2D.None;
-                rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
-
-                animator.SetBool("isPushing", true);    // 바위 밀기 애니메이션 재생
-                if (!pushSound.isPlaying)   // 바위 미는 소리 재생
-                    pushSound.Play();
-            }
+                Push();
             else
-            {
-                rigid.bodyType = RigidbodyType2D.Kinematic;
-                rigid.constraints = RigidbodyConstraints2D.FreezePositionX;
-
-                animator.SetBool("isPushing", false);   // 바위 밀기 애니메이션 중지
-                pushSound.Stop();   // 바위 미는 소리 중지
-            }
+                StopPush();
         }
     }
 
@@ -75,9 +53,41 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && SkillManager.instance.maskManager.currentMask == MaskManager.Mask.Pig)
         {
-            rigid.constraints = RigidbodyConstraints2D.FreezePositionX;
-            animator.SetBool("isPushing", false);   // 바위 밀기 애니메이션 중지
-            pushSound.Stop();   // 바위 미는 소리 중지
+            StopPush();
         }
+    }
+
+    // 바위 움직임 가능
+    private void Move()
+    {
+        rigid.bodyType = RigidbodyType2D.Dynamic;
+        rigid.constraints = RigidbodyConstraints2D.None;
+        rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    // 바위 움직임 불가능
+    private void DontMove()
+    {
+        rigid.bodyType = RigidbodyType2D.Kinematic;
+        rigid.constraints = RigidbodyConstraints2D.FreezePositionX;
+    }
+
+    // 바위 밀기
+    private void Push()
+    {
+        Move();
+
+        animator.SetBool("isPushing", true);    // 바위 밀기 애니메이션 재생
+        if (!pushSound.isPlaying)   // 바위 미는 소리 재생
+            pushSound.Play();
+    }
+
+    // 바위 밀기 중지
+    private void StopPush()
+    {
+        DontMove();
+
+        animator.SetBool("isPushing", false);   // 바위 밀기 애니메이션 중지
+        pushSound.Stop();   // 바위 미는 소리 중지
     }
 }
