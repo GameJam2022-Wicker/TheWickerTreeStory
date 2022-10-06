@@ -24,8 +24,7 @@ public class TimelineManager : MonoBehaviour
         if (director == aDirector)
         {
             Debug.Log("PlayableDirector named " + aDirector.name + " is now stopped.");
-            int idx = SceneManager.GetActiveScene().buildIndex + 1;
-            SceneManager.LoadScene(idx);
+            GameObject.Find("FadeManager").GetComponent<FadeManager>().StartCoroutine("FadeOutCoroutine");
         }
     }
 
