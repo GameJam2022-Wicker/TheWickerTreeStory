@@ -7,6 +7,7 @@ using UnityEngine.Playables;
 public class TimelineManager : MonoBehaviour
 {
     public PlayableDirector director;
+    public GameObject mapSceneButtons;
     private FadeManager fadeManager;
 
     private void Awake()
@@ -30,8 +31,15 @@ public class TimelineManager : MonoBehaviour
     {
         if (director == aDirector)
         {
+            if(SceneManager.GetActiveScene().buildIndex == 5)
+            {
+                mapSceneButtons.SetActive(true);
+            }
+            else
+            {
+                fadeManager.StartCoroutine("FadeOutCoroutine");
+            }
             Debug.Log("PlayableDirector named " + aDirector.name + " is now stopped.");
-            fadeManager.StartCoroutine("FadeOutCoroutine");
         }
     }
 
