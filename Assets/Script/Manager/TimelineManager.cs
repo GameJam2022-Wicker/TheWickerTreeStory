@@ -7,6 +7,13 @@ using UnityEngine.Playables;
 public class TimelineManager : MonoBehaviour
 {
     public PlayableDirector director;
+    private FadeManager fadeManager;
+
+    private void Awake()
+    {
+        // J : 컷씬 끝나면 페이드아웃 하기 위해 미리 페이드매니저 컴포넌트 가져옴
+        fadeManager = GameObject.Find("FadeManager").GetComponent<FadeManager>();
+    }
 
     public void OnClickSkipButton()
     {
@@ -24,7 +31,7 @@ public class TimelineManager : MonoBehaviour
         if (director == aDirector)
         {
             Debug.Log("PlayableDirector named " + aDirector.name + " is now stopped.");
-            GameObject.Find("FadeManager").GetComponent<FadeManager>().StartCoroutine("FadeOutCoroutine");
+            fadeManager.StartCoroutine("FadeOutCoroutine");
         }
     }
 
