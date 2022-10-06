@@ -5073,6 +5073,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 652075788}
     - target: {fileID: 118953548383525928, guid: 71cc9ef5eed9aca4e90561343cf01fd8, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 118953548383525928, guid: 71cc9ef5eed9aca4e90561343cf01fd8, type: 3}
       propertyPath: endPoint
       value: 
       objectReference: {fileID: 1719406334}
