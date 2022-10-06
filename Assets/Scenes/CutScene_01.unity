@@ -857,6 +857,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1758319659}
     m_Modifications:
+    - target: {fileID: 1550055006114602752, guid: a67c4a0f674c7fe488f38730f743ed78, type: 3}
+      propertyPath: director
+      value: 
+      objectReference: {fileID: 1329789899}
     - target: {fileID: 1550055006114602756, guid: a67c4a0f674c7fe488f38730f743ed78, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -1715,8 +1719,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1751,7 +1755,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -391.1765, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1781,7 +1785,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 196, y: -20}
+  m_AnchoredPosition: {x: 249, y: -48}
   m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2100997992
@@ -1894,10 +1898,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueUI
       objectReference: {fileID: 0}
-    - target: {fileID: 477051827068120376, guid: 4ff175a3c5695714c91323fb5cc8868b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 477051827068120377, guid: 4ff175a3c5695714c91323fb5cc8868b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1932,7 +1932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 477051827068120377, guid: 4ff175a3c5695714c91323fb5cc8868b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 477051827068120377, guid: 4ff175a3c5695714c91323fb5cc8868b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2081,7 +2081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2715369639878703527, guid: 017b1173443b07c45b30e9a17ed027eb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 017b1173443b07c45b30e9a17ed027eb, type: 3}
