@@ -34,7 +34,7 @@ public class SkillManager : MonoBehaviour
     //yesman: 플레이어 관련
     public PlayerAction player;
     Rigidbody2D rigid;
-    CapsuleCollider2D capsuleCollider2D;
+    BoxCollider2D boxCollider2D;
     Animator animator;
 
     private bool canOwlSkill = true;    // 올빼미 스킬 사용 가능 여부
@@ -47,7 +47,7 @@ public class SkillManager : MonoBehaviour
     private void Start()
     {
         maskManager = gameObject.GetComponent<MaskManager>();
-        capsuleCollider2D = player.gameObject.GetComponent<CapsuleCollider2D>();
+        boxCollider2D = player.gameObject.GetComponent<BoxCollider2D>();
         rigid = player.gameObject.GetComponent<Rigidbody2D>();
         animator = player.GetComponent<Animator>();
     }
@@ -111,8 +111,8 @@ public class SkillManager : MonoBehaviour
     //yesman: 가면을 쓰지 않았을 때 표지판 체크 가능
     void UseSkillNoneMask()
     {
-        RaycastHit2D raycastHit2D = Physics2D.Raycast(capsuleCollider2D.bounds.center, Vector2.right, 5f, signLayerMask);
-        RaycastHit2D raycastLeftHit2D = Physics2D.Raycast(capsuleCollider2D.bounds.center, Vector2.left, 5f, signLayerMask);
+        RaycastHit2D raycastHit2D = Physics2D.Raycast(boxCollider2D.bounds.center, Vector2.right, 5f, signLayerMask);
+        RaycastHit2D raycastLeftHit2D = Physics2D.Raycast(boxCollider2D.bounds.center, Vector2.left, 5f, signLayerMask);
         Color rayColor;
         if(raycastHit2D.collider!= null && raycastHit2D.collider.gameObject.tag == "Sign" ||
             raycastLeftHit2D.collider != null && raycastLeftHit2D.collider.gameObject.tag == "Sign")
@@ -127,7 +127,7 @@ public class SkillManager : MonoBehaviour
         }
         else
             rayColor = Color.red;
-        Debug.DrawRay(capsuleCollider2D.bounds.center, Vector2.right * 5f, rayColor);
+        Debug.DrawRay(boxCollider2D.bounds.center, Vector2.right * 5f, rayColor);
     }
 
     // 올빼미 스킬 시작

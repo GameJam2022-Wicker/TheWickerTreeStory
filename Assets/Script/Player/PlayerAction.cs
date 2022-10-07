@@ -28,7 +28,7 @@ public class PlayerAction : MonoBehaviour
     private GameObject ladder;  // 현재 플레이어가 타고 있는 사다리
 
     private SkillManager skillManager;
-    private CapsuleCollider2D capsuleCollider2D;
+    private BoxCollider2D boxCollider2D;
     private Animator animator;
     private LayerMask ladderLayer, tileLayer, playerLayer, portalLayer, obstacleLayerMask, gameOverLayer;
 
@@ -37,7 +37,7 @@ public class PlayerAction : MonoBehaviour
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
-        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
 
         ladderLayer = LayerMask.NameToLayer("Ladder");
@@ -52,7 +52,7 @@ public class PlayerAction : MonoBehaviour
 
     void Start()
     {
-        colliderSizeX = capsuleCollider2D.size.x;   // 기존 콜라이더 사이즈 저장
+        colliderSizeX = boxCollider2D.size.x;   // 기존 콜라이더 사이즈 저장
     }
 
 
@@ -106,7 +106,7 @@ public class PlayerAction : MonoBehaviour
             if (isClimbing)
             {
                 rigid.velocity = Vector3.zero;   // 사다리 슈퍼점프 방지
-                capsuleCollider2D.size = new Vector2(colliderSizeX / 2, capsuleCollider2D.size.y);  // 플레이어 콜라이더를 줄여야 사다리 타기 가능
+                boxCollider2D.size = new Vector2(colliderSizeX / 2, boxCollider2D.size.y);  // 플레이어 콜라이더를 줄여야 사다리 타기 가능
             }
         }
 
@@ -194,7 +194,7 @@ public class PlayerAction : MonoBehaviour
         {
             isLadder = isClimbing = false;
             animator.SetBool("isClimbing", isClimbing);
-            capsuleCollider2D.size = new Vector2(colliderSizeX, capsuleCollider2D.size.y);  // 플레이어 콜라이더 원상태로
+            boxCollider2D.size = new Vector2(colliderSizeX, boxCollider2D.size.y);  // 플레이어 콜라이더 원상태로
         }
     }
 
@@ -213,7 +213,7 @@ public class PlayerAction : MonoBehaviour
         float extraHeightText = .3f;
 
         int layerMask = (1 << tileLayer) + (1 << obstacleLayerMask);    // Player 와 MyTeammate 레이어만 충돌체크함
-        RaycastHit2D raycastHit = Physics2D.Raycast(capsuleCollider2D.bounds.center, Vector2.down, capsuleCollider2D.bounds.extents.y + extraHeightText, layerMask);
+        RaycastHit2D raycastHit = Physics2D.Raycast(boxCollider2D.bounds.center, Vector2.down, boxCollider2D.bounds.extents.y + extraHeightText, layerMask);
         Color rayColor;
         if (raycastHit.collider != null)
         {
@@ -223,7 +223,7 @@ public class PlayerAction : MonoBehaviour
         {
             rayColor = Color.red;
         }
-        Debug.DrawRay(capsuleCollider2D.bounds.center, Vector2.down * (capsuleCollider2D.bounds.extents.y + extraHeightText), rayColor);
+        Debug.DrawRay(boxCollider2D.bounds.center, Vector2.down * (boxCollider2D.bounds.extents.y + extraHeightText), rayColor);
 
         return raycastHit.collider != null; 
     }
