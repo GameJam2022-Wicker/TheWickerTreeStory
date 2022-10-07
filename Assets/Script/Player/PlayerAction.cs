@@ -21,13 +21,15 @@ public class PlayerAction : MonoBehaviour
     bool isClimbing;
     bool isGameOver;
 
+    //코요테 타임
+    private float coyoteandJumpTime = 0.2f;
+    private float coyoteandJumpTimeCounter;
+
     private GameObject ladder;  // 현재 플레이어가 타고 있는 사다리
 
     private SkillManager skillManager;
     private CapsuleCollider2D capsuleCollider2D;
-    private SpriteRenderer spriteRenderer;
     private Animator animator;
-    private Color materialTintColor;
     private LayerMask ladderLayer, tileLayer, playerLayer, portalLayer, obstacleLayerMask, gameOverLayer;
 
     [SerializeField] private AudioSource walkSound, jumpSound, flySound, ladderSound, portalSound;
@@ -36,7 +38,6 @@ public class PlayerAction : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         capsuleCollider2D = GetComponent<CapsuleCollider2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
 
         ladderLayer = LayerMask.NameToLayer("Ladder");
@@ -65,9 +66,11 @@ public class PlayerAction : MonoBehaviour
             {
                 Physics2D.IgnoreLayerCollision(playerLayer, tileLayer, false);  // 타일과의 충돌 처리 O
                 rigid.gravityScale = gravityScale;
+                coyoteandJumpTimeCounter = coyoteandJumpTime;
             }
             else
             {
+                coyoteandJumpTimeCounter -= Time.deltaTime;
                 rigid.gravityScale = gravityScale * fallGravityMultiflier;
             }
         }
@@ -108,7 +111,7 @@ public class PlayerAction : MonoBehaviour
         }
 
         //Jump
-        if (Input.GetButtonDown("Jump") && IsGrounded() && !isClimbing && skillManager != null && !skillManager.isOwlSkilling) // 사다리를 타는 중, 올빼미 스킬 사용 중에는 점프 불가능
+        if (coyoteandJumpTimeCounter > 0f && Input.GetButtonDown("Jump") && IsGrounded() && !isClimbing && skillManager != null && !skillManager.isOwlSkilling) // 사다리를 타는 중, 올빼미 스킬 사용 중에는 점프 불가능
         {
             isJumping = true;
             animator.SetBool("isJumping", true);
@@ -132,15 +135,6 @@ public class PlayerAction : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Move By Key Control
-        //float moveInput = Input.GetAxisRaw("Horizontal");
-
-        /*rigid.AddForce(Vector2.right * moveInput, ForceMode2D.Impulse);
-        if (rigid.velocity.x > maxSpeed)
-            rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
-        else if (rigid.velocity.x < maxSpeed * (-1))
-            rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);*/
-
         // 사다리를 타고 있으면서 땅에 있지 않은 경우 수평 이동 불가능
         if (!isClimbing || isClimbing && IsGrounded())
         {
