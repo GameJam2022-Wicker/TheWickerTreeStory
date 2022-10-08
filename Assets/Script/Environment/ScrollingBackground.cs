@@ -10,6 +10,7 @@ public class ScrollingBackground : MonoBehaviour
 
     [SerializeField] float multiplier = 0.0f;
     [SerializeField] bool horizontalOnly = true;
+    [SerializeField] bool verticalOnly = false;
 
     private Transform cameraTransform;
 
@@ -55,6 +56,8 @@ public class ScrollingBackground : MonoBehaviour
             var position = startPos;
             if (horizontalOnly)
                 position.x += multiplier * (cameraTransform.position.x - startCameraPos.x);
+            else if(verticalOnly)
+                position.y += multiplier * (cameraTransform.position.y - startCameraPos.y);
             else
                 position += multiplier * (cameraTransform.position - startCameraPos);
             transform.position = position;
