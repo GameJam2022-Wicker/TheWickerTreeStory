@@ -4720,11 +4720,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5803971206612555564, guid: 159bba6eb5281354ea542a1ae9b8567d, type: 3}
       propertyPath: m_Name
-      value: Sign (1)
+      value: Sign
       objectReference: {fileID: 0}
     - target: {fileID: 5966249944039868776, guid: 159bba6eb5281354ea542a1ae9b8567d, type: 3}
       propertyPath: id
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 159bba6eb5281354ea542a1ae9b8567d, type: 3}

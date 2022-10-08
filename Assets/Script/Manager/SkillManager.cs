@@ -57,16 +57,17 @@ public class SkillManager : MonoBehaviour
         switch(maskManager.currentMask)
         {
             case MaskManager.Mask.None:
-                if(signUI != null && signUI.activeSelf == true)
+                if (Input.GetKeyDown(KeyCode.F) && signUI != null)  // J : 표지판이 있는 맵에서 F키 누름
                 {
-                    if(Input.GetKeyDown(KeyCode.F))
+                    if (signUI.activeSelf == true)  // J : 이미 표지판을 보고 있는 경우
                     {
+                        // J : 표지판 닫음
                         signUI.SetActive(false);
                         Time.timeScale = 1;
-                    }                        
+                    }
+                    else
+                        UseSkillNoneMask();
                 }
-                else if (Input.GetKeyDown(KeyCode.F))
-                    UseSkillNoneMask();
                 break;
             case MaskManager.Mask.Owl:
                 if (canOwlSkill)
@@ -76,17 +77,17 @@ public class SkillManager : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    if (owlSkillCoolTime == 0)  // 쿨타임 지났으면 스킬 시작
+                    if (owlSkillCoolTime == 0)  // J : 쿨타임 지났으면 스킬 시작
                         StartOwlSkill();
                 }
                 else if (Input.GetKey(KeyCode.F))
                 {
                     if (owlSkillTime > 0)
                         owlSkillTime -= Time.deltaTime;
-                    else     // 스킬 시간 끝났으면 강제 종료
+                    else     // J : 스킬 시간 끝났으면 강제 종료
                         FinishOwlSkill();
                 }
-                else if (Input.GetKeyUp(KeyCode.F)) // 스킬 종료
+                else if (Input.GetKeyUp(KeyCode.F)) // J : 스킬 종료
                     FinishOwlSkill();
                 break;
             case MaskManager.Mask.Pig:
@@ -94,10 +95,10 @@ public class SkillManager : MonoBehaviour
                 break;
         }
 
-        UpdateCoolTime();   // 부엉이 스킬 쿨타임 업데이트
+        UpdateCoolTime();   // J : 부엉이 스킬 쿨타임 업데이트
     }
 
-    // 부엉이 스킬 쿨타임 업데이트
+    // J : 부엉이 스킬 쿨타임 업데이트
     private void UpdateCoolTime()
     {
         owlSkillCoolTime -= Time.deltaTime;
@@ -114,23 +115,28 @@ public class SkillManager : MonoBehaviour
         RaycastHit2D raycastHit2D = Physics2D.Raycast(boxCollider2D.bounds.center, Vector2.right, 5f, signLayerMask);
         RaycastHit2D raycastLeftHit2D = Physics2D.Raycast(boxCollider2D.bounds.center, Vector2.left, 5f, signLayerMask);
         Color rayColor;
-        if(raycastHit2D.collider!= null && raycastHit2D.collider.gameObject.tag == "Sign" ||
-            raycastLeftHit2D.collider != null && raycastLeftHit2D.collider.gameObject.tag == "Sign")
+
+        Collider2D signCollider = null;  // J : 표지판 콜라이더
+        if (raycastHit2D.collider != null && raycastHit2D.collider.gameObject.tag == "Sign")
+            signCollider = raycastHit2D.collider;
+        else if (raycastLeftHit2D.collider != null && raycastLeftHit2D.collider.gameObject.tag == "Sign")
+            signCollider = raycastLeftHit2D.collider;
+
+        if (signCollider != null)    // J : 표지판 체크된 경우
         {
             signUI.SetActive(true);
-            if(raycastHit2D.collider != null)
-                signTextPro.text = raycastHit2D.collider.GetComponent<Sign>().signStr;
-            if (raycastLeftHit2D.collider != null)
-                signTextPro.text = raycastLeftHit2D.collider.GetComponent<Sign>().signStr;
+            Debug.Log(signCollider.GetComponent<Sign>().id);
+            signTextPro.text = DataManager.instance.GetSingStr(signCollider.GetComponent<Sign>().id);   // J : 해당 표지판 id의 내용 세팅
             Time.timeScale = 0;
             rayColor = Color.green;
         }
         else
             rayColor = Color.red;
+
         Debug.DrawRay(boxCollider2D.bounds.center, Vector2.right * 5f, rayColor);
     }
 
-    // 올빼미 스킬 시작
+    // J : 올빼미 스킬 시작
     private void StartOwlSkill()
     {
         isOwlSkilling = true;
@@ -141,7 +147,7 @@ public class SkillManager : MonoBehaviour
         owlSkillCoolTime = 5.0f;
     }
 
-    // 올빼미 스킬 종료
+    // J : 올빼미 스킬 종료
     private void FinishOwlSkill()
     {
         isOwlSkilling = false;
