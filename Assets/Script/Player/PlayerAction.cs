@@ -30,7 +30,7 @@ public class PlayerAction : MonoBehaviour
     private SkillManager skillManager;
     private BoxCollider2D boxCollider2D;
     private Animator animator;
-    private LayerMask ladderLayer, tileLayer, playerLayer, portalLayer, obstacleLayerMask, gameOverLayer;
+    private LayerMask ladderLayer, tileLayer, playerLayer, portalLayer, obstacleLayer, gameOverLayer;
 
     [SerializeField] private AudioSource walkSound, jumpSound, flySound, ladderSound, portalSound;
 
@@ -44,7 +44,7 @@ public class PlayerAction : MonoBehaviour
         tileLayer = LayerMask.NameToLayer("Tile");
         playerLayer = LayerMask.NameToLayer("Player");
         portalLayer = LayerMask.NameToLayer("Portal");
-        obstacleLayerMask = LayerMask.NameToLayer("Obstacle");
+        obstacleLayer = LayerMask.NameToLayer("Obstacle");
         gameOverLayer = LayerMask.NameToLayer("GameOver");
 
         skillManager = GameObject.Find("SkillManager").GetComponent<SkillManager>();
@@ -110,8 +110,9 @@ public class PlayerAction : MonoBehaviour
             }
         }
 
-        //Jump
-        if (coyoteandJumpTimeCounter > 0f && Input.GetButtonDown("Jump") && IsGrounded() && !isClimbing && skillManager != null && !skillManager.isOwlSkilling) // 사다리를 타는 중, 올빼미 스킬 사용 중에는 점프 불가능
+        // Jump
+        // J : 사다리 타는 중 or 올빼미 스킬 사용 중에는 점프 불가능
+        if (coyoteandJumpTimeCounter > 0f && Input.GetButtonDown("Jump") && IsGrounded() && !isClimbing && skillManager != null && !skillManager.isOwlSkilling)
         {
             isJumping = true;
             animator.SetBool("isJumping", true);
@@ -212,7 +213,7 @@ public class PlayerAction : MonoBehaviour
     {
         float extraHeightText = .3f;
 
-        int layerMask = (1 << tileLayer) + (1 << obstacleLayerMask);    // Player 와 MyTeammate 레이어만 충돌체크함
+        int layerMask = (1 << tileLayer) + (1 << obstacleLayer);    // tile, obstacle 레이어만 충돌 체크
         RaycastHit2D raycastHit = Physics2D.Raycast(boxCollider2D.bounds.center, Vector2.down, boxCollider2D.bounds.extents.y + extraHeightText, layerMask);
         Color rayColor;
         if (raycastHit.collider != null)
@@ -230,7 +231,8 @@ public class PlayerAction : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == tileLayer && isJumping)
+        // J : 점프 중이었다면 점프 해제
+        if (IsGrounded() && isJumping)
         {
             isJumping = false;
             animator.SetBool("isJumping", false);
