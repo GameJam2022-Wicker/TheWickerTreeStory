@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Map_02.unity
     guid: d1ba2d5b829fedd48be6988304ebfdf8
   - enabled: 1
+    path: Assets/Scenes/Map_2.5.unity
+    guid: 3343c63d89059a943ae70e0b345d9f64
+  - enabled: 1
     path: Assets/Scenes/CutScene_03.unity
     guid: bf60ae3be3fc20044bb47ab7f65296eb
   - enabled: 1
