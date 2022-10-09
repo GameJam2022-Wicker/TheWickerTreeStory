@@ -22,13 +22,13 @@ public class PlayerAction : MonoBehaviour
     bool isGameOver;
 
     //코요테 타임
-    private float coyoteandJumpTime = 0.2f;
-    private float coyoteandJumpTimeCounter;
+    private float coyoteTime = 0.2f;
+    private float coyoteTimeCounter;
 
     private GameObject ladder;  // 현재 플레이어가 타고 있는 사다리
 
     private SkillManager skillManager;
-    private BoxCollider2D boxCollider2D;
+    private CapsuleCollider2D capsuleCollider2D;
     private Animator animator;
     private LayerMask ladderLayer, tileLayer, playerLayer, portalLayer, obstacleLayer, gameOverLayer;
 
@@ -37,7 +37,7 @@ public class PlayerAction : MonoBehaviour
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
-        boxCollider2D = GetComponent<BoxCollider2D>();
+        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         animator = GetComponent<Animator>();
 
         ladderLayer = LayerMask.NameToLayer("Ladder");
@@ -52,7 +52,7 @@ public class PlayerAction : MonoBehaviour
 
     void Start()
     {
-        colliderSizeX = boxCollider2D.size.x;   // 기존 콜라이더 사이즈 저장
+        colliderSizeX = capsuleCollider2D.size.x;   // 기존 콜라이더 사이즈 저장
     }
 
 
@@ -66,11 +66,11 @@ public class PlayerAction : MonoBehaviour
             {
                 Physics2D.IgnoreLayerCollision(playerLayer, tileLayer, false);  // 타일과의 충돌 처리 O
                 rigid.gravityScale = gravityScale;
-                coyoteandJumpTimeCounter = coyoteandJumpTime;
+                coyoteTimeCounter = coyoteTime;
             }
             else
             {
-                coyoteandJumpTimeCounter -= Time.deltaTime;
+                coyoteTimeCounter -= Time.deltaTime;
                 rigid.gravityScale = gravityScale * fallGravityMultiflier;
             }
         }
@@ -106,21 +106,32 @@ public class PlayerAction : MonoBehaviour
             if (isClimbing)
             {
                 rigid.velocity = Vector3.zero;   // 사다리 슈퍼점프 방지
-                boxCollider2D.size = new Vector2(colliderSizeX / 2, boxCollider2D.size.y);  // 플레이어 콜라이더를 줄여야 사다리 타기 가능
+                capsuleCollider2D.size = new Vector2(colliderSizeX / 2, capsuleCollider2D.size.y);  // 플레이어 콜라이더를 줄여야 사다리 타기 가능
             }
         }
 
         // Jump
         // J : 사다리 타는 중 or 올빼미 스킬 사용 중에는 점프 불가능
-        if (coyoteandJumpTimeCounter > 0f && Input.GetButtonDown("Jump") && IsGrounded() && !isClimbing && skillManager != null && !skillManager.isOwlSkilling)
+        // yesman: 코요테타임 적용
+        if (Input.GetButtonDown("Jump") && !isClimbing && skillManager != null && !skillManager.isOwlSkilling)
         {
-            isJumping = true;
-            animator.SetBool("isJumping", true);
-            rigid.velocity = Vector2.up * jumpPower;
+            if(coyoteTimeCounter > 0f)
+            {
+                isJumping = true;
+                animator.SetBool("isJumping", true);
+                rigid.velocity = Vector2.up * jumpPower;
 
-            // 소리 재생
-            jumpSound.Play();
+                // 소리 재생
+                jumpSound.Play();
+            }
+            
         }
+
+        if (Input.GetButtonUp("Jump") && rigid.velocity.y > 0f)
+        {
+            coyoteTimeCounter = 0f;
+        }
+
         /*
         if (Input.GetButtonUp("Jump") && rigid.velocity.y > 0f)
         {
@@ -195,7 +206,7 @@ public class PlayerAction : MonoBehaviour
         {
             isLadder = isClimbing = false;
             animator.SetBool("isClimbing", isClimbing);
-            boxCollider2D.size = new Vector2(colliderSizeX, boxCollider2D.size.y);  // 플레이어 콜라이더 원상태로
+            capsuleCollider2D.size = new Vector2(colliderSizeX, capsuleCollider2D.size.y);  // 플레이어 콜라이더 원상태로
         }
     }
 
@@ -214,7 +225,7 @@ public class PlayerAction : MonoBehaviour
         float extraHeightText = .3f;
 
         int layerMask = (1 << tileLayer) + (1 << obstacleLayer);    // tile, obstacle 레이어만 충돌 체크
-        RaycastHit2D raycastHit = Physics2D.Raycast(boxCollider2D.bounds.center, Vector2.down, boxCollider2D.bounds.extents.y + extraHeightText, layerMask);
+        RaycastHit2D raycastHit = Physics2D.Raycast(capsuleCollider2D.bounds.center, Vector2.down, capsuleCollider2D.bounds.extents.y + extraHeightText, layerMask);
         Color rayColor;
         if (raycastHit.collider != null)
         {
@@ -224,7 +235,7 @@ public class PlayerAction : MonoBehaviour
         {
             rayColor = Color.red;
         }
-        Debug.DrawRay(boxCollider2D.bounds.center, Vector2.down * (boxCollider2D.bounds.extents.y + extraHeightText), rayColor);
+        Debug.DrawRay(capsuleCollider2D.bounds.center, Vector2.down * (capsuleCollider2D.bounds.extents.y + extraHeightText), rayColor);
 
         return raycastHit.collider != null; 
     }

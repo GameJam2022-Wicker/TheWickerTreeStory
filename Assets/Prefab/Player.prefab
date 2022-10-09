@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5672160483998577828}
   - component: {fileID: 5672160483998577827}
   - component: {fileID: 7477860893880078849}
-  - component: {fileID: 921532047111624615}
+  - component: {fileID: 6683269097218309339}
   - component: {fileID: 5320467207715098021}
   - component: {fileID: 7511059386782302453}
   - component: {fileID: 6850060277708135456}
@@ -159,8 +159,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &921532047111624615
-BoxCollider2D:
+--- !u!70 &6683269097218309339
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -172,19 +172,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.045}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.15, y: 1.05}
-    newSize: {x: 1, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.67, y: 0.96}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.01767981, y: 0.0208925}
+  m_Size: {x: 0.6827452, y: 1.1082151}
+  m_Direction: 0
 --- !u!81 &5320467207715098021
 AudioListener:
   m_ObjectHideFlags: 0
