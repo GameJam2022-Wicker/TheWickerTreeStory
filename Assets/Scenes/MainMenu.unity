@@ -322,8 +322,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC5B4\uB461\uACE0 \uC5B4\uB450\uC6B4 \uC625 \uC548\uC5D0\uB294 \uBC84\uB4DC\uB098\uBB34\uC758
-    \uD5A5\uAE30\uAC00 "
+  m_text: "\uADF8 \uC791\uACE0 \uC560\uCC98\uB85C\uC6B4 \uC190\uC744, \uC18C\uB140\uB294
+    \uC678\uBA74\uD558\uC9C0 \uBABB\uD588\uC2B5\uB2C8\uB2E4. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec18d9446caf1f0428cdac43b050ff6f, type: 2}
   m_sharedMaterial: {fileID: 5289204028360799902, guid: ec18d9446caf1f0428cdac43b050ff6f, type: 2}
@@ -1060,7 +1060,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC790\uC791\uD558\uAC8C \uD750\uB974\uACE0 \uC788\uC5C8\uC2B5\uB2C8\uB2E4. "
+  m_text: "\uC18C\uB144\uC744 \uBC14\uB77C\uBCF4\uC558\uC2B5\uB2C8\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec18d9446caf1f0428cdac43b050ff6f, type: 2}
   m_sharedMaterial: {fileID: 5289204028360799902, guid: ec18d9446caf1f0428cdac43b050ff6f, type: 2}
@@ -1388,6 +1388,10 @@ PlayableDirector:
     value: {fileID: 1091968614}
   - key: {fileID: 4806719045415814282, guid: e72e25797f9516d4ea12e8d06f469b49, type: 2}
     value: {fileID: 1091968615}
+  - key: {fileID: 8577591306167781644, guid: e72e25797f9516d4ea12e8d06f469b49, type: 2}
+    value: {fileID: 1054304515}
+  - key: {fileID: 687587372341768764, guid: e72e25797f9516d4ea12e8d06f469b49, type: 2}
+    value: {fileID: 1054304514}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &586834291
@@ -2095,6 +2099,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 842704558}
     m_Modifications:
+    - target: {fileID: 86972508, guid: 103439f47880cb043a39ab634407a8d6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1209
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325557481046678361, guid: 103439f47880cb043a39ab634407a8d6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1142
+      objectReference: {fileID: 0}
     - target: {fileID: 5200886744421991696, guid: 103439f47880cb043a39ab634407a8d6, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2140,6 +2152,16 @@ PrefabInstance:
 --- !u!224 &1054304513 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5200886744421991696, guid: 103439f47880cb043a39ab634407a8d6, type: 3}
+  m_PrefabInstance: {fileID: 1054304512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1054304514 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 86972505, guid: 103439f47880cb043a39ab634407a8d6, type: 3}
+  m_PrefabInstance: {fileID: 1054304512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1054304515 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1222411569, guid: 103439f47880cb043a39ab634407a8d6, type: 3}
   m_PrefabInstance: {fileID: 1054304512}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1055589626
@@ -3541,7 +3563,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uADF8 \uC548\uC744 \uB5A0\uB3C4\uB294 \uBFCC\uC5F0 \uC5F0\uAE30.."
+  m_text: "\uD63C\uB780\uC2A4\uB7EC\uC6B4 \uB9C8\uC74C\uC744 \uAC10\uCD9C \uC218
+    \uC5C6\uC5C8\uC2B5\uB2C8\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec18d9446caf1f0428cdac43b050ff6f, type: 2}
   m_sharedMaterial: {fileID: 5289204028360799902, guid: ec18d9446caf1f0428cdac43b050ff6f, type: 2}
@@ -4550,7 +4573,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ...
+  m_text: ...?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
