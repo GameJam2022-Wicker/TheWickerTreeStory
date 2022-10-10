@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScrollingBackground : MonoBehaviour
 {
-    public bool scrolling, parallax;
+    public bool scrolling, parallax, automatically;
 
     public float backgroundSize;
 
@@ -62,14 +62,16 @@ public class ScrollingBackground : MonoBehaviour
                 position += multiplier * (cameraTransform.position - startCameraPos);
             transform.position = position;
         }
+        // yesman: monstermove에서 가져옴. 자신의 가로사이즈만큼 더한 위치까지 움직임.
+        // 그 위치가 되면 ScrollLeft, ScrollRight를 통해 스크롤됨
+        if(automatically)
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x + backgroundSize/2, transform.position.y), Time.deltaTime * multiplier);
 
     }
 
     private void ScrollLeft()
     {
         int lastRight = rightIndex;
-
-        //layers[rightIndex].position = Vector3.right * (layers[leftIndex].position.x - backgroundSize);
         Vector3 newPos = new Vector3(layers[leftIndex].position.x - backgroundSize, transform.position.y, 0);
         layers[rightIndex].position = newPos;
         leftIndex = rightIndex;
@@ -81,7 +83,6 @@ public class ScrollingBackground : MonoBehaviour
     private void ScrollRight()
     {
         int lastRight = leftIndex;
-        //layers[leftIndex].position = Vector3.right * (layers[rightIndex].position.x + backgroundSize);
         Vector3 newPos = new Vector3(layers[rightIndex].position.x + backgroundSize, transform.position.y, 0);
         layers[leftIndex].position = newPos;
         rightIndex = leftIndex;
