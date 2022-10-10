@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+
 
 public class DataManager : MonoBehaviour
 {
@@ -22,6 +25,31 @@ public class DataManager : MonoBehaviour
                 "角이 잿더미가 되어, 그 연기가 하늘에 오르면, 主께서 풍년을 기약하신다. \n" +
                 "그러니 둘 중 하나는, 昇天의 바람으로 사라질 것이다. \n"};
 
+
+    private string DataFileName = "Data.json";  // J : json 파일 이름
+
+    // J : json 파일로 저장할 데이터 클래스
+    [Serializable]
+    public class GameData
+    {
+        public bool[] sign = {false, false, false, false, false}; // J : 표지판 읽음 여부
+    }
+
+    // J : json 파일로 저장할 객체
+    private GameData _data;
+    public GameData data
+    {
+        get
+        {
+            if (_data==null)
+            {
+                LoadGameData();
+                SaveGameData();
+            }
+            return _data;
+        }
+    }
+
     public static DataManager instance = null;
     private void Awake()
     {
@@ -36,10 +64,44 @@ public class DataManager : MonoBehaviour
         }
     }
 
+    // J : json 파일 불러오기
+    private void LoadGameData()
+    {
+        string filePath = Application.persistentDataPath + "/" + DataFileName;
+        Debug.Log(filePath);
+
+        if (File.Exists(filePath))
+        {
+            Debug.Log("데이터 불러오기");
+            string FromJsonData=File.ReadAllText(filePath);
+            _data=JsonUtility.FromJson<GameData>(FromJsonData);
+        }
+        else
+        {
+            Debug.Log("새로운 데이터 파일 생성");
+            _data = new GameData();
+        }
+    }
+
+    // J : json 파일로 저장
+    private void SaveGameData()
+    {
+        string ToJsonData=JsonUtility.ToJson(data);
+        string filePath = Application.persistentDataPath + "/" + DataFileName;
+        File.WriteAllText(filePath, ToJsonData);
+        Debug.Log("데이터 저장 완료");
+    }
+
     // J : 해당 id의 표지판 내용 리턴
     public string GetSingStr(int id)
     {
         Debug.Log(signStr[id]);
         return signStr[id];
+    }
+
+    // J : 프로그램 종료 시 데이터 저장
+    private void OnApplicationQuit()
+    {
+        SaveGameData();
     }
 }

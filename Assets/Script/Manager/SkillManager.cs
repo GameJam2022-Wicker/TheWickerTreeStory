@@ -125,8 +125,11 @@ public class SkillManager : MonoBehaviour
         if (signCollider != null)    // J : 표지판 체크된 경우
         {
             signUI.SetActive(true);
-            Debug.Log(signCollider.GetComponent<Sign>().id);
-            signTextPro.text = DataManager.instance.GetSingStr(signCollider.GetComponent<Sign>().id);   // J : 해당 표지판 id의 내용 세팅
+
+            int id = signCollider.GetComponent<Sign>().id;  // J : 표지판 id 확인
+            signTextPro.text = DataManager.instance.GetSingStr(id);   // J : 해당 id의 표지판 내용 세팅
+            DataManager.instance.data.sign[id] = true; ; // J : 표지판 읽음 저장
+
             Time.timeScale = 0;
             rayColor = Color.green;
         }
