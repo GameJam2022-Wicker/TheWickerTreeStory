@@ -35,6 +35,7 @@ public class Ending : MonoBehaviour
             playableDirector.playableAsset = badTimeline;
         }
 
+        playableDirector.Play();
         bgm.Play();
     }
 }
