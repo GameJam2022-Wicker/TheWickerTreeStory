@@ -11,6 +11,11 @@ public class Menu : MonoBehaviour
     [SerializeField] private GameObject MenuUI;
     [SerializeField] private GameObject SignList, LetterList;
 
+    // J : 지판/편지 내용
+    [SerializeField] private GameObject Contents;
+    [SerializeField] private TextMeshProUGUI contentsText;
+
+    // J : 리소스
     [SerializeField] private GameObject signItem, noSignItem;
     [SerializeField] private GameObject letterItem, noLetterItem;
     
@@ -88,6 +93,8 @@ public class Menu : MonoBehaviour
     public void OnClickSignBtn(int id)
     {
         Debug.Log("지판 " + id);
+        Contents.SetActive(true);
+        contentsText.text = DataManager.instance.GetSignStr(id);
     }
 
     // J : 편지 이야기 버튼 클릭 -> 편지 목록
@@ -101,6 +108,13 @@ public class Menu : MonoBehaviour
     public void OnClickLetterBtn(int id)
     {
         Debug.Log("편지 " + id);
+        Contents.SetActive(true);
+        contentsText.text = DataManager.instance.GetLetterStr(id);
+    }
+
+    public void OnClickContentsExitBtn()
+    {
+        Contents.SetActive(false);
     }
 
     // J : 게임 나가기 버튼 클릭

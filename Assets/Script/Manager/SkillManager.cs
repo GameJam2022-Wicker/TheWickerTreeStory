@@ -127,7 +127,7 @@ public class SkillManager : MonoBehaviour
             signUI.SetActive(true);
 
             int id = signCollider.GetComponent<Sign>().id;  // J : 표지판 id 확인
-            signTextPro.text = DataManager.instance.GetSingStr(id);   // J : 해당 id의 표지판 내용 세팅
+            signTextPro.text = DataManager.instance.GetSignStr(id);   // J : 해당 id의 표지판 내용 세팅
             DataManager.instance.data.sign[id] = true; ; // J : 표지판 읽음 저장
 
             Time.timeScale = 0;
