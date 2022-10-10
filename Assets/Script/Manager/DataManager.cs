@@ -11,14 +11,14 @@ public class GameData
     public bool[] sign = { false, false, false, false, false }; // J : 표지판 읽음 여부
 
     // J : 지금까지 읽은 지판의 인덱스 리스트 리턴
-    public List<int> GetReadSignList()
+    public int GetReadCount()
     {
         List<int> list = new List<int>();
 
         for (int i = 0; i < sign.Length; i++)
             if (sign[i] == true) list.Add(i);
 
-        return list;
+        return list.Count;
     }
 }
 

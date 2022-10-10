@@ -11,26 +11,12 @@ public class Menu : MonoBehaviour
     [SerializeField] private GameObject MenuUI;
     [SerializeField] private GameObject SignList, LetterList;
 
-    void Start()
-    {
-        int i = 0;
-        foreach (Button btn in SignList.GetComponentsInChildren<Button>())
-        {
-            // J : 임시 변수를 인자로 전달
-            int id = i;
-            btn.onClick.AddListener(() => OnClickSignBtn(id));
-            i++;
-        }
+    [SerializeField] private GameObject signItem, noSignItem;
+    [SerializeField] private GameObject letterItem, noLetterItem;
+    
+    private string[] numStrList = { "첫", "두", "세", "네", "다섯" };
+    private string signStr = " 번째 지판", letterStr = " 번째 편지";
 
-        i = 0;
-        foreach (Button btn in LetterList.GetComponentsInChildren<Button>())
-        {
-            // J : 임시 변수를 인자로 전달
-            int id = i;
-            btn.onClick.AddListener(() => OnClickLetterBtn(id));
-            i++;
-        }
-    }
 
     // J : 왼쪽 상단의 메뉴 버튼 클릭
     public void OnClickMenuBtn()
@@ -47,11 +33,48 @@ public class Menu : MonoBehaviour
     // J : 현재까지 읽은 지판에 따라 MenuUI 세팅
     private void SetMenuUI()
     {
-        List<int> readIdxList=DataManager.instance.data.GetReadSignList();
+        foreach (Transform child in SignList.GetComponentInChildren<Transform>())
+            Destroy(child.gameObject);
+        foreach (Transform child in LetterList.GetComponentInChildren<Transform>())
+            Destroy(child.gameObject);
+
+        int readCount = DataManager.instance.data.GetReadCount();
 
         // J : 볼 수 있는 지판/편지 개수 표시
-        string str = readIdxList.Count.ToString() + " / 5";
+        string str = readCount.ToString() + " / 5";
         signNum.text = letterNum.text = str;
+
+        // J : 지판/편지 목록 표시
+        bool[] sign = DataManager.instance.data.sign;
+        GameObject signItemObj, letterItemObj;
+        for (int i = 0; i < sign.Length; i++)
+        {
+            if (sign[i])
+            {
+                signItemObj = Instantiate(signItem, Vector2.zero, Quaternion.identity);
+                signItemObj.transform.parent = SignList.transform;
+
+                letterItemObj = Instantiate(letterItem, Vector2.zero, Quaternion.identity);
+                letterItemObj.transform.parent = LetterList.transform;
+            }
+            else
+            {
+                signItemObj = Instantiate(noSignItem, Vector2.zero, Quaternion.identity);
+                signItemObj.transform.parent = SignList.transform;
+
+                letterItemObj = Instantiate(noLetterItem, Vector2.zero, Quaternion.identity);
+                letterItemObj.transform.parent = LetterList.transform;
+            }
+
+            // J : 버튼 리스너 설정
+            int id = i;
+            signItemObj.GetComponentInChildren<Button>().onClick.AddListener(() => OnClickSignBtn(id));
+            letterItemObj.GetComponentInChildren<Button>().onClick.AddListener(() => OnClickLetterBtn(id));
+
+            // J : 텍스트 설정 (i번째 지판/편지)
+            signItemObj.GetComponentInChildren<TextMeshProUGUI>().text = numStrList[i] + signStr;
+            letterItemObj.GetComponentInChildren<TextMeshProUGUI>().text = numStrList[i] + letterStr;
+        }
     }
 
     // J : 지판의 이야기 버튼 클릭 -> 지판 목록
