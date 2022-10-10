@@ -4,6 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
+// J : json 파일로 저장할 데이터 클래스
+[Serializable]
+public class GameData
+{
+    public bool[] sign = { false, false, false, false, false }; // J : 표지판 읽음 여부
+
+    // J : 지금까지 읽은 지판의 인덱스 리스트 리턴
+    public List<int> GetReadSignList()
+    {
+        List<int> list = new List<int>();
+
+        for (int i = 0; i < sign.Length; i++)
+            if (sign[i] == true) list.Add(i);
+
+        return list;
+    }
+}
 
 public class DataManager : MonoBehaviour
 {
@@ -25,24 +42,30 @@ public class DataManager : MonoBehaviour
                 "角이 잿더미가 되어, 그 연기가 하늘에 오르면, 主께서 풍년을 기약하신다. \n" +
                 "그러니 둘 중 하나는, 昇天의 바람으로 사라질 것이다. \n"};
 
-
     private string DataFileName = "Data.json";  // J : json 파일 이름
 
-    // J : json 파일로 저장할 데이터 클래스
-    [Serializable]
-    public class GameData
+    static GameObject _container;
+    static GameObject container
     {
-        public bool[] sign = {false, false, false, false, false}; // J : 표지판 읽음 여부
-
-        // J : 지금까지 읽은 지판의 인덱스 리스트 리턴
-        public List<int> GetReadSignList()
+        get
         {
-            List<int> list = new List<int>();
+            return _container;
+        }
+    }
 
-            for (int i = 0; i < sign.Length; i++)
-                if (sign[i]==true) list.Add(i);
-
-            return list;
+    static DataManager _instance;
+    public static DataManager instance
+    {
+        get
+        {
+            if (!_instance)
+            {
+                _container = new GameObject();
+                _container.name = "DataManager";
+                _instance = _container.AddComponent(typeof(DataManager)) as DataManager;
+                DontDestroyOnLoad(_container);  // J : scene을 이동해도 game object 유지
+            }
+            return _instance;
         }
     }
 
@@ -52,7 +75,7 @@ public class DataManager : MonoBehaviour
     {
         get
         {
-            if (_data==null)
+            if (_data == null)
             {
                 LoadGameData();
                 SaveGameData();
@@ -60,20 +83,7 @@ public class DataManager : MonoBehaviour
             return _data;
         }
     }
-
-    public static DataManager instance = null;
-    private void Awake()
-    {
-        if(null == instance)
-        {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }
+    
 
     // J : json 파일 불러오기
     private void LoadGameData()
