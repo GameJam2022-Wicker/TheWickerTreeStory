@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI signNum, letterNum;
     [SerializeField] private GameObject MenuUI;
     [SerializeField] private GameObject SignList, LetterList;
 
@@ -34,9 +36,22 @@ public class Menu : MonoBehaviour
     public void OnClickMenuBtn()
     {
         if (MenuUI.activeSelf == false)
+        {
+            SetMenuUI();
             MenuUI.SetActive(true);
+        }
         else
             MenuUI.SetActive(false);
+    }
+
+    // J : 현재까지 읽은 지판에 따라 MenuUI 세팅
+    private void SetMenuUI()
+    {
+        List<int> readIdxList=DataManager.instance.data.GetReadSignList();
+
+        // J : 볼 수 있는 지판/편지 개수 표시
+        string str = readIdxList.Count.ToString() + " / 5";
+        signNum.text = letterNum.text = str;
     }
 
     // J : 지판의 이야기 버튼 클릭 -> 지판 목록
