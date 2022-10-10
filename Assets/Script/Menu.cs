@@ -38,14 +38,15 @@ public class Menu : MonoBehaviour
     // J : 현재까지 읽은 지판에 따라 MenuUI 세팅
     private void SetMenuUI()
     {
+        // J : 기존 지판/편지 목록 아이템 오브젝트 모두 삭제
         foreach (Transform child in SignList.GetComponentInChildren<Transform>())
             Destroy(child.gameObject);
         foreach (Transform child in LetterList.GetComponentInChildren<Transform>())
             Destroy(child.gameObject);
 
-        int readCount = DataManager.instance.data.GetReadCount();
 
         // J : 볼 수 있는 지판/편지 개수 표시
+        int readCount = DataManager.instance.data.GetReadCount();
         string str = readCount.ToString() + " / 5";
         signNum.text = letterNum.text = str;
 
