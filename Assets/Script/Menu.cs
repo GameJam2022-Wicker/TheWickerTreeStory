@@ -2,10 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
     [SerializeField] private GameObject MenuUI;
+    [SerializeField] private GameObject SignList, LetterList;
+
+    void Start()
+    {
+        int i = 0;
+        foreach (Button btn in SignList.GetComponentsInChildren<Button>())
+        {
+            // J : 임시 변수를 인자로 전달
+            int id = i;
+            btn.onClick.AddListener(() => OnClickSignBtn(id));
+            i++;
+        }
+
+        i = 0;
+        foreach (Button btn in LetterList.GetComponentsInChildren<Button>())
+        {
+            // J : 임시 변수를 인자로 전달
+            int id = i;
+            btn.onClick.AddListener(() => OnClickLetterBtn(id));
+            i++;
+        }
+    }
 
     // J : 왼쪽 상단의 메뉴 버튼 클릭
     public void OnClickMenuBtn()
@@ -14,6 +37,32 @@ public class Menu : MonoBehaviour
             MenuUI.SetActive(true);
         else
             MenuUI.SetActive(false);
+    }
+
+    // J : 지판의 이야기 버튼 클릭 -> 지판 목록
+    public void OnClickSignBtn()
+    {
+        LetterList.SetActive(false);
+        SignList.SetActive(true);
+    }
+
+    // J : 지판 보기 클릭
+    public void OnClickSignBtn(int id)
+    {
+        Debug.Log("지판 " + id);
+    }
+
+    // J : 편지 이야기 버튼 클릭 -> 편지 목록
+    public void OnClickLetterBtn()
+    {
+        SignList.SetActive(false);
+        LetterList.SetActive(true);
+    }
+
+    // J : 편지 보기 클릭
+    public void OnClickLetterBtn(int id)
+    {
+        Debug.Log("편지 " + id);
     }
 
     // J : 게임 나가기 버튼 클릭
