@@ -27,6 +27,7 @@ public class DataManager : MonoBehaviour
     public bool isBelieving;    // J : 플레이어 입력 (믿는다vs믿지 않는다)
 
     // J : 표지판/편지 내용 배열 (추후 데이터 파싱으로 변경 예정)
+    // yesman: skillmanager; 테이블 데이터에서 직접 가져옴
     private string[] signStr = {"꼭두의 안 쪽과 바깥은 그 크기가 다르다. \n" +
                  "夏嫄이 이르길, 이는 \"우리와 軌가 다르기 때문이다.\" 하였다. \n" +
                  "검은 角의 鬼神은 꼭두의 그림자에서 벗어나지 않는다. \n",
@@ -46,7 +47,8 @@ public class DataManager : MonoBehaviour
                 "번제로서 몸이 불타오르는 건, 한 명 뿐이다. \n" +
                 "角이 잿더미가 되어, 그 연기가 하늘에 오르면, 主께서 풍년을 기약하신다. \n" +
                 "그러니 둘 중 하나는, 昇天의 바람으로 사라질 것이다."};
-
+    //편지 스크립트 가져오기
+    //string letterStr = TableData.instance.GetScript("Letter", id);
     private string[] letterStr = {"주인 없는 종이를 줍자, 아버님의 존재가 떠올랐습니다.\n"+
                 "아직 제 기억에 아무 확신이 없지만.. 그래도 앞으로를 위해 편지를 씁니다.\n"+
                 "저는 어린 탈을 쓴 선생의 도움으로 바깥으로 가고 있습니다.\n"+

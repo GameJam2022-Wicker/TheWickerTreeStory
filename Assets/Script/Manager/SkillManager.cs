@@ -126,9 +126,10 @@ public class SkillManager : MonoBehaviour
         {
             signUI.SetActive(true);
 
-            int id = signCollider.GetComponent<Sign>().id;  // J : 표지판 id 확인
-            signTextPro.text = DataManager.instance.GetSignStr(id);   // J : 해당 id의 표지판 내용 세팅
-            DataManager.instance.data.sign[id] = true; ; // J : 표지판 읽음 저장
+            string id = signCollider.GetComponent<Sign>().id;  // J : 표지판 id 확인
+            int orderNum = signCollider.GetComponent<Sign>().orderNum;
+            signTextPro.text = TableData.instance.GetScript("Borad", id);   // J : 해당 id의 표지판 내용 세팅
+            DataManager.instance.data.sign[orderNum] = true; ; // J : 표지판 읽음 저장
 
             Time.timeScale = 0;
             rayColor = Color.green;

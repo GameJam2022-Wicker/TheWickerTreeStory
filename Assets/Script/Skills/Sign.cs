@@ -5,5 +5,6 @@ using UnityEngine.UI;
 
 public class Sign : MonoBehaviour
 {
-    public int id;  // 표지판 id
+    public string id;  // 표지판 id
+    public int orderNum;
 }
