@@ -55,7 +55,10 @@ public class FadeManager : MonoBehaviour
 
     public IEnumerator GameOverCoroutine()
     {
+        fadePanel.GetComponent<Image>().color = Color.white;
         fadePanel.gameObject.SetActive(true);
+        fadePanel.gameObject.GetComponent<Animator>().enabled = true;
+        fadePanel.gameObject.GetComponent<Animator>().Play("GameoverAnimClip");
         float fadeCount = 0;    // 초기 알파값(검은 화면)
         while (true)    // 알파값이 최대(1)가 될 때까지 반복
         {
@@ -64,7 +67,7 @@ public class FadeManager : MonoBehaviour
 
             fadeCount += 0.01f;
             yield return new WaitForSeconds(0.01f); // 0.01초마다 어두워지게->1초 후 완전히 어두워짐
-            fadePanel.color = new Color(0, 0, 0, fadeCount);    // 알파값 조정
+            //fadePanel.color = new Color(0, 0, 0, fadeCount);    // 알파값 조정
             text.color = new Color(text.color.r, text.color.g, text.color.b, fadeCount);
         }
 
