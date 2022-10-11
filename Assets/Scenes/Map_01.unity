@@ -5026,7 +5026,8 @@ MonoBehaviour:
   parallax: 0
   automatically: 1
   backgroundSize: 23.42
-  multiplier: 0.2
+  multiplier: 0
+  autoSpeed: 0.2
   horizontalOnly: 1
   verticalOnly: 0
 --- !u!1001 &697123323
@@ -5623,6 +5624,7 @@ MonoBehaviour:
   automatically: 0
   backgroundSize: 23.42
   multiplier: 0.08
+  autoSpeed: 0
   horizontalOnly: 1
   verticalOnly: 0
 --- !u!1 &868243353
@@ -7577,6 +7579,7 @@ MonoBehaviour:
   automatically: 0
   backgroundSize: 23.42
   multiplier: 0.04
+  autoSpeed: 0
   horizontalOnly: 1
   verticalOnly: 0
 --- !u!1001 &1472788794
@@ -8200,6 +8203,7 @@ MonoBehaviour:
   automatically: 0
   backgroundSize: 23.42
   multiplier: 0.01
+  autoSpeed: 0
   horizontalOnly: 1
   verticalOnly: 0
 --- !u!1 &1686212459
