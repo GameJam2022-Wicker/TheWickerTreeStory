@@ -1421,7 +1421,7 @@ MonoBehaviour:
   m_Version: 3
   m_AnimClip: {fileID: 0}
   m_Locked: 0
-  m_Muted: 1
+  m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
@@ -3520,24 +3520,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfda56da833e2384a9677cd3c976a436, type: 3}
-  m_Name: cutScene_01
+  m_Name: cutScene_01_girl
   m_EditorClassIdentifier: 
   m_Version: 0
   m_Tracks:
   - {fileID: -7507237673990667976}
   - {fileID: 8173969278507518012}
-  - {fileID: 6110955156413860003}
-  - {fileID: 5272012958085960961}
-  - {fileID: -8935563559923587143}
-  - {fileID: -2036549644002337005}
-  - {fileID: -4876132520917219038}
-  - {fileID: 1517009225553577834}
-  - {fileID: -8123367219688859757}
-  - {fileID: 3252705535208748456}
-  - {fileID: 5704908522890931683}
-  - {fileID: -6923226525308588352}
-  - {fileID: -7616894630902468433}
-  - {fileID: -733725638306995982}
   m_FixedDuration: 31.133333333333
   m_EditorSettings:
     m_Framerate: 60
@@ -5688,7 +5676,7 @@ MonoBehaviour:
   m_Version: 3
   m_AnimClip: {fileID: 0}
   m_Locked: 0
-  m_Muted: 1
+  m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
