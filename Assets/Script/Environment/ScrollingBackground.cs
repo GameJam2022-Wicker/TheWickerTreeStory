@@ -9,6 +9,7 @@ public class ScrollingBackground : MonoBehaviour
     public float backgroundSize;
 
     [SerializeField] float multiplier = 0.0f;
+    [SerializeField] float autoSpeed = 0.0f;
     [SerializeField] bool horizontalOnly = true;
     [SerializeField] bool verticalOnly = false;
 
@@ -65,7 +66,8 @@ public class ScrollingBackground : MonoBehaviour
         // yesman: monstermove에서 가져옴. 자신의 가로사이즈만큼 더한 위치까지 움직임.
         // 그 위치가 되면 ScrollLeft, ScrollRight를 통해 스크롤됨
         if(automatically)
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x + backgroundSize/2, transform.position.y), Time.deltaTime * multiplier);
+            transform.position = Vector2.MoveTowards(transform.position, 
+                new Vector2(transform.position.x + backgroundSize/2, transform.position.y), Time.deltaTime * autoSpeed);
 
     }
 

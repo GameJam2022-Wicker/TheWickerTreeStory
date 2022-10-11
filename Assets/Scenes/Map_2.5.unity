@@ -165,7 +165,6 @@ GameObject:
   m_Component:
   - component: {fileID: 108183396}
   - component: {fileID: 108183398}
-  - component: {fileID: 108183397}
   m_Layer: 0
   m_Name: map1.5-3
   m_TagString: Untagged
@@ -187,25 +186,6 @@ Transform:
   m_Father: {fileID: 433994914}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &108183397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108183395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78918d328f427c542b2f6c14aaea9747, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrolling: 0
-  parallax: 1
-  automatically: 0
-  backgroundSize: 0
-  multiplier: 0.09
-  horizontalOnly: 0
-  verticalOnly: 1
 --- !u!212 &108183398
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -369,9 +349,10 @@ MonoBehaviour:
   parallax: 0
   automatically: 1
   backgroundSize: 39.85
-  multiplier: 0.5
+  multiplier: 0.11
+  autoSpeed: 0.5
   horizontalOnly: 0
-  verticalOnly: 1
+  verticalOnly: 0
 --- !u!1001 &215003685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4206,8 +4187,9 @@ MonoBehaviour:
   parallax: 0
   automatically: 1
   backgroundSize: 39.85
-  multiplier: 1
-  horizontalOnly: 1
+  multiplier: 0.13
+  autoSpeed: 1
+  horizontalOnly: 0
   verticalOnly: 0
 --- !u!1001 &729130639
 PrefabInstance:
