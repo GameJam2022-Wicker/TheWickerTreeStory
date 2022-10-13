@@ -2840,6 +2840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentMask: 0
   fillImage: {fileID: 1353238297}
+  canChangeMask: 1
   maskImage: {fileID: 851555794}
   maskSpriteList:
   - {fileID: 21300000, guid: 8a4c2410abd089b4e9054712a1825c21, type: 3}
@@ -2849,7 +2850,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 593503642}
   - {fileID: 593503641}
-  canChangeMask: 1
   maskNum: 3
 --- !u!4 &593503639
 Transform:
@@ -2883,6 +2883,7 @@ MonoBehaviour:
   signUI: {fileID: 996718442}
   signTextPro: {fileID: 996718444}
   isOwlSkilling: 0
+  isPigSkilling: 0
   player: {fileID: 830616966}
   maskManager: {fileID: 593503638}
 --- !u!82 &593503641
@@ -6094,11 +6095,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrolling: 1
-  parallax: 1
-  automatically: 0
+  parallax: 0
+  automatically: 1
   backgroundSize: 23.42
   multiplier: 0.04
-  autoSpeed: 0
+  autoSpeed: 1
   horizontalOnly: 1
   verticalOnly: 0
 --- !u!1 &1824230079
