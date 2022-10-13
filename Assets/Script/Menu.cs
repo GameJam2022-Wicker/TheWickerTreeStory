@@ -113,13 +113,20 @@ public class Menu : MonoBehaviour
         contentsText.text = DataManager.instance.GetLetterStr(id);
     }
 
+    // J : 지판/편지 내용 창 닫기
     public void OnClickContentsExitBtn()
     {
         Contents.SetActive(false);
     }
 
+    // J : 메뉴 창 닫기
+    public void OnClickMenuExitBtn()
+    {
+        MenuUI.SetActive(false);
+    }
+
     // J : 게임 나가기 버튼 클릭
-    public void OnClickExitBtn()
+    public void OnClickGameExitBtn()
     {
         SceneManager.LoadScene(0);
     }
