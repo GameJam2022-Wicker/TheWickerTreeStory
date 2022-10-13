@@ -12,6 +12,8 @@ public class Obstacle : MonoBehaviour
     public LayerMask playerLayerMask;
     public LayerMask tileLayerMask;
 
+    private bool isMoving;
+
     private void Start() 
     {
         rigid = gameObject.GetComponent<Rigidbody2D>();
@@ -22,29 +24,34 @@ public class Obstacle : MonoBehaviour
 
     private void Update()
     {
-        //yesman: 레이캐스트로 플레이어를 감지하여 플레이어가 박스 위에 있다면 canPush = false;
-        RaycastHit2D raycastHit2D = Physics2D.Raycast(boxCollider.bounds.center, Vector2.up, boxCollider.bounds.extents.y, playerLayerMask);
-        RaycastHit2D raycastHit2DDown = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 1f, tileLayerMask);
+        //yesman: 레이캐스트로 플레이어를 감지하여 플레이어가 박스 위에 있다면 밀기 불가능
+        RaycastHit2D raycastHit2D = Physics2D.Raycast(boxCollider.bounds.center, Vector2.up, boxCollider.bounds.extents.y + 0.2f, playerLayerMask);
+        // J : 이미 타일 위인 경우 boxCollider.bounds.extents.y로는 타일 감지를 못하므로 offset 추가
+        RaycastHit2D raycastHit2DDown = Physics2D.Raycast(boxCollider.bounds.center, Vector2.down, boxCollider.bounds.extents.y + 0.2f, tileLayerMask);
+        // J : 바위가 착지해야 타일 감지 가능
+        RaycastHit2D raycastHit2DDrop = Physics2D.Raycast(boxCollider.bounds.center, Vector2.down, boxCollider.bounds.extents.y, tileLayerMask);
 
-        if (raycastHit2D.collider != null)
-            canPush = false;
-        else
+        
+        if (Input.GetKey(KeyCode.F) && raycastHit2D.collider == null)
             canPush = true;
+        else
+            canPush = false;
 
+        // J : 떨어지는 중
         if (raycastHit2DDown.collider == null)
             Move();
-
-        //Debug.DrawRay(boxCollider.bounds.center, Vector2.down * (boxCollider.bounds.extents.y), Color.red);
+        // J : 떨어진 바위가 타일 위에 착지하면 다시 밀기 불가능 (Kinematic으로 변경)
+        else if (!canPush && rigid.bodyType == RigidbodyType2D.Dynamic && raycastHit2DDrop.collider != null)
+            DontMove();
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" && SkillManager.instance.maskManager.currentMask == MaskManager.Mask.Pig)
+        if (collision.gameObject.tag == "Player" 
+            && SkillManager.instance.maskManager.currentMask == MaskManager.Mask.Pig
+            && canPush)
         {
-            if (Input.GetKey(KeyCode.F) && canPush) // 밀 수 있는 상태
                 Push();
-            else
-                StopPush();
         }
     }
 
@@ -52,9 +59,7 @@ public class Obstacle : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player" && SkillManager.instance.maskManager.currentMask == MaskManager.Mask.Pig)
-        {
             StopPush();
-        }
     }
 
     // 바위 움직임 가능
