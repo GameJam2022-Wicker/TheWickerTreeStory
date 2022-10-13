@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Menu : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI signNum, letterNum;
-    [SerializeField] private GameObject MenuUI;
+    [SerializeField] private GameObject BoardUI;
     [SerializeField] private GameObject SignList, LetterList;
 
     // J : 지판/편지 내용
@@ -24,19 +24,19 @@ public class Menu : MonoBehaviour
 
 
     // J : 왼쪽 상단의 메뉴 버튼 클릭
-    public void OnClickMenuBtn()
+    public void OnClickBoardBtn()
     {
-        if (MenuUI.activeSelf == false)
+        if (BoardUI.activeSelf == false)
         {
-            SetMenuUI();
-            MenuUI.SetActive(true);
+            SetBoardUI();
+            BoardUI.SetActive(true);
         }
         else
-            MenuUI.SetActive(false);
+            BoardUI.SetActive(false);
     }
 
     // J : 현재까지 읽은 지판에 따라 MenuUI 세팅
-    private void SetMenuUI()
+    private void SetBoardUI()
     {
         // J : 기존 지판/편지 목록 아이템 오브젝트 모두 삭제
         foreach (Transform child in SignList.GetComponentInChildren<Transform>())
@@ -119,10 +119,10 @@ public class Menu : MonoBehaviour
         Contents.SetActive(false);
     }
 
-    // J : 메뉴 창 닫기
-    public void OnClickMenuExitBtn()
+    // J : 보드 창 닫기
+    public void OnClickBoardExitBtn()
     {
-        MenuUI.SetActive(false);
+        BoardUI.SetActive(false);
     }
 
     // J : 게임 나가기 버튼 클릭

@@ -4350,7 +4350,7 @@ GameObject:
   - component: {fileID: 605873506}
   - component: {fileID: 605873505}
   m_Layer: 5
-  m_Name: MenuUI
+  m_Name: BoardUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7215,7 +7215,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1769966439}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: OnClickMenuExitBtn
+        m_MethodName: OnClickBoardExitBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7330,7 +7330,7 @@ GameObject:
   - component: {fileID: 1686212462}
   - component: {fileID: 1686212461}
   m_Layer: 5
-  m_Name: MenuButton
+  m_Name: BoardButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7401,7 +7401,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1769966439}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: OnClickMenuBtn
+        m_MethodName: OnClickBoardBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7646,7 +7646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signNum: {fileID: 388888644}
   letterNum: {fileID: 1090858028}
-  MenuUI: {fileID: 605873503}
+  BoardUI: {fileID: 605873503}
   SignList: {fileID: 799541188}
   LetterList: {fileID: 76620158}
   Contents: {fileID: 1210375186}
