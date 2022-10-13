@@ -957,7 +957,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "'\uAE30\uC5B5?' \uC18C\uB140\uB294 \uC544\uB9AC\uC1A1\uD588\uC2B5\uB2C8\uB2E4."
+  m_text: "'\uC544\uBC84\uC9C0\uC5D0\uAC8C \uD3B8\uC9C0\uB97C \uB0A8\uAE30\uC790!'
+    \uC18C\uB140\uB294 \uBC84\uB4E4\uC744 \uBD93\uC73C\uB85C,"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec18d9446caf1f0428cdac43b050ff6f, type: 2}
   m_sharedMaterial: {fileID: 5289204028360799902, guid: ec18d9446caf1f0428cdac43b050ff6f, type: 2}
@@ -1083,7 +1084,7 @@ PlayableDirector:
   - key: {fileID: -2967875765379812002, guid: a07d70fac71872d44b7fd6971d57e7b9, type: 2}
     value: {fileID: 641913897}
   - key: {fileID: 391973925061578642, guid: a07d70fac71872d44b7fd6971d57e7b9, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 1333738786}
   - key: {fileID: 3264679673948437663, guid: a07d70fac71872d44b7fd6971d57e7b9, type: 2}
     value: {fileID: 50080340}
   - key: {fileID: -7815918302722978323, guid: a07d70fac71872d44b7fd6971d57e7b9, type: 2}
@@ -1171,8 +1172,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " \uC774\uB294 \uD544\uC2DC \uC5B4\uB518\uAC00\uC5D0 \uAE30\uB85D\uB3FC\uC57C
-    \uD588\uC2B5\uB2C8\uB2E4."
+  m_text: " \uC790\uC2E0\uC758 \uC0C1\uCC98\uC5D0\uC11C \uD750\uB978 \uD53C\uB97C
+    \uBA39\uC73C\uB85C \uC0BC\uC544 \uD3B8\uC9C0\uB97C \uC37C\uC2B5\uB2C8\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec18d9446caf1f0428cdac43b050ff6f, type: 2}
   m_sharedMaterial: {fileID: 5289204028360799902, guid: ec18d9446caf1f0428cdac43b050ff6f, type: 2}
@@ -2943,7 +2944,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380403630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: -3.7488942, z: -10}
+  m_LocalPosition: {x: 33.29, y: 8.960001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 732100483}
@@ -4581,7 +4582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.4246273, y: -3.17569, z: -10}
+  m_LocalPosition: {x: 33.332752, y: 3.8471098, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1443078496}
@@ -7756,6 +7757,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1333738786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7957535779893812176, guid: 27e7fd4098d4490439c03d9b7db9ac81, type: 3}
+  m_PrefabInstance: {fileID: 1333738782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1413221124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8738,7 +8744,7 @@ PlayableDirector:
   - key: {fileID: 3264679673948437663, guid: f800717080eb9374eb777296e327cd4f, type: 2}
     value: {fileID: 1120386799}
   - key: {fileID: -6281710581421417737, guid: f800717080eb9374eb777296e327cd4f, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 1333738786}
   - key: {fileID: 511620526844803658, guid: f800717080eb9374eb777296e327cd4f, type: 2}
     value: {fileID: 1069956137}
   - key: {fileID: 8188932975468989584, guid: f800717080eb9374eb777296e327cd4f, type: 2}
