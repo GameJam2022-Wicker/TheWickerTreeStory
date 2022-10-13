@@ -13,7 +13,8 @@ public class MaskManager : MonoBehaviour
     }
     public Mask currentMask;
 
-    public Image maskImage;
+    public Image fillImage;
+    [SerializeField] private Image maskImage;
     [SerializeField] private List<Sprite> maskSpriteList;
     [SerializeField] private List<AudioSource> maskChangeAudioList;
     [SerializeField] private bool canChangeMask;    // 가면 변경 가능 여부 (Map_03 -> false)
@@ -58,7 +59,13 @@ public class MaskManager : MonoBehaviour
         if (maskChangeAudioList[(int)currentMask] != null)
             maskChangeAudioList[(int)currentMask].Play();
 
+        if (currentMask == Mask.Owl)
+            fillImage.gameObject.SetActive(true);
+        else
+            fillImage.gameObject.SetActive(false);
+        /*
         if (currentMask != Mask.Owl)
             maskImage.color = new Color(maskImage.color.r, maskImage.color.g, maskImage.color.b, 1);
+        */
     }
 }

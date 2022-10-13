@@ -171,8 +171,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrolling: 1
   parallax: 1
+  automatically: 0
   backgroundSize: 23.42
   multiplier: 0.06
+  autoSpeed: 0
   horizontalOnly: 1
   verticalOnly: 0
 --- !u!1 &181528736
@@ -1011,11 +1013,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!224 &529489680 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6788654159108924166, guid: 27e7fd4098d4490439c03d9b7db9ac81, type: 3}
-  m_PrefabInstance: {fileID: 6788654159351856150}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &542480807
 GameObject:
   m_ObjectHideFlags: 0
@@ -2798,7 +2795,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 529489680}
+  - {fileID: 1291978254}
   - {fileID: 996718443}
   - {fileID: 391810366}
   m_Father: {fileID: 0}
@@ -2842,7 +2839,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMask: 0
-  maskImage: {fileID: 1549169025}
+  fillImage: {fileID: 1353238297}
+  maskImage: {fileID: 851555794}
   maskSpriteList:
   - {fileID: 21300000, guid: 8a4c2410abd089b4e9054712a1825c21, type: 3}
   - {fileID: -7410076271603460419, guid: d73429fefab312c48ada0190f09471ec, type: 3}
@@ -3534,6 +3532,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &851555794 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7957535781031064926, guid: 27e7fd4098d4490439c03d9b7db9ac81, type: 3}
+  m_PrefabInstance: {fileID: 6788654159351856150}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &860393478
 GameObject:
   m_ObjectHideFlags: 0
@@ -3582,8 +3591,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrolling: 1
   parallax: 1
+  automatically: 0
   backgroundSize: 23.42
   multiplier: 0.01
+  autoSpeed: 0
   horizontalOnly: 1
   verticalOnly: 0
 --- !u!1001 &996718441
@@ -5503,11 +5514,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8773162935210827731, guid: b49b3203f523c0a43bee713df86d7368, type: 3}
   m_PrefabInstance: {fileID: 1256425356}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &1291978254 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7957535779893812175, guid: 27e7fd4098d4490439c03d9b7db9ac81, type: 3}
+  m_PrefabInstance: {fileID: 6788654159351856150}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1329110789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5672160483998577830, guid: 5ec17e08921e66445b5921867e8dd479, type: 3}
   m_PrefabInstance: {fileID: 830616964}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1353238297 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3483811786202423098, guid: 27e7fd4098d4490439c03d9b7db9ac81, type: 3}
+  m_PrefabInstance: {fileID: 6788654159351856150}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1357735129
 GameObject:
   m_ObjectHideFlags: 0
@@ -5859,17 +5886,6 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 2074349235}
   m_Damping: 0.5
   m_MaxWindowSize: -1
---- !u!114 &1549169025 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6788654158081904023, guid: 27e7fd4098d4490439c03d9b7db9ac81, type: 3}
-  m_PrefabInstance: {fileID: 6788654159351856150}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1596727629
 GameObject:
   m_ObjectHideFlags: 0
@@ -6079,8 +6095,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrolling: 1
   parallax: 1
+  automatically: 0
   backgroundSize: 23.42
   multiplier: 0.04
+  autoSpeed: 0
   horizontalOnly: 1
   verticalOnly: 0
 --- !u!1 &1824230079

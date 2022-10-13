@@ -47,7 +47,8 @@ public class PlayerAction : MonoBehaviour
         obstacleLayer = LayerMask.NameToLayer("Obstacle");
         gameOverLayer = LayerMask.NameToLayer("GameOver");
 
-        skillManager = GameObject.Find("SkillManager").GetComponent<SkillManager>();
+        if (GameObject.Find("SkillManager") != null)
+            skillManager = GameObject.Find("SkillManager").GetComponent<SkillManager>();
     }
 
     void Start()
