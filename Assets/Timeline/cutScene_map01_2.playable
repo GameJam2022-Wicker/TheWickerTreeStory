@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 3.216666666666667
+    m_Start: 4.416666666666667
     m_ClipIn: 0
     m_Asset: {fileID: -991377877768680311}
-    m_Duration: 1.9333333333333336
+    m_Duration: 2.216666666666667
     m_TimeScale: 1
     m_ParentTrack: {fileID: -8765640236800240051}
     m_EaseInDuration: 0
@@ -115,10 +115,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Active
   - m_Version: 1
-    m_Start: 7.8
+    m_Start: 10.586091567172357
     m_ClipIn: 0
     m_Asset: {fileID: 4893305329513288052}
-    m_Duration: 2.033333333333334
+    m_Duration: 2.5639084328276436
     m_TimeScale: 1
     m_ParentTrack: {fileID: -8765640236800240051}
     m_EaseInDuration: 0
@@ -184,10 +184,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Active
   - m_Version: 1
-    m_Start: 10.1
+    m_Start: 13.299999999999994
     m_ClipIn: 0
     m_Asset: {fileID: 4962419389415701314}
-    m_Duration: 2.033333333333334
+    m_Duration: 2.63333333333334
     m_TimeScale: 1
     m_ParentTrack: {fileID: -8765640236800240051}
     m_EaseInDuration: 0
@@ -253,10 +253,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Active
   - m_Version: 1
-    m_Start: 12.45
+    m_Start: 16.15
     m_ClipIn: 0
     m_Asset: {fileID: 7157739771556120257}
-    m_Duration: 2.033333333333334
+    m_Duration: 2.900000000000013
     m_TimeScale: 1
     m_ParentTrack: {fileID: -8765640236800240051}
     m_EaseInDuration: 0
@@ -385,10 +385,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 2.216666666666667
+    m_Start: 2.716666666666667
     m_ClipIn: 0
     m_Asset: {fileID: -8028293839879622441}
-    m_Duration: 1.4666666666666668
+    m_Duration: 1.7000000000000002
     m_TimeScale: 1
     m_ParentTrack: {fileID: -7871753228951528787}
     m_EaseInDuration: 0
@@ -662,10 +662,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 15.333333333333332
+    m_Start: 19.05000000000001
     m_ClipIn: 0
     m_Asset: {fileID: -729553256010851036}
-    m_Duration: 1.2833333333333332
+    m_Duration: 2.133333333333331
     m_TimeScale: 1
     m_ParentTrack: {fileID: -6281710581421417737}
     m_EaseInDuration: 0
@@ -794,10 +794,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 3.216666666666667
+    m_Start: 4.416666666666667
     m_ClipIn: 0
     m_Asset: {fileID: -7860148700520443743}
-    m_Duration: 1.9333333333333336
+    m_Duration: 2.216666666666667
     m_TimeScale: 1
     m_ParentTrack: {fileID: -5303924038517835518}
     m_EaseInDuration: 0
@@ -845,10 +845,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SubtitleClip
   - m_Version: 1
-    m_Start: 7.8
+    m_Start: 10.586091567172357
     m_ClipIn: 0
     m_Asset: {fileID: -5216134193826285270}
-    m_Duration: 2.033333333333334
+    m_Duration: 2.5639084328276436
     m_TimeScale: 1
     m_ParentTrack: {fileID: -5303924038517835518}
     m_EaseInDuration: 0
@@ -914,10 +914,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SubtitleClip
   - m_Version: 1
-    m_Start: 10.1
+    m_Start: 13.299999999999994
     m_ClipIn: 0
     m_Asset: {fileID: -6034057506712848289}
-    m_Duration: 2.033333333333334
+    m_Duration: 2.63333333333334
     m_TimeScale: 1
     m_ParentTrack: {fileID: -5303924038517835518}
     m_EaseInDuration: 0
@@ -983,10 +983,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SubtitleClip
   - m_Version: 1
-    m_Start: 12.45
+    m_Start: 16.15
     m_ClipIn: 0
     m_Asset: {fileID: -5815983795012470892}
-    m_Duration: 2.033333333333334
+    m_Duration: 2.900000000000013
     m_TimeScale: 1
     m_ParentTrack: {fileID: -5303924038517835518}
     m_EaseInDuration: 0
@@ -1192,7 +1192,7 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 10.233334
+        time: 13.266666
         value: {x: 33.39, y: 12.708895, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -1201,7 +1201,7 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 11.066667
+        time: 14.1
         value: {x: 33.864, y: 12.708895, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -1262,7 +1262,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 11.066667
+    m_StopTime: 14.1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -1291,7 +1291,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 10.233334
+        time: 13.266666
         value: 33.39
         inSlope: 0
         outSlope: 0
@@ -1300,7 +1300,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 11.066667
+        time: 14.1
         value: 33.864
         inSlope: 0
         outSlope: 0
@@ -1328,7 +1328,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 10.233334
+        time: 13.266666
         value: 12.708895
         inSlope: 0
         outSlope: 0
@@ -1337,7 +1337,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 11.066667
+        time: 14.1
         value: 12.708895
         inSlope: 0
         outSlope: 0
@@ -1365,7 +1365,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 10.233334
+        time: 13.266666
         value: 0
         inSlope: 0
         outSlope: 0
@@ -1374,7 +1374,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 11.066667
+        time: 14.1
         value: 0
         inSlope: 0
         outSlope: 0
@@ -1471,7 +1471,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -3547830178098665582}
-    m_Duration: 14.5
+    m_Duration: 19.083333333333332
     m_TimeScale: 1
     m_ParentTrack: {fileID: -2967875765379812002}
     m_EaseInDuration: 0
@@ -1578,7 +1578,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 14.483334
+        time: 19.083334
         value: 3
         inSlope: 0
         outSlope: 0
@@ -1587,7 +1587,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 15.216666
+        time: 19.816668
         value: 6.4
         inSlope: 0
         outSlope: 0
@@ -1623,7 +1623,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 15.216666
+    m_StopTime: 19.816668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -1661,7 +1661,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 14.483334
+        time: 19.083334
         value: 3
         inSlope: 0
         outSlope: 0
@@ -1670,7 +1670,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 15.216666
+        time: 19.816668
         value: 6.4
         inSlope: 0
         outSlope: 0
@@ -1760,7 +1760,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 14.483333333333334
+    m_Start: 19.05000000000001
     m_ClipIn: 0
     m_Asset: {fileID: -7515568178503754862}
     m_Duration: 1.75
@@ -1856,7 +1856,7 @@ MonoBehaviour:
     m_Start: 0.5166666666666667
     m_ClipIn: 0
     m_Asset: {fileID: -1136944816970102711}
-    m_Duration: 1.7
+    m_Duration: 2.2
     m_TimeScale: 1
     m_ParentTrack: {fileID: -1528479571902971987}
     m_EaseInDuration: 0
@@ -1922,10 +1922,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SubtitleClip
   - m_Version: 1
-    m_Start: 3.216666666666667
+    m_Start: 4.416666666666667
     m_ClipIn: 0
     m_Asset: {fileID: -4698784036049178999}
-    m_Duration: 1.9333333333333336
+    m_Duration: 2.216666666666667
     m_TimeScale: 1
     m_ParentTrack: {fileID: -1528479571902971987}
     m_EaseInDuration: 0
@@ -1973,7 +1973,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SubtitleClip
   - m_Version: 1
-    m_Start: 5.883333333333334
+    m_Start: 8.669424900505692
     m_ClipIn: 0
     m_Asset: {fileID: 6370254047942452052}
     m_Duration: 1.7
@@ -2024,10 +2024,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SubtitleClip
   - m_Version: 1
-    m_Start: 7.8
+    m_Start: 10.586091567172357
     m_ClipIn: 0
     m_Asset: {fileID: -8543491830961653442}
-    m_Duration: 2.033333333333334
+    m_Duration: 2.5639084328276436
     m_TimeScale: 1
     m_ParentTrack: {fileID: -1528479571902971987}
     m_EaseInDuration: 0
@@ -2093,10 +2093,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SubtitleClip
   - m_Version: 1
-    m_Start: 10.1
+    m_Start: 13.299999999999997
     m_ClipIn: 0
     m_Asset: {fileID: -1199758497288757233}
-    m_Duration: 2.033333333333334
+    m_Duration: 2.6333333333333364
     m_TimeScale: 1
     m_ParentTrack: {fileID: -1528479571902971987}
     m_EaseInDuration: 0
@@ -2162,10 +2162,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SubtitleClip
   - m_Version: 1
-    m_Start: 12.45
+    m_Start: 16.150000000000006
     m_ClipIn: 0
     m_Asset: {fileID: 5064346406978642518}
-    m_Duration: 2.033333333333334
+    m_Duration: 2.9000000000000057
     m_TimeScale: 1
     m_ParentTrack: {fileID: -1528479571902971987}
     m_EaseInDuration: 0
@@ -2557,10 +2557,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 2.216666666666667
+    m_Start: 2.716666666666667
     m_ClipIn: 0
     m_Asset: {fileID: -4886609616651041975}
-    m_Duration: 1.4666666666666666
+    m_Duration: 1.7000000000000002
     m_TimeScale: 1
     m_ParentTrack: {fileID: 299207478206962253}
     m_EaseInDuration: 0
@@ -2724,10 +2724,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 4.416666666666667
+    m_Start: 6.633333333333334
     m_ClipIn: 0
     m_Asset: {fileID: 5564721197914419575}
-    m_Duration: 1.4666666666666666
+    m_Duration: 1.8027582338390244
     m_TimeScale: 1
     m_ParentTrack: {fileID: 511620526844803658}
     m_EaseInDuration: 0
@@ -2831,7 +2831,7 @@ MonoBehaviour:
     m_Start: 0.5166666666666667
     m_ClipIn: 0
     m_Asset: {fileID: -8889117557828672115}
-    m_Duration: 1.7
+    m_Duration: 2.2
     m_TimeScale: 1
     m_ParentTrack: {fileID: 800859329815461837}
     m_EaseInDuration: 0
@@ -2897,10 +2897,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Active
   - m_Version: 1
-    m_Start: 3.216666666666667
+    m_Start: 4.416666666666667
     m_ClipIn: 0
     m_Asset: {fileID: -2055002263587180590}
-    m_Duration: 1.9333333333333336
+    m_Duration: 2.216666666666667
     m_TimeScale: 1
     m_ParentTrack: {fileID: 800859329815461837}
     m_EaseInDuration: 0
@@ -2966,7 +2966,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Active
   - m_Version: 1
-    m_Start: 5.883333333333334
+    m_Start: 8.669424900505692
     m_ClipIn: 0
     m_Asset: {fileID: -4099123154122850243}
     m_Duration: 1.7
@@ -3035,10 +3035,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Active
   - m_Version: 1
-    m_Start: 7.8
+    m_Start: 10.586091567172357
     m_ClipIn: 0
     m_Asset: {fileID: -2345921914933156066}
-    m_Duration: 2.033333333333334
+    m_Duration: 2.5639084328276436
     m_TimeScale: 1
     m_ParentTrack: {fileID: 800859329815461837}
     m_EaseInDuration: 0
@@ -3104,10 +3104,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Active
   - m_Version: 1
-    m_Start: 10.1
+    m_Start: 13.299999999999997
     m_ClipIn: 0
     m_Asset: {fileID: -5176918652492500254}
-    m_Duration: 2.033333333333334
+    m_Duration: 2.6333333333333364
     m_TimeScale: 1
     m_ParentTrack: {fileID: 800859329815461837}
     m_EaseInDuration: 0
@@ -3173,10 +3173,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Active
   - m_Version: 1
-    m_Start: 12.45
+    m_Start: 16.150000000000006
     m_ClipIn: 0
     m_Asset: {fileID: -7404389910809605925}
-    m_Duration: 2.033333333333334
+    m_Duration: 2.9000000000000057
     m_TimeScale: 1
     m_ParentTrack: {fileID: 800859329815461837}
     m_EaseInDuration: 0
@@ -3269,7 +3269,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 1807304524488163495}
-    m_Duration: 10.283333333333333
+    m_Duration: 13.283333333333333
     m_TimeScale: 0.24999999999999997
     m_ParentTrack: {fileID: 1229023919519532396}
     m_EaseInDuration: 0
@@ -3335,7 +3335,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: girl_idle
   - m_Version: 1
-    m_Start: 10.283333333333333
+    m_Start: 13.283333333333333
     m_ClipIn: 0
     m_Asset: {fileID: -3731580809191611806}
     m_Duration: 0.8333333333333339
@@ -3386,10 +3386,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: girl_walk
   - m_Version: 1
-    m_Start: 11.116666666666667
+    m_Start: 14.116666666666667
     m_ClipIn: 0
     m_Asset: {fileID: -4754104873420505649}
-    m_Duration: 5.5
+    m_Duration: 7.066666666666677
     m_TimeScale: 0.2500000000000002
     m_ParentTrack: {fileID: 1229023919519532396}
     m_EaseInDuration: 0
@@ -3478,7 +3478,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 14.483333333333334
+    m_Start: 19.05000000000001
     m_ClipIn: 0
     m_Asset: {fileID: 4294776395081815103}
     m_Duration: 2.133333333333333
@@ -3574,7 +3574,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 2757930827052753615}
-    m_Duration: 16.616666666666667
+    m_Duration: 21.183333333333344
     m_TimeScale: 0.25
     m_ParentTrack: {fileID: 1670416518386878014}
     m_EaseInDuration: 0
@@ -3977,10 +3977,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 4.416666666666667
+    m_Start: 6.633333333333334
     m_ClipIn: 0
     m_Asset: {fileID: -5675024113034571419}
-    m_Duration: 1.4666666666666666
+    m_Duration: 1.8027582338390244
     m_TimeScale: 1
     m_ParentTrack: {fileID: 8188932975468989584}
     m_EaseInDuration: 0
