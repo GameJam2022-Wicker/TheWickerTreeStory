@@ -30,7 +30,7 @@ public class MaskManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canChangeMask)
+        if (canChangeMask & CanChangeMask())
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
@@ -49,6 +49,12 @@ public class MaskManager : MonoBehaviour
         }
     }
 
+    // J : 가면 능력 사용 중이면 가면 변경 불가능
+    private bool CanChangeMask()
+    {
+        return (!SkillManager.instance.isPigSkilling && !SkillManager.instance.isOwlSkilling);
+    }
+
     private void ChangeMask()
     {
         maskImage.sprite = maskSpriteList[(int)currentMask];
@@ -63,9 +69,5 @@ public class MaskManager : MonoBehaviour
             fillImage.gameObject.SetActive(true);
         else
             fillImage.gameObject.SetActive(false);
-        /*
-        if (currentMask != Mask.Owl)
-            maskImage.color = new Color(maskImage.color.r, maskImage.color.g, maskImage.color.b, 1);
-        */
     }
 }

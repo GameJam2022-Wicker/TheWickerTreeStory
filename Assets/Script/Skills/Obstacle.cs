@@ -12,8 +12,6 @@ public class Obstacle : MonoBehaviour
     public LayerMask playerLayerMask;
     public LayerMask tileLayerMask;
 
-    private bool isMoving;
-
     private void Start() 
     {
         rigid = gameObject.GetComponent<Rigidbody2D>();
@@ -51,7 +49,7 @@ public class Obstacle : MonoBehaviour
             && SkillManager.instance.maskManager.currentMask == MaskManager.Mask.Pig
             && canPush)
         {
-                Push();
+            Push();
         }
     }
 
@@ -85,6 +83,8 @@ public class Obstacle : MonoBehaviour
         animator.SetBool("isPushing", true);    // 바위 밀기 애니메이션 재생
         if (!pushSound.isPlaying)   // 바위 미는 소리 재생
             pushSound.Play();
+
+        SkillManager.instance.isPigSkilling = true;
     }
 
     // 바위 밀기 중지
@@ -94,5 +94,7 @@ public class Obstacle : MonoBehaviour
 
         animator.SetBool("isPushing", false);   // 바위 밀기 애니메이션 중지
         pushSound.Stop();   // 바위 미는 소리 중지
+
+        SkillManager.instance.isPigSkilling = false;
     }
 }

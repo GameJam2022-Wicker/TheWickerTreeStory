@@ -26,10 +26,9 @@ public class SkillManager : MonoBehaviour
     public GameObject signUI;
     public TextMeshProUGUI signTextPro;
 
-    //yesman: 가면 owl
-    public bool isOwlSkilling = false;
-    private float owlSkillTime = 0.5f;  // 남은 올빼미 스킬 타임
-    private float owlSkillCoolTime = 0f;  // 올빼미 스킬 쿨타임
+    public bool isOwlSkilling, isPigSkilling = false;   // J : 능력 사용 중 여부
+    private float owlSkillTime = 0.5f;  // J : 남은 올빼미 스킬 타임
+    private float owlSkillCoolTime = 0f;  // J : 올빼미 스킬 쿨타임
 
     //yesman: 플레이어 관련
     public PlayerAction player;
