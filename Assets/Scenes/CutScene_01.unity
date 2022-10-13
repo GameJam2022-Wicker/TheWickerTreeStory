@@ -1816,7 +1816,7 @@ GameObject:
   - component: {fileID: 1036811030}
   - component: {fileID: 1036811029}
   m_Layer: 0
-  m_Name: TriggerObstacle
+  m_Name: CutSceneTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1834,7 +1834,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2ba6518019a0c4588c61b8238f9de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeline_cutscene1_2: {fileID: 2020197937}
+  tag: Obstacle
+  timeline_cutscene: {fileID: 2020197937}
 --- !u!61 &1036811030
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5077,6 +5078,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1440996059}
     m_Modifications:
+    - target: {fileID: 477051825219219308, guid: 4ff175a3c5695714c91323fb5cc8868b, type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 477051825219219308, guid: 4ff175a3c5695714c91323fb5cc8868b, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 36
+      objectReference: {fileID: 0}
     - target: {fileID: 477051825219219310, guid: 4ff175a3c5695714c91323fb5cc8868b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5100,6 +5109,14 @@ PrefabInstance:
     - target: {fileID: 477051825219219310, guid: 4ff175a3c5695714c91323fb5cc8868b, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 477051827068120356, guid: 4ff175a3c5695714c91323fb5cc8868b, type: 3}
+      propertyPath: m_Padding.m_Left
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 477051827068120356, guid: 4ff175a3c5695714c91323fb5cc8868b, type: 3}
+      propertyPath: m_Padding.m_Right
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 477051827068120376, guid: 4ff175a3c5695714c91323fb5cc8868b, type: 3}
       propertyPath: m_Name
