@@ -5698,6 +5698,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1590832780, guid: 5ec17e08921e66445b5921867e8dd479, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 939ece6e5548aaf4ab317258438ecc96, type: 3}
+    - target: {fileID: 1590832780, guid: 5ec17e08921e66445b5921867e8dd479, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5672160483998577826, guid: 5ec17e08921e66445b5921867e8dd479, type: 3}
       propertyPath: m_Name
       value: Player
@@ -14428,6 +14436,7 @@ MonoBehaviour:
   signUI: {fileID: 368000735}
   signTextPro: {fileID: 699901733}
   isOwlSkilling: 0
+  isPigSkilling: 0
   player: {fileID: 459091841}
   maskManager: {fileID: 1937560721}
 --- !u!114 &1937560721
@@ -14444,6 +14453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentMask: 0
   fillImage: {fileID: 1017651105}
+  canChangeMask: 1
   maskImage: {fileID: 1017651106}
   maskSpriteList:
   - {fileID: 21300000, guid: 8a4c2410abd089b4e9054712a1825c21, type: 3}
@@ -14453,7 +14463,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 1937560723}
   - {fileID: 1937560722}
-  canChangeMask: 1
   maskNum: 2
 --- !u!82 &1937560722
 AudioSource:
