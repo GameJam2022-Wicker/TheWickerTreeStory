@@ -14,10 +14,10 @@ public class MaskManager : MonoBehaviour
     public Mask currentMask;
 
     public Image fillImage;
+    public bool canChangeMask;    // 가면 변경 가능 여부 (Map_03 -> false)
     [SerializeField] private Image maskImage;
     [SerializeField] private List<Sprite> maskSpriteList;
     [SerializeField] private List<AudioSource> maskChangeAudioList;
-    [SerializeField] private bool canChangeMask;    // 가면 변경 가능 여부 (Map_03 -> false)
     [SerializeField] private int maskNum;           // 가면 개수
     private Animator animator;
     

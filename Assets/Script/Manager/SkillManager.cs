@@ -87,7 +87,7 @@ public class SkillManager : MonoBehaviour
                 break;
         }
 
-        UpdateCoolTime();   // J : 부엉이 스킬 쿨타임 업데이트
+        if (maskManager.canChangeMask) UpdateCoolTime();   // J : 부엉이 스킬 쿨타임 업데이트
     }
 
     // J : 부엉이 스킬 쿨타임 업데이트
