@@ -1398,6 +1398,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &586811339 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7957535779893812176, guid: 27e7fd4098d4490439c03d9b7db9ac81, type: 3}
+  m_PrefabInstance: {fileID: 586811335}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &674254883
 GameObject:
   m_ObjectHideFlags: 0
@@ -2621,7 +2626,7 @@ PlayableDirector:
   - key: {fileID: 6110955156413860003, guid: 96abc9dcf69099847959578ca231862d, type: 2}
     value: {fileID: 562743331}
   - key: {fileID: 5272012958085960961, guid: 96abc9dcf69099847959578ca231862d, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 586811339}
   - key: {fileID: 6110955156413860003, guid: d921122e4a288c64b8d647b5b2d81099, type: 2}
     value: {fileID: 562743331}
   - key: {fileID: 5272012958085960961, guid: d921122e4a288c64b8d647b5b2d81099, type: 2}
@@ -3369,7 +3374,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "F\uB97C \uB204\uB974\uBA74 \uBC14\uC704\uB97C \uBC00 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+  m_text: "E\uB098 Q\uB97C \uB20C\uB7EC\uC11C \uAC00\uBA74\uC744 \uBCC0\uACBD\uD560
+    \uC218 \uC788\uC2B5\uB2C8\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec18d9446caf1f0428cdac43b050ff6f, type: 2}
   m_sharedMaterial: {fileID: 5289204028360799902, guid: ec18d9446caf1f0428cdac43b050ff6f, type: 2}
