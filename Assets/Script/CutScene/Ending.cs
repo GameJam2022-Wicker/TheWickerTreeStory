@@ -8,8 +8,8 @@ public class Ending : MonoBehaviour
 {
     bool isBelieving;
 
-    public AudioSource bgm;
-    public AudioClip happyBGM, badBGM;
+    /*public AudioSource bgm;
+    public AudioClip happyBGM, badBGM;*/
 
     private PlayableDirector playableDirector;
     [SerializeField] private TimelineAsset happyTimeline, badTimeline;
@@ -26,16 +26,16 @@ public class Ending : MonoBehaviour
 
         if(isBelieving)
         {
-            bgm.clip = happyBGM;
+            //bgm.clip = happyBGM;
             playableDirector.playableAsset = happyTimeline;
         }
         else
         {
-            bgm.clip = badBGM;
+            //bgm.clip = badBGM;
             playableDirector.playableAsset = badTimeline;
         }
 
         playableDirector.Play();
-        bgm.Play();
+        //bgm.Play();
     }
 }
