@@ -34,8 +34,8 @@ public class FadeManager : MonoBehaviour
 
     public IEnumerator FadeOutCoroutine()
     {
-
-        StartCoroutine(AudioManager.instance.AnimateMusicCrossfadeOut(2));
+        if(AudioManager.instance != null)
+            StartCoroutine(AudioManager.instance.AnimateMusicCrossfadeOut(2));
         fadePanel.gameObject.SetActive(true);
 
         float fadeCount = 0;    // 초기 알파값(검은 화면)

@@ -3591,8 +3591,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a0034657a5e2841aeb3a46c4b13856, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: "\uB098\uCC98\uB7FC \uBFD4\uC774 \uC5C6\uB294 \uC0AC\uB78C\uC740
-    \uBABB \uC0AC\uC6A9\uD558\uC9C0\uB9CC.."
+  subtitleText: "\uB098\uCC98\uB7FC '\uBFD4\uC774 \uC5C6\uB294 \uC0AC\uB78C'\uC740
+    \uC0AC\uC6A9\uD560 \uC218 \uC5C6\uC9C0\uB9CC ..."
 --- !u!114 &3802879123207357493
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4444,7 +4444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a0034657a5e2841aeb3a46c4b13856, type: 3}
   m_Name: SubtitleClip(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: "F\uB97C \uB204\uB974\uBA74 \uBC14\uC704\uB97C \uBC00 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+  subtitleText: "F\uB97C \uB204\uB974\uBA74 \uBC14\uC704\uB97C \uBC00 \uC218 \uC788\uC2B5\uB2C8\uB2E4"
 --- !u!114 &7600081684353796170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4599,7 +4599,7 @@ MonoBehaviour:
   m_Name: SubtitleClip
   m_EditorClassIdentifier: 
   subtitleText: "E\uB098 Q\uB97C \uB20C\uB7EC\uC11C \uAC00\uBA74\uC744 \uBCC0\uACBD\uD560
-    \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+    \uC218 \uC788\uC2B5\uB2C8\uB2E4"
 --- !u!114 &8648103545781571676
 MonoBehaviour:
   m_ObjectHideFlags: 1

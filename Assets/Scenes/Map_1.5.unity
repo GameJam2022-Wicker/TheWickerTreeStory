@@ -5113,6 +5113,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MaskUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7957535779893812175, guid: 27e7fd4098d4490439c03d9b7db9ac81, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957535779893812175, guid: 27e7fd4098d4490439c03d9b7db9ac81, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27e7fd4098d4490439c03d9b7db9ac81, type: 3}
 --- !u!224 &1017651104 stripped
@@ -5698,14 +5706,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 939ece6e5548aaf4ab317258438ecc96, type: 3}
-    - target: {fileID: 0}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5672160483998577826, guid: 5ec17e08921e66445b5921867e8dd479, type: 3}
       propertyPath: m_Name
       value: Player
