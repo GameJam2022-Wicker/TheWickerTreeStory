@@ -18,8 +18,7 @@ public class TimelineManager : MonoBehaviour
 
     public void OnClickSkipButton()
     {
-        int idx = SceneManager.GetActiveScene().buildIndex + 1;
-        SceneManager.LoadScene(idx);
+        StartCoroutine(fadeManager.FadeOutCoroutine());
     }
 
     void OnEnable()

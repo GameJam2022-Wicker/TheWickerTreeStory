@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
         musicSources.loop = true;
         musicSources.Play();
 
-        StartCoroutine(AnimateMusicCrossfade(fadeDuration));
+        StartCoroutine(AnimateMusicCrossfadeIn(fadeDuration));
     }
 
     private void OnEnable()
@@ -94,14 +94,26 @@ public class AudioManager : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    IEnumerator AnimateMusicCrossfade(float duration)
+    IEnumerator AnimateMusicCrossfadeIn(float duration)
     {
         float percent = 0;
 
         while (percent < 1)
         {
             percent += Time.deltaTime * 1 / duration;
-            musicSources.volume = Mathf.Lerp(0, 100, percent);
+            musicSources.volume = Mathf.Lerp(0, 1, percent);
+            yield return null;
+        }
+    }
+
+    public IEnumerator AnimateMusicCrossfadeOut(float duration)
+    {
+        float percent = 0;
+
+        while (percent < 1)
+        {
+            percent += Time.deltaTime * 1 / duration;
+            musicSources.volume = Mathf.Lerp(1, 0, percent);
             yield return null;
         }
     }
