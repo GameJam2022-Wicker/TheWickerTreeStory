@@ -88,7 +88,7 @@ public class CutScene : MonoBehaviour
 
     private void EndCutScene()
     {
-        buttons.SetActive(false);
+        //buttons.SetActive(false);
         GameObject.Find("FadeManager").GetComponent<FadeManager>().StartCoroutine("FadeOutCoroutine");
     }
 }
