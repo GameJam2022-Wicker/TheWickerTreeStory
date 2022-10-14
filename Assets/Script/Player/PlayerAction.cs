@@ -256,6 +256,8 @@ public class PlayerAction : MonoBehaviour
             {
                 GameObject.Find("FadeManager").GetComponent<FadeManager>().StartCoroutine("GameOverCoroutine");
                 isGameOver = !isGameOver;
+                walkSound.mute = true;
+                jumpSound.mute = true;
                 maxSpeed = 0f;
             }
         }

@@ -38,6 +38,7 @@ public class ShadowMove : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             collision.gameObject.layer = LayerMask.NameToLayer("Dead");
+            gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
         }
             
     }
