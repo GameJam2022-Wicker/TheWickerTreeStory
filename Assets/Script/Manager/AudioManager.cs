@@ -14,9 +14,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip cutscene2;
     public AudioClip cutscene3;
     public AudioClip map1;
-    public AudioClip premap2;
+    public AudioClip map1_5;
     public AudioClip map2;
-    public AudioClip premap3;
+    public AudioClip map2_5;
     public AudioClip map3;
     public AudioClip happyEnding;
     public AudioClip badEnding;
@@ -55,33 +55,33 @@ public class AudioManager : MonoBehaviour
             case 0:
                 PlayMusic(mainmenu, 2);
                 break;
-
             case 1:
                 PlayMusic(cutscene1, 2);
                 break;
             case 2:
+            case 3:
                 PlayMusic(map1, 2);
                 break;
-            case 3:
-                PlayMusic(premap2, 2);
-                break;
             case 4:
-                PlayMusic(cutscene2, 2);
+                PlayMusic(map1_5, 2);
                 break;
             case 5:
-                PlayMusic(map2, 2);
+                PlayMusic(cutscene2, 2);
                 break;
             case 6:
-                PlayMusic(premap3, 2);
+                PlayMusic(map2, 2);
                 break;
             case 7:
-                PlayMusic(cutscene3, 2);
+                PlayMusic(map2_5, 2);
                 break;
             case 8:
-                PlayMusic(map3, 2);
+                PlayMusic(cutscene3, 2);
                 break;
             case 9:
-                if(DataManager.instance.isBelieving)
+                PlayMusic(map3, 2);
+                break;                
+            case 10:
+                if (DataManager.instance.isBelieving)
                     PlayMusic(happyEnding, 2);
                 else
                     PlayMusic(badEnding, 2);

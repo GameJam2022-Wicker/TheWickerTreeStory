@@ -12,25 +12,28 @@ EditorBuildSettings:
     path: Assets/Scenes/CutScene_01.unity
     guid: b022d696583d9db43a9d25c232b868fa
   - enabled: 1
-    path: Assets/Scenes/Map_01.unity
+    path: Assets/Scenes/Map_1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Map_1.5.unity
+    path: Assets/Scenes/Map_1_2_5.unity
+    guid: a8323a659ac6d4c42a28ad40a55c67a4
+  - enabled: 1
+    path: Assets/Scenes/Map_1_5.unity
     guid: 26dd3117c8c7272439644818ac98d6bf
   - enabled: 1
     path: Assets/Scenes/CutScene_02.unity
     guid: 56f907ca8fd3a304cb9bf88fb66002bb
   - enabled: 1
-    path: Assets/Scenes/Map_02.unity
+    path: Assets/Scenes/Map_2.unity
     guid: d1ba2d5b829fedd48be6988304ebfdf8
   - enabled: 1
-    path: Assets/Scenes/Map_2.5.unity
+    path: Assets/Scenes/Map_2_5.unity
     guid: 3343c63d89059a943ae70e0b345d9f64
   - enabled: 1
     path: Assets/Scenes/CutScene_03.unity
     guid: bf60ae3be3fc20044bb47ab7f65296eb
   - enabled: 1
-    path: Assets/Scenes/Map_03.unity
+    path: Assets/Scenes/Map_3.unity
     guid: 52dd10dcc0858c44a8cb033f47f1a703
   - enabled: 1
     path: Assets/Scenes/Ending.unity

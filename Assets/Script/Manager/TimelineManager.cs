@@ -30,7 +30,7 @@ public class TimelineManager : MonoBehaviour
     {
         if (director == aDirector)
         {
-            if(SceneManager.GetActiveScene().buildIndex == 7)
+            if(SceneManager.GetActiveScene().buildIndex == 8)
             {
                 mapSceneButtons.SetActive(true);
             }
