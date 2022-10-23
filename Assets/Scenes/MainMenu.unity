@@ -707,6 +707,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &171695136
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 171695138}
+  - component: {fileID: 171695137}
+  m_Layer: 0
+  m_Name: MouseCursor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &171695137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171695136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4715f26550bd8c345aa375f989c20237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCursor: {fileID: 2800000, guid: a846c5ff004d1d443af9daa23eb6aee9, type: 3}
+  clickCursor: {fileID: 2800000, guid: 584ff918155c7d744974ce4df1138123, type: 3}
+  hotSpot: {x: 10, y: 10}
+--- !u!4 &171695138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171695136}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.427248, y: -0.39707285, z: -1.7617606}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &226256935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2664,9 +2710,9 @@ MonoBehaviour:
   cutscene2: {fileID: 8300000, guid: 0fa42f3e1bca4394bbb2adadda2cfcb7, type: 3}
   cutscene3: {fileID: 8300000, guid: dcb924906cd304145aaa7eeeeba986f2, type: 3}
   map1: {fileID: 8300000, guid: 860fec7f2eed32f4397171d7aecb4d02, type: 3}
-  premap2: {fileID: 8300000, guid: 939ece6e5548aaf4ab317258438ecc96, type: 3}
+  map1_5: {fileID: 0}
   map2: {fileID: 8300000, guid: e2a39b73670974bd29312ff392fa146d, type: 3}
-  premap3: {fileID: 8300000, guid: ec00232f0c98b9b4a9b293483524fdc7, type: 3}
+  map2_5: {fileID: 0}
   map3: {fileID: 8300000, guid: e1331e1dd3065c14e9a4b997f9ef2c09, type: 3}
   happyEnding: {fileID: 8300000, guid: 6ee86c17501f64104a49364699f114e9, type: 3}
   badEnding: {fileID: 8300000, guid: 82565b008ddc94e2fb6abc361e6dd90f, type: 3}
