@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: TheWickerStory
-  defaultCursor: {fileID: 2800000, guid: a846c5ff004d1d443af9daa23eb6aee9, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 584ff918155c7d744974ce4df1138123, type: 3}
   cursorHotspot: {x: 10, y: 10}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1

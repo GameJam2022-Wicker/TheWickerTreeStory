@@ -2710,9 +2710,9 @@ MonoBehaviour:
   cutscene2: {fileID: 8300000, guid: 0fa42f3e1bca4394bbb2adadda2cfcb7, type: 3}
   cutscene3: {fileID: 8300000, guid: dcb924906cd304145aaa7eeeeba986f2, type: 3}
   map1: {fileID: 8300000, guid: 860fec7f2eed32f4397171d7aecb4d02, type: 3}
-  map1_5: {fileID: 0}
+  map1_5: {fileID: 8300000, guid: 939ece6e5548aaf4ab317258438ecc96, type: 3}
   map2: {fileID: 8300000, guid: e2a39b73670974bd29312ff392fa146d, type: 3}
-  map2_5: {fileID: 0}
+  map2_5: {fileID: 8300000, guid: ec00232f0c98b9b4a9b293483524fdc7, type: 3}
   map3: {fileID: 8300000, guid: e1331e1dd3065c14e9a4b997f9ef2c09, type: 3}
   happyEnding: {fileID: 8300000, guid: 6ee86c17501f64104a49364699f114e9, type: 3}
   badEnding: {fileID: 8300000, guid: 82565b008ddc94e2fb6abc361e6dd90f, type: 3}
