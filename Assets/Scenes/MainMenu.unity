@@ -736,8 +736,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4715f26550bd8c345aa375f989c20237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultCursor: {fileID: 2800000, guid: a846c5ff004d1d443af9daa23eb6aee9, type: 3}
-  clickCursor: {fileID: 2800000, guid: 584ff918155c7d744974ce4df1138123, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 584ff918155c7d744974ce4df1138123, type: 3}
+  clickCursor: {fileID: 2800000, guid: a846c5ff004d1d443af9daa23eb6aee9, type: 3}
   hotSpot: {x: 10, y: 10}
 --- !u!4 &171695138
 Transform:
